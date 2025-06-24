@@ -33,58 +33,42 @@ type User struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// Logical id of this artifact
 	// The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.
 	Id *datatypes_go_proto.Id `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// Metadata about the resource
 	// The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
 	Meta *datatypes_go_proto.Meta `protobuf:"bytes,2,opt,name=meta,proto3" json:"meta,omitempty"`
-	// A set of rules under which this content was created
 	// A reference to a set of rules that were followed when the resource was constructed, and which must be understood when processing the content. Often, this is a reference to an implementation guide that defines the special rules along with other profiles etc.
 	ImplicitRules *datatypes_go_proto.Uri `protobuf:"bytes,3,opt,name=implicit_rules,json=implicitRules,proto3" json:"implicit_rules,omitempty"`
-	// Language of the resource content
 	// The base language in which the resource is written.
 	Language *datatypes_go_proto.Code `protobuf:"bytes,4,opt,name=language,proto3" json:"language,omitempty"`
-	// Text summary of the resource, for human interpretation
 	// A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it "clinically safe" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.
 	Text *datatypes_go_proto.Narrative `protobuf:"bytes,5,opt,name=text,proto3" json:"text,omitempty"`
 	// Contained, inline Resources
-	// Contained, inline Resources
 	Contained []*anypb.Any `protobuf:"bytes,6,rep,name=contained,proto3" json:"contained,omitempty"`
-	// Additional content defined by implementations
 	// Additional content defined by implementations
 	Extension []*datatypes_go_proto.Extension `protobuf:"bytes,8,rep,name=extension,proto3" json:"extension,omitempty"`
 	// Extensions that cannot be ignored
-	// Extensions that cannot be ignored
 	ModifierExtension []*datatypes_go_proto.Extension `protobuf:"bytes,9,rep,name=modifier_extension,json=modifierExtension,proto3" json:"modifier_extension,omitempty"`
-	// An identifier for this user
 	// An identifier for this user.
 	Identifier []*datatypes_go_proto.Identifier `protobuf:"bytes,10,rep,name=identifier,proto3" json:"identifier,omitempty"`
-	// The first name or given name of the user
 	// The first name or given name of the user. This is the value as entered when the user is created. It is used to populate the profile resource.
 	FirstName *datatypes_go_proto.String `protobuf:"bytes,11,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
-	// The last name or family name of the user
 	// The last name or family name of the user. This is the value as entered when the user is created. It is used to populate the profile resource.
 	LastName *datatypes_go_proto.String `protobuf:"bytes,12,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
 	// External identifier for the user
 	// @deprecated Replaced by ProjectMembership.externalId.
 	ExternalId *datatypes_go_proto.String `protobuf:"bytes,13,opt,name=external_id,json=externalId,proto3" json:"external_id,omitempty"`
-	// The email address that uniquely identifies the user
 	// The email address that uniquely identifies the user.
 	Email *datatypes_go_proto.String `protobuf:"bytes,14,opt,name=email,proto3" json:"email,omitempty"`
-	// Whether the system has verified that the user has access to the email address
 	// Whether the system has verified that the user has access to the email address.
 	EmailVerified *datatypes_go_proto.Boolean `protobuf:"bytes,15,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
 	// Administrative flag
 	// @deprecated
 	Admin *datatypes_go_proto.Boolean `protobuf:"bytes,16,opt,name=admin,proto3" json:"admin,omitempty"`
-	// Encrypted hash of the user's password
 	// Encrypted hash of the user's password.
 	PasswordHash *datatypes_go_proto.String `protobuf:"bytes,17,opt,name=password_hash,json=passwordHash,proto3" json:"password_hash,omitempty"`
-	// Shared secret for MFA authenticator applications
 	// Shared secret for MFA authenticator applications.
 	MfaSecret *datatypes_go_proto.String `protobuf:"bytes,18,opt,name=mfa_secret,json=mfaSecret,proto3" json:"mfa_secret,omitempty"`
-	// Whether the user has completed MFA enrollment
 	// Whether the user has completed MFA enrollment.
 	MfaEnrolled *datatypes_go_proto.Boolean `protobuf:"bytes,19,opt,name=mfa_enrolled,json=mfaEnrolled,proto3" json:"mfa_enrolled,omitempty"`
 }
