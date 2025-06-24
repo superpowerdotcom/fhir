@@ -18,14 +18,14 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/google/fhir/go/jsonformat/internal/accessor"
-	"github.com/google/fhir/go/jsonformat/internal/jsonpbhelper"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/jsonpbhelper"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 
-	d4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
-	d5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
-	d3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
+	d4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
+	d5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
+	d3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
 )
 
 // normalizeFragmentReference normalizes an internal reference into its specialized field.

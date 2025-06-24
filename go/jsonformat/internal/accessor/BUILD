@@ -8,7 +8,7 @@ licenses(["notice"])
 go_library(
     name = "accessor",
     srcs = ["getter_setter.go"],
-    importpath = "github.com/google/fhir/go/jsonformat/internal/accessor",
+    importpath = "github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor",
     deps = [
         "@com_github_golang_protobuf//proto:go_default_library",
         "@org_golang_google_protobuf//reflect/protoreflect:go_default_library",
@@ -37,6 +37,6 @@ proto_library(
 
 go_proto_library(
     name = "accessor_test_go_proto",
-    importpath = "github.com/google/fhir/go/jsonformat/internal/accessor/accessor_test_go_proto",
+    importpath = "github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor/accessor_test_go_proto",
     protos = [":accessor_test_proto"],
 )

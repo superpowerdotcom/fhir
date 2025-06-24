@@ -7,5 +7,5 @@ licenses(["notice"])
 go_library(
     name = "fhirversion",
     srcs = ["fhirversion.go"],
-    importpath = "github.com/google/fhir/go/fhirversion",
+    importpath = "github.com/superpowerdotcom/fhir/go/fhirversion",
 )

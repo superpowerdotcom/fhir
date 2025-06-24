@@ -23,7 +23,7 @@ import "proto/google/fhir/proto/r5/core/datatypes.proto";
 option java_multiple_files = true;
 option java_package = "com.google.fhir.r5.core";
 option (.google.fhir.proto.fhir_version) = R5;
-option go_package = "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/organization_affiliation_go_proto";
+option go_package = "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/organization_affiliation_go_proto";
 
 // Auto-generated from StructureDefinition for OrganizationAffiliation.
 // Defines an affiliation/association/relationship between 2 distinct

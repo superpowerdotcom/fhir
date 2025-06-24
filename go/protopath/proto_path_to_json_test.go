@@ -17,8 +17,8 @@ package protopath
 import (
 	"testing"
 
-	pptpb "github.com/google/fhir/go/protopath/protopathtest_go_proto"
 	"github.com/google/go-cmp/cmp"
+	pptpb "github.com/superpowerdotcom/fhir/go/protopath/protopathtest_go_proto"
 )
 
 func TestToJSONPath(t *testing.T) {

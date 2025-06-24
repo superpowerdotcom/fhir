@@ -14,11 +14,11 @@
 # limitations under the License.
 
 function go_modules_tests {
-    mkdir -p /tmp/go/src/github.com/google/fhir
+    mkdir -p /tmp/go/src/github.com/superpowerdotcom/fhir
     export GOPATH=/tmp/go
     export GO111MODULE=on
-    cp -r ./ /tmp/go/src/github.com/google/fhir
-    pushd /tmp/go/src/github.com/google/fhir/go
+    cp -r ./ /tmp/go/src/github.com/superpowerdotcom/fhir
+    pushd /tmp/go/src/github.com/superpowerdotcom/fhir/go
     go mod download  # Download module dependencies
     go build ./...  # Build everything in go/
     go test ./...  # Test everything in go/

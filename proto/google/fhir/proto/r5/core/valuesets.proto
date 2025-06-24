@@ -20,7 +20,7 @@ import "proto/google/fhir/proto/annotations.proto";
 
 option java_multiple_files = true;
 option java_package = "com.google.fhir.r5.core";
-option go_package = "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/valuesets_go_proto";
+option go_package = "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/valuesets_go_proto";
 
 // Codes identifying the lifecycle stage of an adverse event.
 // See http://hl7.org/fhir/ValueSet/adverse-event-status

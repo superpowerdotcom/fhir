@@ -1,4 +1,4 @@
-module github.com/google/fhir/go
+module github.com/superpowerdotcom/fhir/go
 
 go 1.19
 
@@ -7,7 +7,7 @@ require (
 	github.com/antlr4-go/antlr/v4 v4.13.0
 	github.com/bazelbuild/rules_go v0.24.5
 	github.com/golang/protobuf v1.5.4
-	github.com/google/fhir/go/protopath v0.7.4
+	github.com/superpowerdotcom/fhir/go/protopath v0.0.0
 	github.com/google/go-cmp v0.6.0
 	github.com/json-iterator/go v1.1.10
 	golang.org/x/exp v0.0.0-20230515195305-f3d0a9c9a5cc
@@ -25,3 +25,5 @@ require (
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/superpowerdotcom/fhir/go/protopath => ./protopath
