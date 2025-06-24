@@ -1,0 +1,14 @@
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "empty-oneof"
+  }
+  expression {
+    value: "Observation.component[0].value"
+  }
+}

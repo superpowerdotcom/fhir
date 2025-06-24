@@ -1,0 +1,4480 @@
+id {
+  value: "ghp"
+}
+meta {
+  last_updated {
+    value_us: 1439721323000000
+    timezone: "Z"
+    precision: SECOND
+  }
+}
+text {
+  status {
+    value: GENERATED
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: ghp</p><p><b>meta</b>: </p><p><b>contained</b>: , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , </p><p><b>identifier</b>: ghp-example</p><p><b>status</b>: final</p><p><b>code</b>: General Health Profile <span>(Details : {http://acme.com/labs/reports code \'GHP\' = \'GHP\', given as \'General Health Profile\'})</span></p><p><b>subject</b>: <a>Patient/pat2</a></p><p><b>effective</b>: 16/08/2015 6:40:17 AM</p><p><b>issued</b>: 17/08/2015 6:40:17 AM</p><h3>Performers</h3><table><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a>Acme Laboratory, Inc</a></td></tr></table><p><b>specimen</b>: </p><ul><li>Red Top Tube. Generated Summary: id: rtt; 20150816-00124; Serum sample <span>(Details : {SNOMED CT code \'119364003\' = \'Serum specimen\', given as \'Serum sample\'})</span>; ????</li><li>Lavender Top Tube. Generated Summary: id: ltt; 20150816-00124; Blood specimen with EDTA <span>(Details : {SNOMED CT code \'445295009\' = \'Blood specimen with EDTA\', given as \'Blood specimen with EDTA\'})</span>; ????</li><li>Urine Sample. Generated Summary: id: urine; 20150816-00124; Urine specimen <span>(Details : {SNOMED CT code \'122575003\' = \'Urine specimen\', given as \'Urine specimen\'})</span>; ????</li></ul><p><b>result</b>: </p><ul><li>Chemistry Panel. Generated Summary: id: p1; status: final; Comprehensive metabolic 2000 panel - Serum or Plasma <span>(Details : {LOINC code \'24323-8\' = \'Comprehensive metabolic 2000 panel - Serum or Plasma\', given as \'Comprehensive metabolic 2000 panel - Serum or Plasma\'})</span>; effective: 16/08/2015 6:40:17 AM; issued: 17/08/2015 6:40:17 AM; Acme Laboratory, Inc</li><li>CBC. Generated Summary: id: p2; status: final; Complete blood count (hemogram) panel - Blood by Automated count <span>(Details : {LOINC code \'58410-2\' = \'Complete blood count (hemogram) panel - Blood by Automated count\', given as \'Complete blood count (hemogram) panel - Blood by Automated count\'})</span>; effective: 16/08/2015 6:40:17 AM; issued: 17/08/2015 6:40:17 AM; Acme Laboratory, Inc</li><li>Urinalysis. Generated Summary: id: p3; status: final; Urinalysis macro (dipstick) panel - Urine <span>(Details : {LOINC code \'24357-6\' = \'Urinalysis macro (dipstick) panel - Urine\', given as \'Urinalysis macro (dipstick) panel - Urine\'})</span>; effective: 16/08/2015 6:40:17 AM; issued: 17/08/2015 6:40:17 AM; Acme Laboratory, Inc</li></ul></div>"
+  }
+}
+contained {
+  specimen {
+    id {
+      value: "rtt"
+    }
+    accession_identifier {
+      system {
+        value: "http://acme.com/labs/accession-ids"
+      }
+      value {
+        value: "20150816-00124"
+      }
+    }
+    type {
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "119364003"
+        }
+        display {
+          value: "Serum sample"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    collection {
+      collector {
+        practitioner_id {
+          value: "f202"
+        }
+      }
+      collected {
+        date_time {
+          value_us: 1439707217000000
+          timezone: "Z"
+          precision: SECOND
+        }
+      }
+    }
+    container {
+      type {
+        coding {
+          system {
+            value: "http://acme.com/labs"
+          }
+          code {
+            value: "SST"
+          }
+          display {
+            value: "Serum Separator Tube"
+          }
+        }
+      }
+    }
+  }
+}
+contained {
+  specimen {
+    id {
+      value: "ltt"
+    }
+    accession_identifier {
+      system {
+        value: "http://acme.com/labs/accession-ids"
+      }
+      value {
+        value: "20150816-00124"
+      }
+    }
+    type {
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "445295009"
+        }
+        display {
+          value: "Blood specimen with EDTA"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    collection {
+      collector {
+        practitioner_id {
+          value: "f202"
+        }
+      }
+      collected {
+        date_time {
+          value_us: 1439707217000000
+          timezone: "Z"
+          precision: SECOND
+        }
+      }
+    }
+    container {
+      type {
+        coding {
+          system {
+            value: "http://acme.com/labs"
+          }
+          code {
+            value: "LTT"
+          }
+          display {
+            value: "Lavender Top Tube"
+          }
+        }
+      }
+    }
+  }
+}
+contained {
+  specimen {
+    id {
+      value: "urine"
+    }
+    accession_identifier {
+      system {
+        value: "http://acme.com/labs/accession-ids"
+      }
+      value {
+        value: "20150816-00124"
+      }
+    }
+    type {
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "122575003"
+        }
+        display {
+          value: "Urine specimen"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    collection {
+      collector {
+        practitioner_id {
+          value: "f202"
+        }
+      }
+      collected {
+        date_time {
+          value_us: 1439707217000000
+          timezone: "Z"
+          precision: SECOND
+        }
+      }
+    }
+    container {
+      type {
+        coding {
+          system {
+            value: "http://acme.com/labs"
+          }
+          code {
+            value: "UCUP"
+          }
+          display {
+            value: "100mL sterile cup"
+          }
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "p2"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "58410-2"
+        }
+        display {
+          value: "Complete blood count (hemogram) panel - Blood by Automated count"
+        }
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    specimen {
+      fragment {
+        value: "ltt"
+      }
+      display {
+        value: "Lavender Top Tube"
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r1"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r2"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r3"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r4"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r5"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r6"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r7"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r8"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r9"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r10"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r11"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r12"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r13"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r14"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r15"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r16"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "r17"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r1"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "718-7"
+        }
+        display {
+          value: "Hemoglobin [Mass/volume] in Blood"
+        }
+      }
+      text {
+        value: "Haemoglobin"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "176"
+        }
+        unit {
+          value: "g/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "g/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "135"
+        }
+        unit {
+          value: "g/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "g/L"
+        }
+      }
+      high {
+        value {
+          value: "180"
+        }
+        unit {
+          value: "g/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "g/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r2"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "789-8"
+        }
+        display {
+          value: "Erythrocytes [#/volume] in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Red Cell Count"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "5.9"
+        }
+        unit {
+          value: "x10*12/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*12/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "4.2"
+        }
+        unit {
+          value: "x10*12/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*12/L"
+        }
+      }
+      high {
+        value {
+          value: "6.0"
+        }
+        unit {
+          value: "x10*12/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*12/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r3"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "4544-3"
+        }
+        display {
+          value: "Hematocrit [Volume Fraction] of Blood by Automated count"
+        }
+      }
+      text {
+        value: "Haematocrit"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "55"
+        }
+        unit {
+          value: "%"
+        }
+      }
+    }
+    interpretation {
+      coding {
+        system {
+          value: "http://hl7.org/fhir/v2/0078"
+        }
+        code {
+          value: "H"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "38"
+        }
+        unit {
+          value: "%"
+        }
+      }
+      high {
+        value {
+          value: "52"
+        }
+        unit {
+          value: "%"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r4"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "787-2"
+        }
+        display {
+          value: "Erythrocyte mean corpuscular volume [Entitic volume] by Automated count"
+        }
+      }
+      text {
+        value: "Mean Cell Volume"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "99"
+        }
+        unit {
+          value: "fL"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "fL"
+        }
+      }
+    }
+    interpretation {
+      coding {
+        system {
+          value: "http://hl7.org/fhir/v2/0078"
+        }
+        code {
+          value: "H"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "80"
+        }
+        unit {
+          value: "fL"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "fL"
+        }
+      }
+      high {
+        value {
+          value: "98"
+        }
+        unit {
+          value: "fL"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "fL"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r5"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "785-6"
+        }
+        display {
+          value: "Erythrocyte mean corpuscular hemoglobin [Entitic mass] by Automated count"
+        }
+      }
+      text {
+        value: "Mean Cell Haemoglobin"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "36"
+        }
+        unit {
+          value: "pg"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "pg"
+        }
+      }
+    }
+    interpretation {
+      coding {
+        system {
+          value: "http://hl7.org/fhir/v2/0078"
+        }
+        code {
+          value: "H"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "27"
+        }
+        unit {
+          value: "pg"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "pg"
+        }
+      }
+      high {
+        value {
+          value: "35"
+        }
+        unit {
+          value: "pg"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "pg"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r6"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "777-3"
+        }
+        display {
+          value: "Platelets [#/volume] in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Platelet Count"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "444"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "150"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+      high {
+        value {
+          value: "450"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r7"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "6690-2"
+        }
+        display {
+          value: "Leukocytes [#/volume] in Blood by Automated count"
+        }
+      }
+      text {
+        value: "White Cell Count"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "4.6"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "4.0"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+      high {
+        value {
+          value: "11.0"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r8"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "770-8"
+        }
+        display {
+          value: "Neutrophils/100 leukocytes in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Neutrophils"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "20"
+        }
+        unit {
+          value: "%"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "%"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r9"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "751-8"
+        }
+        display {
+          value: "Neutrophils [#/volume] in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Neutrophils"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "0.9"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+    interpretation {
+      coding {
+        system {
+          value: "http://hl7.org/fhir/v2/0078"
+        }
+        code {
+          value: "LL"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "2.0"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+      high {
+        value {
+          value: "7.5"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r10"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "736-9"
+        }
+        display {
+          value: "Lymphocytes/100 leukocytes in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Lymphocytes"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "20"
+        }
+        unit {
+          value: "%"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "%"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r11"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "731-0"
+        }
+        display {
+          value: "Lymphocytes [#/volume] in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Lymphocytes"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "0.9"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+    interpretation {
+      coding {
+        system {
+          value: "http://hl7.org/fhir/v2/0078"
+        }
+        code {
+          value: "L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "1.1"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+      high {
+        value {
+          value: "4.0"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r12"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "5905-5"
+        }
+        display {
+          value: "Monocytes/100 leukocytes in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Monocytes"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "20"
+        }
+        unit {
+          value: "%"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "%"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r13"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "742-7"
+        }
+        display {
+          value: "Monocytes [#/volume] in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Monocytes"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "0.9"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0.2"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+      high {
+        value {
+          value: "1.0"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r14"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "713-8"
+        }
+        display {
+          value: "Eosinophils/100 leukocytes in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Eosinophils"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "20"
+        }
+        unit {
+          value: "%"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "%"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r15"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "711-2"
+        }
+        display {
+          value: "Eosinophils [#/volume] in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Eosinophils"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "0.92"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+    interpretation {
+      coding {
+        system {
+          value: "http://hl7.org/fhir/v2/0078"
+        }
+        code {
+          value: "HH"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0.04"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+      high {
+        value {
+          value: "0.40"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r16"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "706-2"
+        }
+        display {
+          value: "Basophils/100 leukocytes in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Basophils"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "20"
+        }
+        unit {
+          value: "%"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "%"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "r17"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "704-7"
+        }
+        display {
+          value: "Basophils [#/volume] in Blood by Automated count"
+        }
+      }
+      text {
+        value: "Basophils"
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "0.92"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+    reference_range {
+      high {
+        value {
+          value: "0.21"
+        }
+        unit {
+          value: "x10*9/L"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "10*9/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "p1"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "24323-8"
+        }
+        display {
+          value: "Comprehensive metabolic 2000 panel - Serum or Plasma"
+        }
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    specimen {
+      fragment {
+        value: "rtt"
+      }
+      display {
+        value: "Red Top Tube"
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o1"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o2"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o3"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o4"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o5"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o6"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o7"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o8"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o9"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o10"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o11"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o12"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o13"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o14"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o15"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o16"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o17"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o18"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o19"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o20"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o21"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "o22"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o1"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2951-2"
+        }
+        display {
+          value: "Sodium [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "104934005"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "140"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "137"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "147"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o2"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2823-3"
+        }
+        display {
+          value: "Potassium [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "59573005"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "4.2"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "3.5"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "5.0"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o3"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2075-0"
+        }
+        display {
+          value: "Chloride [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "46511006"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "105"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "96"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "109"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o4"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "1963-8"
+        }
+        display {
+          value: "Bicarbonate [Moles/volume] in Serum"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "88645003"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "26"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "25"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "33"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o5"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "1863-0"
+        }
+        display {
+          value: "Anion gap 4 in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "271057005"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "13"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "4"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "17"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o6"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "14749-6"
+        }
+        display {
+          value: "Glucose [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "36048009"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "7.4"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "3.0"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "7.7"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o7"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "14937-7"
+        }
+        display {
+          value: "Urea nitrogen [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "273967009"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "4.7"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "2.0"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "7.0"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o8"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "14682-9"
+        }
+        display {
+          value: "Creatinine [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "70901006"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "0.09"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0.04"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "0.11"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o9"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "14933-6"
+        }
+        display {
+          value: "Urate [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "86228006"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "0.39"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    interpretation {
+      coding {
+        system {
+          value: "http://hl7.org/fhir/v2/0078"
+        }
+        code {
+          value: "H"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0.14"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "0.35"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o10"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "14631-6"
+        }
+        display {
+          value: "Bilirubin.total [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "27171005"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "7"
+        }
+        unit {
+          value: "umol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "2"
+        }
+        unit {
+          value: "umol/L"
+        }
+      }
+      high {
+        value {
+          value: "20"
+        }
+        unit {
+          value: "umol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o11"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "14629-0"
+        }
+        display {
+          value: "Bilirubin.direct [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "39748002"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "3"
+        }
+        unit {
+          value: "umol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0"
+        }
+        unit {
+          value: "umol/L"
+        }
+      }
+      high {
+        value {
+          value: "8"
+        }
+        unit {
+          value: "umol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o12"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "6768-6"
+        }
+        display {
+          value: "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "88810008"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "108"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "30"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+      high {
+        value {
+          value: "115"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o13"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2324-2"
+        }
+        display {
+          value: "Gamma glutamyl transferase [Enzymatic activity/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "69480007"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "35"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+      high {
+        value {
+          value: "45"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o14"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "1742-6"
+        }
+        display {
+          value: "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "34608000"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "54"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+    interpretation {
+      coding {
+        system {
+          value: "http://hl7.org/fhir/v2/0078"
+        }
+        code {
+          value: "H"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+      high {
+        value {
+          value: "45"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o15"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "1920-8"
+        }
+        display {
+          value: "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "45896001"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "30"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+      high {
+        value {
+          value: "41"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o16"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2532-0"
+        }
+        display {
+          value: "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "11274001"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "131"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "80"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+      high {
+        value {
+          value: "250"
+        }
+        unit {
+          value: "U/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o17"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2000-8"
+        }
+        display {
+          value: "Calcium [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "71878006"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "2.38"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "2.25"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "2.65"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o18"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "13959-2"
+        }
+        display {
+          value: "Calcium.ionized [Moles/volume] in Serum or Plasma by calculation"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "166708003"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "2.39"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "2.25"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "2.65"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o19"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "14879-1"
+        }
+        display {
+          value: "Phosphate [Moles/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "104866001"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "1.5"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "0.8"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+      high {
+        value {
+          value: "1.5"
+        }
+        unit {
+          value: "mmol/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o20"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2885-2"
+        }
+        display {
+          value: "Protein [Mass/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "74040009"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "67"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "60"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+      high {
+        value {
+          value: "82"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o21"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "1751-7"
+        }
+        display {
+          value: "Albumin [Mass/volume] in Serum or Plasma"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "104485008"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "42"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "35"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+      high {
+        value {
+          value: "50"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "o22"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "10834-0"
+        }
+        display {
+          value: "Globulin [Mass/volume] in Serum by calculation"
+        }
+      }
+      coding {
+        system {
+          value: "http://snomed.info/sct"
+        }
+        code {
+          value: "104979009"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "25"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+    }
+    reference_range {
+      low {
+        value {
+          value: "20"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+      high {
+        value {
+          value: "40"
+        }
+        unit {
+          value: "g/L"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "p3"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "24357-6"
+        }
+        display {
+          value: "Urinalysis macro (dipstick) panel - Urine"
+        }
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u1"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u2"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u3"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u4"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u5"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u6"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u7"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u8"
+        }
+      }
+    }
+    related {
+      type {
+        value: HAS_MEMBER
+      }
+      target {
+        fragment {
+          value: "u9"
+        }
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u1"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2756-5"
+        }
+        display {
+          value: "pH of Urine"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "5.0"
+        }
+        unit {
+          value: "pH"
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u2"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2887-8"
+        }
+        display {
+          value: "Protein [Presence] in Urine"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      codeable_concept {
+        coding {
+          system {
+            value: "http://snomed.info/sct"
+          }
+          code {
+            value: "260385009"
+          }
+          display {
+            value: "Negative"
+          }
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u3"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2965-2"
+        }
+        display {
+          value: "Specific gravity of Urine"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "1.009"
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u4"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "33051-4"
+        }
+        display {
+          value: "Erythrocytes [Presence] in Urine"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      codeable_concept {
+        coding {
+          system {
+            value: "http://snomed.info/sct"
+          }
+          code {
+            value: "260385009"
+          }
+          display {
+            value: "Negative"
+          }
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u5"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "2349-9"
+        }
+        display {
+          value: "Glucose [Presence] in Urine"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      codeable_concept {
+        coding {
+          system {
+            value: "http://snomed.info/sct"
+          }
+          code {
+            value: "260385009"
+          }
+          display {
+            value: "Negative"
+          }
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u6"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "33052-2"
+        }
+        display {
+          value: "Leukocytes [Presence] in Urine"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      codeable_concept {
+        coding {
+          system {
+            value: "http://snomed.info/sct"
+          }
+          code {
+            value: "260385009"
+          }
+          display {
+            value: "Negative"
+          }
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u7"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "30405-5"
+        }
+        display {
+          value: "Leukocytes [#/volume] in Urine"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "1"
+        }
+        unit {
+          value: "/uL"
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u8"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "30391-7"
+        }
+        display {
+          value: "Erythocytes [#/volume] in Urine"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "1"
+        }
+        comparator {
+          value: LT
+        }
+        unit {
+          value: "/uL"
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+contained {
+  observation {
+    id {
+      value: "u9"
+    }
+    status {
+      value: FINAL
+    }
+    code {
+      coding {
+        system {
+          value: "http://loinc.org"
+        }
+        code {
+          value: "13654-9"
+        }
+        display {
+          value: "Epithelial cells.squamous [#/volume] in Urine sediment"
+        }
+      }
+    }
+    subject {
+      patient_id {
+        value: "pat2"
+      }
+    }
+    effective {
+      date_time {
+        value_us: 1439707217000000
+        timezone: "Z"
+        precision: SECOND
+      }
+    }
+    issued {
+      value_us: 1439793617000000
+      timezone: "Z"
+      precision: SECOND
+    }
+    performer {
+      organization_id {
+        value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+      }
+      display {
+        value: "Acme Laboratory, Inc"
+      }
+    }
+    value {
+      quantity {
+        value {
+          value: "1"
+        }
+        comparator {
+          value: LT
+        }
+        unit {
+          value: "/mL"
+        }
+      }
+    }
+    specimen {
+      fragment {
+        value: "urine"
+      }
+      display {
+        value: "Urine Sample"
+      }
+    }
+  }
+}
+identifier {
+  system {
+    value: "http://acme.com/lab/reports"
+  }
+  value {
+    value: "ghp-example"
+  }
+}
+status {
+  value: FINAL
+}
+code {
+  coding {
+    system {
+      value: "http://acme.com/labs/reports"
+    }
+    code {
+      value: "GHP"
+    }
+    display {
+      value: "General Health Profile"
+    }
+  }
+}
+subject {
+  patient_id {
+    value: "pat2"
+  }
+}
+effective {
+  date_time {
+    value_us: 1439707217000000
+    timezone: "Z"
+    precision: SECOND
+  }
+}
+issued {
+  value_us: 1439793617000000
+  timezone: "Z"
+  precision: SECOND
+}
+performer {
+  actor {
+    organization_id {
+      value: "1832473e-2fe0-452d-abe9-3cdb9879522f"
+    }
+    display {
+      value: "Acme Laboratory, Inc"
+    }
+  }
+}
+specimen {
+  fragment {
+    value: "rtt"
+  }
+  display {
+    value: "Red Top Tube"
+  }
+}
+specimen {
+  fragment {
+    value: "ltt"
+  }
+  display {
+    value: "Lavender Top Tube"
+  }
+}
+specimen {
+  fragment {
+    value: "urine"
+  }
+  display {
+    value: "Urine Sample"
+  }
+}
+result {
+  fragment {
+    value: "p1"
+  }
+  display {
+    value: "Chemistry Panel"
+  }
+}
+result {
+  fragment {
+    value: "p2"
+  }
+  display {
+    value: "CBC"
+  }
+}
+result {
+  fragment {
+    value: "p3"
+  }
+  display {
+    value: "Urinalysis"
+  }
+}

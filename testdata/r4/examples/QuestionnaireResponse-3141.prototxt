@@ -1,0 +1,145 @@
+id {
+  value: "3141"
+}
+text {
+  status {
+    value: GENERATED
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <pre>\n            Comorbidity? YES\n              Cardial Comorbidity? YES\n                Angina? YES\n                MI? NO\n              Vascular Comorbidity?\n                (no answers)\n              ...\n            Histopathology\n              Abdominal\n                pT category: 1a\n              ...\n          </pre>\n    </div>"
+  }
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\272\006\266\001\n\b\n\006patsubRE*6\n4http://cancer.questionnaire.org/systems/id/patientnr2\v\n\tA34442332RA\"\r\"\v\n\tDutch BSN*#\n!urn:oid:2.16.840.1.113883.2.4.6.32\v\n\t188912345r\002\b\001z\034\b\200\350\273\366\254\362\024\022\020Australia/Sydney\030\003"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\342\a/\n\a\n\005order\202\001\002\b\a\212\001\002\b\004\302\001\n*\b\n\006patsub\352\001\f\232\a\t\n\aexample"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\342\006_\n\v\n\tquestauthRP\"\024\"\022\n\020AUMC, Den Helder*0\n.http://cancer.questionnaire.org/systems/id/org2\006\n\004AUMC"
+}
+identifier {
+  system {
+    value: "http://example.org/fhir/NamingSystem/questionnaire-ids"
+  }
+  value {
+    value: "Q12349876"
+  }
+}
+based_on {
+  fragment {
+    value: "order"
+  }
+}
+part_of {
+  procedure_id {
+    value: "f201"
+  }
+}
+status {
+  value: COMPLETED
+}
+subject {
+  fragment {
+    value: "patsub"
+  }
+}
+encounter {
+  encounter_id {
+    value: "example"
+  }
+}
+authored {
+  value_us: 1361301300000000
+  timezone: "-05:00"
+  precision: SECOND
+}
+author {
+  fragment {
+    value: "questauth"
+  }
+}
+item {
+  link_id {
+    value: "1"
+  }
+  item {
+    link_id {
+      value: "1.1"
+    }
+    answer {
+      value {
+        coding {
+          system {
+            value: "http://cancer.questionnaire.org/system/code/yesno"
+          }
+          code {
+            value: "1"
+          }
+          display {
+            value: "Yes"
+          }
+        }
+      }
+      item {
+        link_id {
+          value: "1.1.1"
+        }
+        item {
+          link_id {
+            value: "1.1.1.1"
+          }
+          answer {
+            value {
+              coding {
+                system {
+                  value: "http://cancer.questionnaire.org/system/code/yesno"
+                }
+                code {
+                  value: "1"
+                }
+              }
+            }
+          }
+        }
+        item {
+          link_id {
+            value: "1.1.1.2"
+          }
+          answer {
+            value {
+              coding {
+                system {
+                  value: "http://cancer.questionnaire.org/system/code/yesno"
+                }
+                code {
+                  value: "1"
+                }
+              }
+            }
+          }
+        }
+        item {
+          link_id {
+            value: "1.1.1.3"
+          }
+          answer {
+            value {
+              coding {
+                system {
+                  value: "http://cancer.questionnaire.org/system/code/yesno"
+                }
+                code {
+                  value: "0"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

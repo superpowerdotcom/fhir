@@ -1,0 +1,107 @@
+id {
+  value: "example-double-cousin-relationship"
+}
+text {
+  status {
+    value: GENERATED
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: example-double-cousin-relationship</p><p><b>contained</b>: , , , , , </p><p><b>status</b>: current</p><p><b>mode</b>: snapshot</p><p><b>code</b>: TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal <span>(Details : {LOINC code \'80738-8\' = \'TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal\', given as \'TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal\'})</span></p><p><b>subject</b>: <a>Pam Taylor</a></p><blockquote><p><b>entry</b></p><p><b>item</b>: id: 1; status: completed; name: Mary; natural mother <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code \'NMTH\' = \'natural mother\', given as \'natural mother\'})</span>; deceased</p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 2; status: completed; name: Bob; paternal uncle <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code \'PUNCLE\' = \'paternal uncle\', given as \'paternal uncle\'})</span></p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 3; status: completed; name: Jon; maternal uncle <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code \'MUNCLE\' = \'maternal uncle\', given as \'maternal uncle\'})</span></p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 4; status: completed; name: Alica; maternal grandmother <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code \'MGRMTH\' = \'maternal grandmother\', given as \'maternal grandmother\'})</span>; 70 yr<span> (Details: UCUM code a = \'a\')</span></p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 5; status: completed; name: Aunt with Parent ID; maternal aunt <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code \'MAUNT\' = \'maternal aunt\', given as \'maternal aunt\'})</span>; Female <span>(Details : {http://hl7.org/fhir/administrative-gender code \'female\' = \'Female\', given as \'Female\'})</span>; 55 yr<span> (Details: UCUM code a = \'a\')</span></p></blockquote><blockquote><p><b>entry</b></p><p><b>item</b>: id: 6; status: completed; name: Paul; Paternal grandfather <span>(Details : {http://terminology.hl7.org/CodeSystem/v3-RoleCode code \'PGRFTH\' = \'paternal grandfather\', given as \'Paternal grandfather\'})</span>; 74 yr<span> (Details: UCUM code b = \'b\')</span></p></blockquote></div>"
+  }
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\262\003\246\002\n\003\n\0011j\002\b\002z\033\362\006\t\n\aexample\342\t\f\n\nPam Taylor\212\001\006\n\004Mary\222\001c\032O\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\006\n\004NMTH2\020\n\016natural mother\"\020\n\016natural mother\272\001\004\n\002\b\001\332\001\206\001\"R\032;\032\030\n\026http://snomed.info/sct*\n\n\b732110092\023\n\021Diabetes mellitus\"\023\n\021Diabetes mellitus:0\n.\032\004\n\00245*\004\n\002yr2\033\n\031http://unitsofmeasure.org:\003\n\001a"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\262\003\334\002\n\003\n\0012j\002\b\002z\033\362\006\t\n\aexample\342\t\f\n\nPam Taylor\212\001\005\n\003Bob\222\001e\032Q\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\b\n\006PUNCLE2\020\n\016paternal uncle\"\020\n\016paternal uncle\332\001\302\001\"\215\001\032[\032\030\n\026http://snomed.info/sct*\017\n\r14810001191002.\n,Diabetes mellitus type 2 without retinopathy\".\n,Diabetes mellitus type 2 without retinopathy:0\n.\032\004\n\00235*\004\n\002yr2\033\n\031http://unitsofmeasure.org:\003\n\001a"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\262\003\226\001\n\003\n\0013j\002\b\002z\033\362\006\t\n\aexample\342\t\f\n\nPam Taylor\212\001\005\n\003Jon\222\001e\032Q\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\b\n\006MUNCLE2\020\n\016maternal uncle\"\020\n\016maternal uncle"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\262\003\326\003\n\003\n\0014B\374\001\022P\nNhttp://hl7.org/fhir/StructureDefinition/family-member-history-genetics-sibling\032p\022\006\n\004type\"f\302\001c\032O\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\006\n\004NSIS2\020\n\016natural sister\"\020\n\016natural sister\0326\022\v\n\treference\"\'\252\002$\352\003\b\n\006mother\342\t\026\n\024paternal grandmotherj\002\b\002z\033\362\006\t\n\aexample\342\t\f\n\nPam Taylor\212\001\a\n\005Alica\222\001q\032W\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\b\n\006MGRMTH2\026\n\024maternal grandmother\"\026\n\024maternal grandmother\252\0010\n.\032\004\n\00270*\004\n\002yr2\033\n\031http://unitsofmeasure.org:\003\n\001a"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\262\003\211\004\n\003\n\0015B\352\001\022O\nMhttp://hl7.org/fhir/StructureDefinition/family-member-history-genetics-parent\032_\022\006\n\004type\"U\302\001R\032F\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\005\n\003MTH2\b\n\006mother\"\b\n\006mother\0326\022\v\n\treference\"\'\252\002$\352\003\b\n\006147146\342\t\026\n\024maternal grandmotherj\002\b\002z\033\362\006\t\n\aexample\342\t\f\n\nPam Taylor\212\001\025\n\023Aunt with Parent ID\222\001b\032O\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\a\n\005MAUNT2\017\n\rmaternal aunt\"\017\n\rmaternal aunt\232\001C\032A\032+\n)http://hl7.org/fhir/administrative-gender*\b\n\006female2\b\n\006Female\252\0010\n.\032\004\n\00255*\004\n\002yr2\033\n\031http://unitsofmeasure.org:\003\n\001a"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\262\003\327\003\n\003\n\0016B\376\001\022P\nNhttp://hl7.org/fhir/StructureDefinition/family-member-history-genetics-sibling\032r\022\006\n\004type\"h\302\001e\032P\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\006\n\004NBRO2\021\n\017natural brother\"\021\n\017natural brother\0326\022\v\n\treference\"\'\252\002$\352\003\b\n\006father\342\t\026\n\024maternal grandfatherj\002\b\002z\033\362\006\t\n\aexample\342\t\f\n\nPam Taylor\212\001\006\n\004Paul\222\001q\032W\0323\n1http://terminology.hl7.org/CodeSystem/v3-RoleCode*\b\n\006PGRFTH2\026\n\024Paternal grandfather\"\026\n\024Paternal grandfather\252\0010\n.\032\004\n\00274*\004\n\002yr2\033\n\031http://unitsofmeasure.org:\003\n\001b"
+}
+status {
+  value: CURRENT
+}
+mode {
+  value: SNAPSHOT
+}
+code {
+  coding {
+    system {
+      value: "http://loinc.org"
+    }
+    code {
+      value: "80738-8"
+    }
+    display {
+      value: "TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal"
+    }
+  }
+  text {
+    value: "TPMT gene mutations found [Identifier] in Blood or Tissue by Sequencing Nominal"
+  }
+}
+subject {
+  patient_id {
+    value: "example"
+  }
+  display {
+    value: "Pam Taylor"
+  }
+}
+entry {
+  item {
+    fragment {
+      value: "1"
+    }
+  }
+}
+entry {
+  item {
+    fragment {
+      value: "2"
+    }
+  }
+}
+entry {
+  item {
+    fragment {
+      value: "3"
+    }
+  }
+}
+entry {
+  item {
+    fragment {
+      value: "4"
+    }
+  }
+}
+entry {
+  item {
+    fragment {
+      value: "5"
+    }
+  }
+}
+entry {
+  item {
+    fragment {
+      value: "6"
+    }
+  }
+}

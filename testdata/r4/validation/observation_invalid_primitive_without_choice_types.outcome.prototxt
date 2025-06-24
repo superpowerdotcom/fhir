@@ -1,0 +1,56 @@
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "Input failed regex requirement for: google.fhir.r4.core.Uri"
+  }
+  expression {
+    value: "Observation.implicitRules"
+  }
+}
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "Input failed regex requirement for: google.fhir.r4.core.Code"
+  }
+  expression {
+    value: "Observation.language"
+  }
+}
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "Input failed regex requirement for: google.fhir.r4.core.String"
+  }
+  expression {
+    value: "Observation.referenceRange[0].text"
+  }
+}
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "Input failed regex requirement for: google.fhir.r4.core.Id"
+  }
+  expression {
+    value: "Observation.meta.versionId"
+  }
+}

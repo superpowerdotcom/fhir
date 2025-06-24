@@ -1,0 +1,14 @@
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "empty-reference"
+  }
+  expression {
+    value: "Observation.basedOn[0]"
+  }
+}

@@ -1,0 +1,255 @@
+id {
+  value: "EB3500"
+}
+text {
+  status {
+    value: GENERATED
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human-readable rendering of the ExplanationOfBenefit</div>"
+  }
+}
+identifier {
+  system {
+    value: "http://www.BenefitsInc.com/fhir/explanationofbenefit"
+  }
+  value {
+    value: "987654321"
+  }
+}
+status {
+  value: ACTIVE
+}
+type {
+  coding {
+    system {
+      value: "http://hl7.org/fhir/ex-claimtype"
+    }
+    code {
+      value: "oral"
+    }
+  }
+}
+patient {
+  patient_id {
+    value: "pat1"
+  }
+}
+created {
+  value_us: 1408111200000000
+  timezone: "Australia/Sydney"
+  precision: DAY
+}
+enterer {
+  practitioner_id {
+    value: "1"
+  }
+}
+provider {
+  practitioner_id {
+    value: "1"
+  }
+}
+organization {
+  organization_id {
+    value: "2"
+  }
+}
+facility {
+  location_id {
+    value: "1"
+  }
+}
+claim {
+  claim_id {
+    value: "100150"
+  }
+}
+claim_response {
+  claim_response_id {
+    value: "R3500"
+  }
+}
+outcome {
+  coding {
+    system {
+      value: "http://hl7.org/fhir/remittance-outcome"
+    }
+    code {
+      value: "complete"
+    }
+  }
+}
+disposition {
+  value: "Claim settled as per contract."
+}
+payee {
+  type {
+    coding {
+      system {
+        value: "http://hl7.org/fhir/payeetype"
+      }
+      code {
+        value: "provider"
+      }
+    }
+  }
+  resource_type {
+    coding {
+      system {
+        value: "http://hl7.org/fhir/resource-type-link"
+      }
+      code {
+        value: "organization"
+      }
+    }
+  }
+  party {
+    organization_id {
+      value: "2"
+    }
+  }
+}
+care_team {
+  sequence {
+    value: 1
+  }
+  provider {
+    practitioner_id {
+      value: "example"
+    }
+  }
+}
+insurance {
+  coverage {
+    coverage_id {
+      value: "9876B1"
+    }
+  }
+}
+item {
+  sequence {
+    value: 1
+  }
+  care_team_link_id {
+    value: 1
+  }
+  service {
+    coding {
+      system {
+        value: "http://hl7.org/fhir/service-uscls"
+      }
+      code {
+        value: "1200"
+      }
+    }
+  }
+  serviced {
+    date {
+      value_us: 1408111200000000
+      timezone: "Australia/Sydney"
+      precision: DAY
+    }
+  }
+  unit_price {
+    value {
+      value: "135.57"
+    }
+    system {
+      value: "urn:iso:std:iso:4217"
+    }
+    code {
+      value: "USD"
+    }
+  }
+  net {
+    value {
+      value: "135.57"
+    }
+    system {
+      value: "urn:iso:std:iso:4217"
+    }
+    code {
+      value: "USD"
+    }
+  }
+  encounter {
+    encounter_id {
+      value: "example"
+    }
+  }
+  adjudication {
+    category {
+      coding {
+        code {
+          value: "eligible"
+        }
+      }
+    }
+    amount {
+      value {
+        value: "120.00"
+      }
+      system {
+        value: "urn:iso:std:iso:4217"
+      }
+      code {
+        value: "USD"
+      }
+    }
+  }
+  adjudication {
+    category {
+      coding {
+        code {
+          value: "eligpercent"
+        }
+      }
+    }
+    value {
+      value: "0.80"
+    }
+  }
+  adjudication {
+    category {
+      coding {
+        code {
+          value: "benefit"
+        }
+      }
+    }
+    amount {
+      value {
+        value: "96.00"
+      }
+      system {
+        value: "urn:iso:std:iso:4217"
+      }
+      code {
+        value: "USD"
+      }
+    }
+  }
+}
+total_cost {
+  value {
+    value: "135.57"
+  }
+  system {
+    value: "urn:iso:std:iso:4217"
+  }
+  code {
+    value: "USD"
+  }
+}
+total_benefit {
+  value {
+    value: "96.00"
+  }
+  system {
+    value: "urn:iso:std:iso:4217"
+  }
+  code {
+    value: "USD"
+  }
+}

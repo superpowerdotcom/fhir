@@ -1,0 +1,9 @@
+status: { value: DRAFT }
+population: {
+  research_element_definition_id: { value: "123"}
+}
+name { value: "test" }
+contained {
+  type_url : "123",
+  value: "hello"
+}

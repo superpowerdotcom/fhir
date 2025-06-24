@@ -1,0 +1,14 @@
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "start.hasValue().not() or end.hasValue().not() or (start <= end)"
+  }
+  expression {
+    value: "Encounter.period"
+  }
+}

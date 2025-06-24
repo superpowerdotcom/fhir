@@ -1,0 +1,29 @@
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "missing-required-field"
+  }
+  expression {
+    value: "Observation.status"
+  }
+}
+
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "missing-required-field"
+  }
+  expression {
+    value: "Observation.note[0].text"
+  }
+}

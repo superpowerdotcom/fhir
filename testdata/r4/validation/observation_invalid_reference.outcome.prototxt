@@ -1,0 +1,42 @@
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "invalid-reference-disallowed-type-Device"
+  }
+  expression {
+    value: "Observation.specimen"
+  }
+}
+issue {
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "empty-reference"
+  }
+  expression {
+    value: "Observation.focus[2]"
+  }
+}
+issue{
+  severity {
+    value: ERROR
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "invalid-reference-disallowed-type-Basic"
+  }
+  expression {
+    value: "Observation.performer[2]"
+  }
+}

@@ -1,0 +1,496 @@
+name: "NamingSystem"
+field {
+  name: "id"
+  number: 1
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Id"
+  options {
+    [google.fhir.proto.field_description]: "Logical id of this artifact"
+  }
+}
+field {
+  name: "meta"
+  number: 2
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Meta"
+  options {
+    [google.fhir.proto.field_description]: "Metadata about the resource"
+  }
+}
+field {
+  name: "implicit_rules"
+  number: 3
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Uri"
+  options {
+    [google.fhir.proto.field_description]: "A set of rules under which this content was created"
+  }
+}
+field {
+  name: "language"
+  number: 4
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Code"
+  options {
+    [google.fhir.proto.field_description]: "Language of the resource content"
+  }
+}
+field {
+  name: "text"
+  number: 5
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Narrative"
+  options {
+    [google.fhir.proto.field_description]: "Text summary of the resource, for human interpretation"
+  }
+}
+field {
+  name: "contained"
+  number: 6
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.protobuf.Any"
+  options {
+    [google.fhir.proto.field_description]: "Contained, inline Resources"
+  }
+}
+field {
+  number: 7
+  options {
+    [google.fhir.proto.reserved_reason]: "Field 7 reserved for strongly-typed ContainedResource for id: NamingSystem.contained"
+  }
+}
+field {
+  name: "extension"
+  number: 8
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Additional content defined by implementations"
+  }
+}
+field {
+  name: "modifier_extension"
+  number: 9
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Extensions that cannot be ignored"
+  }
+}
+field {
+  name: "name"
+  number: 10
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "Name for this naming system (computer friendly)"
+  }
+}
+field {
+  name: "status"
+  number: 11
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.NamingSystem.StatusCode"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "draft | active | retired | unknown"
+  }
+}
+field {
+  name: "kind"
+  number: 12
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.NamingSystem.KindCode"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "codesystem | identifier | root"
+  }
+}
+field {
+  name: "date"
+  number: 13
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DateTime"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "Date last changed"
+  }
+}
+field {
+  name: "publisher"
+  number: 14
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Name of the publisher (organization or individual)"
+  }
+}
+field {
+  name: "contact"
+  number: 15
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ContactDetail"
+  options {
+    [google.fhir.proto.field_description]: "Contact details for the publisher"
+  }
+}
+field {
+  name: "responsible"
+  number: 16
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Who maintains system namespace?"
+  }
+}
+field {
+  name: "type"
+  number: 17
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "e.g. driver,  provider,  patient, bank etc."
+  }
+}
+field {
+  name: "description"
+  number: 18
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Markdown"
+  options {
+    [google.fhir.proto.field_description]: "Natural language description of the naming system"
+  }
+}
+field {
+  name: "use_context"
+  number: 19
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.UsageContext"
+  options {
+    [google.fhir.proto.field_description]: "The context that the content is intended to support"
+  }
+}
+field {
+  name: "jurisdiction"
+  number: 20
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Intended jurisdiction for naming system (if applicable)"
+  }
+}
+field {
+  name: "usage"
+  number: 21
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "How/where is it used"
+  }
+}
+field {
+  name: "unique_id"
+  number: 22
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.NamingSystem.UniqueId"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "Unique identifiers used for system"
+  }
+}
+nested_type {
+  name: "StatusCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.PublicationStatusCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/publication-status"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "KindCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.NamingSystemTypeCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/namingsystem-type"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "UniqueId"
+  field {
+    name: "id"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "Unique id for inter-element referencing"
+    }
+  }
+  field {
+    name: "extension"
+    number: 2
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Additional content defined by implementations"
+    }
+  }
+  field {
+    name: "modifier_extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Extensions that cannot be ignored even if unrecognized"
+    }
+  }
+  field {
+    name: "type"
+    number: 4
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.NamingSystem.UniqueId.TypeCode"
+    options {
+      [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+      [google.fhir.proto.field_description]: "oid | uuid | uri | other"
+    }
+  }
+  field {
+    name: "value"
+    number: 5
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+      [google.fhir.proto.field_description]: "The unique identifier"
+    }
+  }
+  field {
+    name: "preferred"
+    number: 6
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Boolean"
+    options {
+      [google.fhir.proto.field_description]: "Is this the id that should be used for this type"
+    }
+  }
+  field {
+    name: "comment"
+    number: 7
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "Notes about identifier usage"
+    }
+  }
+  field {
+    name: "period"
+    number: 8
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Period"
+    options {
+      [google.fhir.proto.field_description]: "When is identifier valid?"
+    }
+  }
+  nested_type {
+    name: "TypeCode"
+    field {
+      name: "value"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_ENUM
+      type_name: ".google.fhir.r4.core.NamingSystemIdentifierTypeCode.Value"
+    }
+    field {
+      name: "id"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.String"
+    }
+    field {
+      name: "extension"
+      number: 3
+      label: LABEL_REPEATED
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Extension"
+    }
+    options {
+      [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/namingsystem-identifier-type"
+      [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+      [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+    }
+  }
+}
+options {
+  [google.fhir.proto.structure_definition_kind]: KIND_RESOURCE
+  [google.fhir.proto.message_description]: "Auto-generated from StructureDefinition for NamingSystem, last updated 2019-11-01T09:29:23.356+11:00.\nSystem of unique identification.\nSee http://hl7.org/fhir/StructureDefinition/NamingSystem"
+  [google.fhir.proto.fhir_structure_definition_url]: "http://hl7.org/fhir/StructureDefinition/NamingSystem"
+  [google.fhir.proto.fhir_path_message_constraint]: "kind != \'root\' or uniqueId.all(type != \'uuid\')"
+  [google.fhir.proto.fhir_path_message_constraint]: "uniqueId.where(preferred = true).select(type).isDistinct()"
+  [google.fhir.proto.search_parameter] {
+    name: "contact"
+    type: STRING
+    expression: "NamingSystem.contact.name"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context"
+    type: TOKEN
+    expression: "(CapabilityStatement.useContext.value as CodeableConcept) | (CodeSystem.useContext.value as CodeableConcept) | (CompartmentDefinition.useContext.value as CodeableConcept) | (ConceptMap.useContext.value as CodeableConcept) | (GraphDefinition.useContext.value as CodeableConcept) | (ImplementationGuide.useContext.value as CodeableConcept) | (MessageDefinition.useContext.value as CodeableConcept) | (NamingSystem.useContext.value as CodeableConcept) | (OperationDefinition.useContext.value as CodeableConcept) | (SearchParameter.useContext.value as CodeableConcept) | (StructureDefinition.useContext.value as CodeableConcept) | (StructureMap.useContext.value as CodeableConcept) | (TerminologyCapabilities.useContext.value as CodeableConcept) | (ValueSet.useContext.value as CodeableConcept)"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context-quantity"
+    type: QUANTITY
+    expression: "(CapabilityStatement.useContext.value as Quantity) | (CapabilityStatement.useContext.value as Range) | (CodeSystem.useContext.value as Quantity) | (CodeSystem.useContext.value as Range) | (CompartmentDefinition.useContext.value as Quantity) | (CompartmentDefinition.useContext.value as Range) | (ConceptMap.useContext.value as Quantity) | (ConceptMap.useContext.value as Range) | (GraphDefinition.useContext.value as Quantity) | (GraphDefinition.useContext.value as Range) | (ImplementationGuide.useContext.value as Quantity) | (ImplementationGuide.useContext.value as Range) | (MessageDefinition.useContext.value as Quantity) | (MessageDefinition.useContext.value as Range) | (NamingSystem.useContext.value as Quantity) | (NamingSystem.useContext.value as Range) | (OperationDefinition.useContext.value as Quantity) | (OperationDefinition.useContext.value as Range) | (SearchParameter.useContext.value as Quantity) | (SearchParameter.useContext.value as Range) | (StructureDefinition.useContext.value as Quantity) | (StructureDefinition.useContext.value as Range) | (StructureMap.useContext.value as Quantity) | (StructureMap.useContext.value as Range) | (TerminologyCapabilities.useContext.value as Quantity) | (TerminologyCapabilities.useContext.value as Range) | (ValueSet.useContext.value as Quantity) | (ValueSet.useContext.value as Range)"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context-type"
+    type: TOKEN
+    expression: "CapabilityStatement.useContext.code | CodeSystem.useContext.code | CompartmentDefinition.useContext.code | ConceptMap.useContext.code | GraphDefinition.useContext.code | ImplementationGuide.useContext.code | MessageDefinition.useContext.code | NamingSystem.useContext.code | OperationDefinition.useContext.code | SearchParameter.useContext.code | StructureDefinition.useContext.code | StructureMap.useContext.code | TerminologyCapabilities.useContext.code | ValueSet.useContext.code"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context-type-quantity"
+    type: COMPOSITE
+    expression: "CapabilityStatement.useContext | CodeSystem.useContext | CompartmentDefinition.useContext | ConceptMap.useContext | GraphDefinition.useContext | ImplementationGuide.useContext | MessageDefinition.useContext | NamingSystem.useContext | OperationDefinition.useContext | SearchParameter.useContext | StructureDefinition.useContext | StructureMap.useContext | TerminologyCapabilities.useContext | ValueSet.useContext"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context-type-value"
+    type: COMPOSITE
+    expression: "CapabilityStatement.useContext | CodeSystem.useContext | CompartmentDefinition.useContext | ConceptMap.useContext | GraphDefinition.useContext | ImplementationGuide.useContext | MessageDefinition.useContext | NamingSystem.useContext | OperationDefinition.useContext | SearchParameter.useContext | StructureDefinition.useContext | StructureMap.useContext | TerminologyCapabilities.useContext | ValueSet.useContext"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "date"
+    type: DATE
+    expression: "CapabilityStatement.date | CodeSystem.date | CompartmentDefinition.date | ConceptMap.date | GraphDefinition.date | ImplementationGuide.date | MessageDefinition.date | NamingSystem.date | OperationDefinition.date | SearchParameter.date | StructureDefinition.date | StructureMap.date | TerminologyCapabilities.date | ValueSet.date"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "description"
+    type: STRING
+    expression: "CapabilityStatement.description | CodeSystem.description | CompartmentDefinition.description | ConceptMap.description | GraphDefinition.description | ImplementationGuide.description | MessageDefinition.description | NamingSystem.description | OperationDefinition.description | SearchParameter.description | StructureDefinition.description | StructureMap.description | TerminologyCapabilities.description | ValueSet.description"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "id-type"
+    type: TOKEN
+    expression: "NamingSystem.uniqueId.type"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "jurisdiction"
+    type: TOKEN
+    expression: "CapabilityStatement.jurisdiction | CodeSystem.jurisdiction | ConceptMap.jurisdiction | GraphDefinition.jurisdiction | ImplementationGuide.jurisdiction | MessageDefinition.jurisdiction | NamingSystem.jurisdiction | OperationDefinition.jurisdiction | SearchParameter.jurisdiction | StructureDefinition.jurisdiction | StructureMap.jurisdiction | TerminologyCapabilities.jurisdiction | ValueSet.jurisdiction"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "kind"
+    type: TOKEN
+    expression: "NamingSystem.kind"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "name"
+    type: STRING
+    expression: "CapabilityStatement.name | CodeSystem.name | CompartmentDefinition.name | ConceptMap.name | GraphDefinition.name | ImplementationGuide.name | MessageDefinition.name | NamingSystem.name | OperationDefinition.name | SearchParameter.name | StructureDefinition.name | StructureMap.name | TerminologyCapabilities.name | ValueSet.name"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "period"
+    type: DATE
+    expression: "NamingSystem.uniqueId.period"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "publisher"
+    type: STRING
+    expression: "CapabilityStatement.publisher | CodeSystem.publisher | CompartmentDefinition.publisher | ConceptMap.publisher | GraphDefinition.publisher | ImplementationGuide.publisher | MessageDefinition.publisher | NamingSystem.publisher | OperationDefinition.publisher | SearchParameter.publisher | StructureDefinition.publisher | StructureMap.publisher | TerminologyCapabilities.publisher | ValueSet.publisher"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "responsible"
+    type: STRING
+    expression: "NamingSystem.responsible"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "status"
+    type: TOKEN
+    expression: "CapabilityStatement.status | CodeSystem.status | CompartmentDefinition.status | ConceptMap.status | GraphDefinition.status | ImplementationGuide.status | MessageDefinition.status | NamingSystem.status | OperationDefinition.status | SearchParameter.status | StructureDefinition.status | StructureMap.status | TerminologyCapabilities.status | ValueSet.status"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "telecom"
+    type: TOKEN
+    expression: "NamingSystem.contact.telecom"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "type"
+    type: TOKEN
+    expression: "NamingSystem.type"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "value"
+    type: STRING
+    expression: "NamingSystem.uniqueId.value"
+  }
+}

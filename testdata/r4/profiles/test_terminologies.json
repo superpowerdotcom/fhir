@@ -1,0 +1,216 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "CodeSystem",
+        "id": "Brewery",
+        "url": "http://test/url/base/Brewery",
+        "name": "Brewery",
+        "title": "Brewery",
+        "status": "draft",
+        "date": "2023-01-10",
+        "publisher": "Testington Inc.",
+        "description": "The brewery of origin.",
+        "content": "complete",
+        "property": [
+          {
+            "code": "status",
+            "uri": "http://hl7.org/fhir/concept-properties#status",
+            "type": "code"
+          }
+        ],
+        "concept": [
+          {
+            "code": "sante-adairius",
+            "display": "Sante Adairius"
+          },
+          {
+            "code": "treehouse",
+            "display": "Treehouse"
+          },
+          {
+            "code": "russian-river",
+            "display": "Russian River"
+          },
+          {
+            "code": "cantillon",
+            "display": "Cantillon"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CodeSystem",
+        "id": "FootballTeams",
+        "url": "http://test/url/base/FootballTeams",
+        "name": "FootballTeams",
+        "title": "FootballTeams",
+        "status": "draft",
+        "date": "2023-01-10",
+        "publisher": "Testington Inc.",
+        "description": "NFL Football Teams",
+        "content": "complete",
+        "property": [
+          {
+            "code": "status",
+            "uri": "http://hl7.org/fhir/concept-properties#status",
+            "type": "code"
+          }
+        ],
+        "concept": [
+          {
+            "code": "Niners"
+          },
+          {
+            "code": "Eagles"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "Brewery",
+        "url": "http://test/url/base/ValueSet/Brewery",
+        "name": "Brewery",
+        "title": "Brewery",
+        "status": "draft",
+        "date": "2023-01-10",
+        "publisher": "Testington Inc.",
+        "description": "ValueSet for Brewery Code System.",
+        "compose": {
+          "include": [
+            {
+              "system": "http://test/url/base/Brewery"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "CaliforniaBreweries",
+        "url": "http://test/url/base/ValueSet/CaliforniaBreweries",
+        "name": "CaliforniaBreweries",
+        "title": "CaliforniaBreweries",
+        "status": "draft",
+        "date": "2023-01-10",
+        "publisher": "Testington Inc.",
+        "description": "ValueSet for California breweries.",
+        "compose": {
+          "include": [
+            {
+              "system": "http://test/url/base/Brewery",
+              "concept": [
+                {
+                  "code": "sante-adairius"
+                },
+                {
+                  "code": "russian-river"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "AmericanBreweries",
+        "url": "http://test/url/base/ValueSet/AmericanBreweries",
+        "name": "AmericanBreweries",
+        "title": "AmericanBreweries",
+        "status": "draft",
+        "date": "2023-01-10",
+        "publisher": "Testington Inc.",
+        "description": "ValueSet for Brewery Code System.",
+        "compose": {
+          "include": [
+            {
+              "system": "http://test/url/base/Brewery"
+            }
+          ],
+          "exclude": [
+            {
+              "system": "http://test/url/base/Brewery",
+              "concept": [
+                {
+                  "code": "cantillon"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "Californians",
+        "url": "http://test/url/base/ValueSet/Californians",
+        "name": "Californians",
+        "title": "Californians",
+        "status": "draft",
+        "date": "2023-01-10",
+        "publisher": "Testington Inc.",
+        "description": "California businesses",
+        "compose": {
+          "include": [
+            {
+              "system": "http://test/url/base/Brewery",
+              "concept": [
+                {
+                  "code": "sante-adairius"
+                },
+                {
+                  "code": "russian-river"
+                }
+              ]
+            },
+            {
+              "system": "http://test/url/base/FootballTeams",
+              "concept": [
+                {
+                  "code": "Niners"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "SomeSnomedCodes",
+        "url": "http://test/url/base/ValueSet/SomeSnomedCodes",
+        "name": "SomeSnomedCodes",
+        "title": "SomeSnomedCodes",
+        "status": "draft",
+        "date": "2023-01-10",
+        "publisher": "Testington Inc.",
+        "description": "ValueSet with codes from a CodeSystem that has a defining resource but no defined codes",
+        "compose": {
+          "include": [
+            {
+              "system": "http://snomed.info/sct",
+              "concept": [
+                {
+                  "code": "foo"
+                },
+                {
+                  "code": "bar"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

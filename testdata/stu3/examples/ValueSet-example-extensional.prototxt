@@ -1,0 +1,140 @@
+id {
+  value: "example-extensional"
+}
+meta {
+  last_updated {
+    value_us: 1492551883294000
+    timezone: "+10:00"
+    precision: MILLISECOND
+  }
+  profile {
+    value: "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+  }
+}
+text {
+  status {
+    value: GENERATED
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t\n            <p>Value set &quot;LOINC Codes for Cholesterol&quot;: This is an example value set that includes \n        all the  codes for serum cholesterol from LOINC v2.36.</p>\n\t\t\t\n            <p>Developed by: FHIR project team (example)</p>\n\t\t\t\n            <p>Published for testing on 13-June 2012</p>\n\t\t\t\n            <p>This value set includes the following LOINC codes:</p>\n\t\t\t\n            <ul>\n\t\t\t\t\n              <li>14647-2: Cholesterol [Moles/Volume]</li>\n\t\t\t\t\n              <li>2093-3: Cholesterol [Mass/Volume]</li>\n\t\t\t\t\n              <li>35200-5: Cholesterol [Mass Or Moles/Volume] </li>\n\t\t\t\t\n              <li>9342-7: Cholesterol [Percentile]</li>\n\t\t\t\n            </ul>\n\t\t\t\n            <p>This content from LOINC\302\256 is copyright \302\251 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use.</p>\n\t\t\n          </div>"
+  }
+}
+extension {
+  url {
+    value: "http://hl7.org/fhir/StructureDefinition/structuredefinition-ballot-status"
+  }
+  value {
+    string_value {
+      value: "Informative"
+    }
+  }
+}
+extension {
+  url {
+    value: "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"
+  }
+  value {
+    integer {
+    }
+  }
+}
+url {
+  value: "http://hl7.org/fhir/ValueSet/example-extensional"
+}
+identifier {
+  system {
+    value: "http://acme.com/identifiers/valuesets"
+  }
+  value {
+    value: "loinc-cholesterol-int"
+  }
+}
+version {
+  value: "20150622"
+}
+name {
+  value: "LOINC Codes for Cholesterol in Serum/Plasma"
+}
+status {
+  value: DRAFT
+}
+experimental {
+  value: true
+}
+date {
+  value_us: 1434895200000000
+  timezone: "Australia/Sydney"
+  precision: DAY
+}
+publisher {
+  value: "HL7 International"
+}
+contact {
+  name {
+    value: "FHIR project team"
+  }
+  telecom {
+    system {
+      value: URL
+    }
+    value {
+      value: "http://hl7.org/fhir"
+    }
+  }
+}
+description {
+  value: "This is an example value set that includes all the LOINC codes for serum/plasma cholesterol from v2.36."
+}
+copyright {
+  value: "This content from LOINC \302\256 is copyright \302\251 1995 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at http://loinc.org/terms-of-use."
+}
+compose {
+  locked_date {
+    value_us: 1339509600000000
+    timezone: "Australia/Sydney"
+    precision: DAY
+  }
+  inactive {
+    value: true
+  }
+  include {
+    system {
+      value: "http://loinc.org"
+    }
+    version {
+      value: "2.36"
+    }
+    concept {
+      code {
+        value: "14647-2"
+      }
+      display {
+        value: "Cholesterol [Moles/Volume]"
+      }
+    }
+    concept {
+      code {
+        value: "2093-3"
+      }
+      display {
+        value: "Cholesterol [Mass/Volume]"
+      }
+    }
+    concept {
+      code {
+        value: "35200-5"
+      }
+      display {
+        value: "Cholesterol [Mass Or Moles/Volume]"
+      }
+    }
+    concept {
+      code {
+        value: "9342-7"
+      }
+      display {
+        value: "Cholesterol [Percentile]"
+      }
+    }
+  }
+}

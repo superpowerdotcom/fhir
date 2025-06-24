@@ -1,0 +1,303 @@
+profile {
+  element_data {
+    name: "Bundle",
+    description: "Test Bundle"
+  }
+  base_url: "http://hl7.org/fhir/StructureDefinition/Bundle"
+}
+
+profile {
+  element_data {
+    name: "TestPatient"
+    description: "Patient with some fields changed for test."
+  }
+  base_url: "http://hl7.org/fhir/StructureDefinition/Patient"
+
+  # Test adding a FHIRPath constraint
+  restriction {
+    field_id: "Patient.address"
+    fhir_path_constraint {
+      description: "If the city has a value the state must too."
+      expression: "city.exists() implies state.exists()"
+    }
+    fhir_path_constraint {
+      severity: WARNING
+      description: "Postal codes should have at least five characters."
+      expression: "postalCode.length() >= 5"
+    }
+  }
+
+  restriction {
+    field_id: "Patient.name"
+    size_restriction: REQUIRED
+  }
+
+  codeable_concept_slice {
+    coding_slice {
+      element_data {
+        name: "color"
+      }
+      code_data {
+        system: "http://hl7.org/fhir/metric-color"
+      }
+    }
+    field_id: "Patient.maritalStatus"
+  }
+
+  extension_slice {
+    element_data {
+      name: "decExt"
+      description: "Decimal Extension"
+      size_restriction: REQUIRED
+    }
+    url: "http://test/url/base/StructureDefinition/SimpleDecimalExt"
+  }
+
+  extension_slice {
+    element_data {
+      name: "favoriteBrewery"
+    }
+    url: "http://test/url/base/StructureDefinition/FavoriteBrewery"
+  }
+
+  extension_slice {
+    element_data {
+      name: "favoriteCalifornian"
+    }
+    url: "http://test/url/base/StructureDefinition/FavoriteCalifornian"
+  }
+}
+
+profile {
+  element_data {
+    name: "TestObservation"
+    description: "Patient with some fields changed for test."
+  }
+  base_url: "http://hl7.org/fhir/StructureDefinition/Observation"
+
+  codeable_concept_slice {
+    coding_slice {
+      element_data {
+        name: "sysA"
+        description: "SysA Code"
+        size_restriction: OPTIONAL
+      }
+      code_data {
+        system: "http://sysa.org"
+      }
+    }
+    coding_slice {
+      element_data {
+        name: "sysB"
+        description: "SysB Code"
+        size_restriction: REPEATED
+      }
+      code_data {
+        system: "http://sysb.org"
+      }
+    }
+    coding_slice {
+      element_data {
+        name: "sysC"
+        description: "SysC Code"
+        size_restriction: OPTIONAL
+      }
+      code_data {
+        system: "http://sysc.org"
+        fixed_value: "8472"
+      }
+    }
+    coding_slice {
+      element_data {
+        name: "sysD"
+        description: "SysD Code"
+        size_restriction: OPTIONAL
+      }
+      code_data {
+        system: "http://sysd.org"
+        fixed_value: "8675329"
+      }
+    }
+    coding_slice {
+      element_data {
+        name: "color"
+        size_restriction: OPTIONAL
+      }
+      code_data {
+        system: "http://hl7.org/fhir/metric-color"
+      }
+    }
+    field_id: "Observation.code"
+  }
+
+  codeable_concept_slice {
+    coding_slice {
+      element_data {
+        name: "catA"
+        size_restriction: REPEATED
+      }
+      code_data {
+        system: "http://catA.org"
+      }
+    }
+    field_id: "Observation.category"
+  }
+
+  extension_slice {
+    element_data {
+      name: "myComplexExtension"
+      size_restriction: OPTIONAL
+    }
+    url: "http://test/url/base/StructureDefinition/ComplexExt"
+  }
+
+  extension_slice {
+    element_data {
+      name: "onNested"
+      size_restriction: OPTIONAL
+    }
+    url: "http://test/url/base/StructureDefinition/SimpleDecimalExt"
+    field_id: "Observation.component"
+  }
+
+  codeable_concept_slice {
+    coding_slice {
+      element_data {
+        name: "onNestedConcept"
+        size_restriction: OPTIONAL
+      }
+      code_data {
+        system: "http://nestedconcept.org"
+      }
+    }
+    field_id: "Observation.component.interpretation"
+  }
+}
+
+profile {
+  element_data {
+    name: "TestObservationLvl2"
+    description: "Level 2 Observation"
+  }
+  base_url: "http://test/url/base/StructureDefinition/TestObservation"
+
+  extension_slice {
+    element_data {
+      name: "newExt"
+    }
+    url: "http://test/url/base/StructureDefinition/SimpleDecimalExt"
+  }
+
+  codeable_concept_slice {
+    coding_slice {
+      element_data {
+        name: "newCodeOnProfiled"
+        size_restriction: OPTIONAL
+      }
+      code_data {
+        system: "http://newonprofiled.org"
+      }
+    }
+    field_id: "Observation.code"
+  }
+}
+
+profile {
+  element_data {
+    name: "TestEncounter"
+    description: "Test Encounter"
+  }
+  base_url: "http://hl7.org/fhir/StructureDefinition/Encounter"
+
+  codeable_concept_slice {
+    field_id: "Encounter.priority"
+    coding_slice {
+      element_data {
+        name: "act"
+        description: "Act Priority"
+        size_restriction: OPTIONAL
+      }
+      code_data {
+        system: "http://terminology.hl7.org/CodeSystem/v3-ActPriority"
+      }
+    }
+  }
+}
+
+profile {
+  element_data {
+    name: "ProfiledDatatypesObservation"
+    description: "Test of extensions on datatypes."
+  }
+  base_url: "http://hl7.org/fhir/StructureDefinition/Observation"
+
+  extension_slice {
+    element_data {
+      name: "extensionOnMeta"
+      description: "an example extension on a meta type."
+      size_restriction: REPEATED
+    }
+    url: "http://test/url/base/StructureDefinition/SimpleDecimalExt"
+    field_id: "Observation.meta"
+  }
+
+  extension_slice {
+    element_data {
+      name: "extensionOnString"
+      description: "an example extension on a string type."
+      size_restriction: REPEATED
+    }
+    url: "http://test/url/base/StructureDefinition/SimpleDecimalExt"
+    field_id: "Observation.referenceRange.text"
+  }
+}
+
+
+profile {
+  element_data {
+    name: "TestEncounterWithProfiledIdentifier"
+  }
+  base_url: "http://hl7.org/fhir/StructureDefinition/Encounter"
+
+  codeable_concept_slice {
+    field_id: "Encounter.identifier.type"
+    coding_slice {
+      element_data {
+        name: "act"
+      }
+      code_data {
+        system: "http://terminology.hl7.org/CodeSystem/v3-ActPriority"
+      }
+    }
+  }
+}
+
+
+profile {
+  element_data {
+    name: "TestPatientWithWarningAndErrorFhirpath"
+  }
+  base_url: "http://hl7.org/fhir/StructureDefinition/Patient"
+
+  restriction {
+    field_id: "Patient.address"
+    fhir_path_constraint {
+      description: "If the city has a value the state must too."
+      expression: "city.exists() implies state.exists()"
+    }
+    fhir_path_constraint {
+      severity: WARNING
+      description: "Postal codes should have at least five characters."
+      expression: "postalCode.all(length() >= 5)"
+    }
+  }
+
+  restriction {
+    field_id: "Patient"
+    fhir_path_constraint {
+      severity: WARNING
+      description: "Patient should have a name"
+      expression: "name.exists()"
+    }
+  }
+}

@@ -1,0 +1,272 @@
+id {
+  value: "preg"
+}
+text {
+  status {
+    value: ADDITIONAL
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <p>A maternity care plan (for a pregnant woman).</p>\n      <p>LMP is 1st Jan, 2013 (a great new years party!) The plan has activities to take prenatal vitamins, schedule first antenatal,\n            and \'placeholders\' for the second antenatal and delivery (there would be lots of others of course)</p>\n      <p>Note that where is a proposed \'status\' element against each activity</p>\n    </div>"
+  }
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\342\001\312\001\n\004\n\002p1ZH\032F\032:\n8http://terminology.hl7.org/CodeSystem/condition-clinical*\b\n\006activebM\032K\032<\n:http://terminology.hl7.org/CodeSystem/condition-ver-status*\v\n\tconfirmedz\r\"\v\n\tpregnancy\212\001\031\362\006\003\n\0011\342\t\020\n\016Eve Everywoman"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\342\006\035\n\005\n\003pr1b\024*\t\n\aMidwife2\a\n\005Mavis"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\342\006\"\n\005\n\003pr2b\031*\016\n\fObstetrician2\a\n\005Oscar"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "z\266\001\n\n\n\bcareteam\212\001M\"0\032#\032\032\n\030http://example.org/mysys*\005\n\003lmc\"\t\n\aMidwife*\031*\005\n\003pr1\342\t\017\n\rMavis Midwife\212\001W\"5\032#\032\032\n\030http://example.org/mysys*\005\n\003obs\"\016\n\fObstretitian*\036*\005\n\003pr2\342\t\024\n\022Oscar Obstetrician"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\302\003w\n\006\n\004goalZ\002\b\004zM\"K\nIMaintain patient\'s health throughout pregnancy and ensure a healthy child\202\001\031\362\006\003\n\0011\342\t\020\n\016Eve Everywoman"
+}
+extension {
+  url {
+    value: "http://example.org/fhir/StructureDefinition/careplan#lmp"
+  }
+  value {
+    date_time {
+      value_us: 1356958800000000
+      timezone: "Australia/Sydney"
+      precision: DAY
+    }
+  }
+}
+status {
+  value: ACTIVE
+}
+intent {
+  value: PLAN
+}
+subject {
+  patient_id {
+    value: "1"
+  }
+  display {
+    value: "Eve Everywoman"
+  }
+}
+period {
+  start {
+    value_us: 1356958800000000
+    timezone: "Australia/Sydney"
+    precision: DAY
+  }
+  end {
+    value_us: 1380549600000000
+    timezone: "Australia/Sydney"
+    precision: DAY
+  }
+}
+care_team {
+  fragment {
+    value: "careteam"
+  }
+}
+addresses {
+  fragment {
+    value: "p1"
+  }
+  display {
+    value: "pregnancy"
+  }
+}
+goal {
+  fragment {
+    value: "goal"
+  }
+}
+activity {
+  reference {
+    display {
+      value: "Prenatal vitamin MedicationRequest"
+    }
+  }
+}
+activity {
+  extension {
+    url {
+      value: "http://example.org/fhir/StructureDefinition/careplan#andetails"
+    }
+    value {
+      uri {
+        value: "http://orionhealth.com/fhir/careplan/1andetails"
+      }
+    }
+  }
+  detail {
+    kind {
+      value: APPOINTMENT
+    }
+    code {
+      coding {
+        system {
+          value: "http://example.org/mySystem"
+        }
+        code {
+          value: "1an"
+        }
+      }
+      text {
+        value: "First Antenatal encounter"
+      }
+    }
+    status {
+      value: SCHEDULED
+    }
+    do_not_perform {
+    }
+    scheduled {
+      timing {
+        repeat {
+          bounds {
+            period {
+              start {
+                value_us: 1360760400000000
+                timezone: "Australia/Sydney"
+                precision: DAY
+              }
+              end {
+                value_us: 1361970000000000
+                timezone: "Australia/Sydney"
+                precision: DAY
+              }
+            }
+          }
+        }
+      }
+    }
+    performer {
+      fragment {
+        value: "pr1"
+      }
+      display {
+        value: "Mavis Midwife"
+      }
+    }
+    description {
+      value: "The first antenatal encounter. This is where a detailed physical examination is performed.             and the pregnanacy discussed with the mother-to-be."
+    }
+  }
+}
+activity {
+  detail {
+    kind {
+      value: APPOINTMENT
+    }
+    code {
+      coding {
+        system {
+          value: "http://example.org/mySystem"
+        }
+        code {
+          value: "an"
+        }
+      }
+      text {
+        value: "Follow-up Antenatal encounter"
+      }
+    }
+    status {
+      value: NOT_STARTED
+    }
+    do_not_perform {
+    }
+    scheduled {
+      timing {
+        repeat {
+          bounds {
+            period {
+              start {
+                value_us: 1362056400000000
+                timezone: "Australia/Sydney"
+                precision: DAY
+              }
+              end {
+                value_us: 1363179600000000
+                timezone: "Australia/Sydney"
+                precision: DAY
+              }
+            }
+          }
+        }
+      }
+    }
+    performer {
+      fragment {
+        value: "pr1"
+      }
+      display {
+        value: "Mavis Midwife"
+      }
+    }
+    description {
+      value: "The second antenatal encounter. Discuss any issues that arose from the first antenatal encounter"
+    }
+  }
+}
+activity {
+  detail {
+    kind {
+      value: APPOINTMENT
+    }
+    code {
+      coding {
+        system {
+          value: "http://example.org/mySystem"
+        }
+        code {
+          value: "del"
+        }
+      }
+      text {
+        value: "Delivery"
+      }
+    }
+    status {
+      value: NOT_STARTED
+    }
+    do_not_perform {
+    }
+    scheduled {
+      timing {
+        repeat {
+          bounds {
+            period {
+              start {
+                value_us: 1377957600000000
+                timezone: "Australia/Sydney"
+                precision: DAY
+              }
+              end {
+                value_us: 1379080800000000
+                timezone: "Australia/Sydney"
+                precision: DAY
+              }
+            }
+          }
+        }
+      }
+    }
+    performer {
+      fragment {
+        value: "pr1"
+      }
+      display {
+        value: "Mavis Midwife"
+      }
+    }
+    description {
+      value: "The delivery."
+    }
+  }
+}

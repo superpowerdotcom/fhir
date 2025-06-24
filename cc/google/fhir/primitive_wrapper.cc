@@ -1,0 +1,123 @@
+/*
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "google/fhir/primitive_wrapper.h"
+
+#include <stddef.h>
+#include <stdint.h>
+#include <string.h>
+
+#include <memory>
+#include <sstream>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+
+#include "absl/container/flat_hash_map.h"
+#include "absl/memory/memory.h"
+#include "absl/status/status.h"
+#include "absl/status/statusor.h"
+#include "absl/strings/escaping.h"
+#include "absl/strings/match.h"
+#include "absl/strings/str_cat.h"
+#include "absl/strings/string_view.h"
+#include "absl/time/time.h"
+#include "google/fhir/annotations.h"
+#include "google/fhir/codes.h"
+#include "google/fhir/extensions.h"
+#include "google/fhir/fhir_types.h"
+#include "google/fhir/proto_util.h"
+#include "google/fhir/status/status.h"
+#include "google/fhir/status/statusor.h"
+#include "google/fhir/util.h"
+#include "proto/google/fhir/proto/annotations.pb.h"
+#include "google/protobuf/descriptor.h"
+#include "google/protobuf/message.h"
+#include "re2/re2.h"
+
+namespace google {
+namespace fhir {
+
+using ::absl::InvalidArgumentError;
+using ::google::protobuf::Descriptor;
+using ::google::protobuf::FieldDescriptor;
+using ::google::protobuf::Message;
+using ::google::protobuf::Reflection;
+
+namespace primitives_internal {
+
+absl::StatusOr<bool> HasPrimitiveHasNoValue(const Message& message) {
+  const FieldDescriptor* field =
+      message.GetDescriptor()->FindFieldByName("extension");
+  std::vector<const Message*> no_value_extensions;
+  ForEachMessage<Message>(message, field, [&](const Message& extension) {
+    std::string scratch;
+    const std::string& url_value = GetExtensionUrl(extension, &scratch);
+    if (url_value == kPrimitiveHasNoValueUrl) {
+      no_value_extensions.push_back(&extension);
+    }
+  });
+  if (no_value_extensions.size() > 1) {
+    return InvalidArgumentError(absl::StrCat(
+        "Message has more than one PrimitiveHasNoValue extension: ",
+        message.GetDescriptor()->full_name()));
+  }
+  if (no_value_extensions.empty()) {
+    return false;
+  }
+  const Message& no_value_extension = *no_value_extensions.front();
+  const Message& value_msg = no_value_extension.GetReflection()->GetMessage(
+      no_value_extension,
+      no_value_extension.GetDescriptor()->FindFieldByName("value"));
+  const Message& boolean_msg = value_msg.GetReflection()->GetMessage(
+      value_msg, value_msg.GetDescriptor()->FindFieldByName("boolean"));
+  return boolean_msg.GetReflection()->GetBool(
+      boolean_msg, boolean_msg.GetDescriptor()->FindFieldByName("value"));
+}
+
+}  // namespace primitives_internal
+
+absl::Status BuildHasNoValueExtension(Message* extension) {
+  const Descriptor* descriptor = extension->GetDescriptor();
+  const Reflection* reflection = extension->GetReflection();
+
+  if (!IsExtension(descriptor)) {
+    return InvalidArgumentError(
+        absl::StrCat("Not a valid extension type: ", descriptor->full_name()));
+  }
+
+  const FieldDescriptor* url_field = descriptor->FindFieldByName("url");
+  FHIR_RETURN_IF_ERROR(
+      SetPrimitiveStringValue(reflection->MutableMessage(extension, url_field),
+                              primitives_internal::kPrimitiveHasNoValueUrl));
+
+  Message* value = reflection->MutableMessage(
+      extension, descriptor->FindFieldByName("value"));
+
+  Message* boolean_message = value->GetReflection()->MutableMessage(
+      value, value->GetDescriptor()->FindFieldByName("boolean"));
+
+  boolean_message->GetReflection()->SetBool(
+      boolean_message,
+      boolean_message->GetDescriptor()->FindFieldByName("value"), true);
+
+  return absl::OkStatus();
+}
+
+}  // namespace fhir
+}  // namespace google

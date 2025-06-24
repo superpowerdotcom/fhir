@@ -1,0 +1,108 @@
+id {
+  value: "gcs"
+}
+text {
+  status {
+    value: GENERATED
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: gcs</p><p><b>contained</b>: , , </p><p><b>url</b>: <b>http://hl7.org/fhir/Questionnaire/gcs</b></p><p><b>title</b>: Glasgow Coma Score</p><p><b>status</b>: draft</p><p><b>subjectType</b>: Patient</p><p><b>date</b>: 03/08/2015</p><p><b>publisher</b>: FHIR Project team</p><p><b>code</b>: Glasgow coma score total (Details: LOINC code 9269-2 = \'Glasgow coma score total\', stated as \'null\')</p><blockquote><p><b>item</b></p><p><b>linkId</b>: 1.1</p><p><b>code</b>: Glasgow coma score verbal (Details: LOINC code 9270-0 = \'Glasgow coma score verbal\', stated as \'null\')</p><p><b>type</b>: choice</p><p><b>answerValueSet</b>: <a>#verbal</a></p></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: 1.2</p><p><b>code</b>: Glasgow coma score motor (Details: LOINC code 9268-4 = \'Glasgow coma score motor\', stated as \'null\')</p><p><b>type</b>: choice</p><p><b>answerValueSet</b>: <a>#motor</a></p></blockquote><blockquote><p><b>item</b></p><p><b>linkId</b>: 1.3</p><p><b>code</b>: Glasgow coma score eye opening (Details: LOINC code 9267-6 = \'Glasgow coma score eye opening\', stated as \'null\')</p><p><b>type</b>: choice</p><p><b>answerValueSet</b>: <a>#eye</a></p></blockquote></div>"
+  }
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\202\t\352\002\n\a\n\005motorZ9*\022\n\020http://loinc.org2#\n!http://loinc.org/ValueSet/LL357-5j\025\n\023GCS Motor Value Setz\002\b\002\242\001 \n\036LOINC ANSWER LIST    (LL357-5)\322\001\344\0012\341\001\"\022\n\020http://loinc.org2!\"\n\n\bLA6562-8*\023\n\021No motor response2!\"\n\n\bLA6563-6*\023\n\021Extension to pain2\037\"\n\n\bLA6564-4*\021\n\017Flexion to pain2#\"\n\n\bLA6565-1*\025\n\023Withdrawl from pain2\037\"\n\n\bLA6566-9*\021\n\017Localizing pain2\036\"\n\n\bLA6567-7*\020\n\016Obeys commands"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\202\t\351\002\n\b\n\006verbalZ9*\022\n\020http://loinc.org2#\n!http://loinc.org/ValueSet/LL356-7j\026\n\024GCS Verbal Value Setz\002\b\002\242\001 \n\036LOINC ANSWER LIST    (LL356-7)\322\001\341\0012\336\001\"\022\n\020http://loinc.org2F\"\n\n\bLA6557-8*8\n6No verbal response (>2yrs); no vocal response (<=2yrs)2\'\"\n\n\bLA6558-6*\031\n\027Incomprehensible sounds2#\"\n\n\bLA6559-4*\025\n\023Inappropriate words2\030\"\n\n\bLA6560-2*\n\n\bConfused2\030\"\n\n\bLA6561-0*\n\n\bOriented"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\202\t\266\002\n\005\n\003eyeZ9*\022\n\020http://loinc.org2#\n!http://loinc.org/ValueSet/LL355-9j\023\n\021GCS Eye Value Setz\002\b\002\242\001 \n\036LOINC ANSWER LIST    (LL355-9)\322\001\264\0012\261\001\"\022\n\020http://loinc.org2\036\"\n\n\bLA6553-7*\020\n\016No eye opening2#\"\n\n\bLA6554-5*\025\n\023Eye opening to pain2-\"\n\n\bLA6555-2*\037\n\035Eye opening to verbal command2\'\"\n\n\bLA6556-0*\031\n\027Eyes open spontaneously"
+}
+url {
+  value: "http://hl7.org/fhir/Questionnaire/gcs"
+}
+title {
+  value: "Glasgow Coma Score"
+}
+status {
+  value: DRAFT
+}
+subject_type {
+  value: PATIENT
+}
+date {
+  value_us: 1438524000000000
+  timezone: "Australia/Sydney"
+  precision: DAY
+}
+publisher {
+  value: "FHIR Project team"
+}
+code {
+  system {
+    value: "http://loinc.org"
+  }
+  code {
+    value: "9269-2"
+  }
+}
+item {
+  link_id {
+    value: "1.1"
+  }
+  code {
+    system {
+      value: "http://loinc.org"
+    }
+    code {
+      value: "9270-0"
+    }
+  }
+  type {
+    value: CHOICE
+  }
+  answer_value_set {
+    value: "#verbal"
+  }
+}
+item {
+  link_id {
+    value: "1.2"
+  }
+  code {
+    system {
+      value: "http://loinc.org"
+    }
+    code {
+      value: "9268-4"
+    }
+  }
+  type {
+    value: CHOICE
+  }
+  answer_value_set {
+    value: "#motor"
+  }
+}
+item {
+  link_id {
+    value: "1.3"
+  }
+  code {
+    system {
+      value: "http://loinc.org"
+    }
+    code {
+      value: "9267-6"
+    }
+  }
+  type {
+    value: CHOICE
+  }
+  answer_value_set {
+    value: "#eye"
+  }
+}

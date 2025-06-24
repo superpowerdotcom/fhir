@@ -1,0 +1,985 @@
+name: "ResearchElementDefinition"
+field {
+  name: "id"
+  number: 1
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Id"
+  options {
+    [google.fhir.proto.field_description]: "Logical id of this artifact"
+  }
+}
+field {
+  name: "meta"
+  number: 2
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Meta"
+  options {
+    [google.fhir.proto.field_description]: "Metadata about the resource"
+  }
+}
+field {
+  name: "implicit_rules"
+  number: 3
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Uri"
+  options {
+    [google.fhir.proto.field_description]: "A set of rules under which this content was created"
+  }
+}
+field {
+  name: "language"
+  number: 4
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Code"
+  options {
+    [google.fhir.proto.field_description]: "Language of the resource content"
+  }
+}
+field {
+  name: "text"
+  number: 5
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Narrative"
+  options {
+    [google.fhir.proto.field_description]: "Text summary of the resource, for human interpretation"
+  }
+}
+field {
+  name: "contained"
+  number: 6
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.protobuf.Any"
+  options {
+    [google.fhir.proto.field_description]: "Contained, inline Resources"
+  }
+}
+field {
+  number: 7
+  options {
+    [google.fhir.proto.reserved_reason]: "Field 7 reserved for strongly-typed ContainedResource for id: ResearchElementDefinition.contained"
+  }
+}
+field {
+  name: "extension"
+  number: 8
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Additional content defined by implementations"
+  }
+}
+field {
+  name: "modifier_extension"
+  number: 9
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Extensions that cannot be ignored"
+  }
+}
+field {
+  name: "url"
+  number: 10
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Uri"
+  options {
+    [google.fhir.proto.field_description]: "Canonical identifier for this research element definition, represented as a URI (globally unique)"
+  }
+}
+field {
+  name: "identifier"
+  number: 11
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Identifier"
+  options {
+    [google.fhir.proto.field_description]: "Additional identifier for the research element definition"
+  }
+}
+field {
+  name: "version"
+  number: 12
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Business version of the research element definition"
+  }
+}
+field {
+  name: "name"
+  number: 13
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Name for this research element definition (computer friendly)"
+  }
+}
+field {
+  name: "title"
+  number: 14
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Name for this research element definition (human friendly)"
+  }
+}
+field {
+  name: "short_title"
+  number: 15
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Title for use in informal contexts"
+  }
+}
+field {
+  name: "subtitle"
+  number: 16
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Subordinate title of the ResearchElementDefinition"
+  }
+}
+field {
+  name: "status"
+  number: 17
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ResearchElementDefinition.StatusCode"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "draft | active | retired | unknown"
+  }
+}
+field {
+  name: "experimental"
+  number: 18
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Boolean"
+  options {
+    [google.fhir.proto.field_description]: "For testing purposes, not real usage"
+  }
+}
+field {
+  name: "subject"
+  number: 19
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ResearchElementDefinition.SubjectX"
+  options {
+    [google.fhir.proto.field_description]: "E.g. Patient, Practitioner, RelatedPerson, Organization, Location, Device"
+  }
+}
+field {
+  name: "date"
+  number: 20
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DateTime"
+  options {
+    [google.fhir.proto.field_description]: "Date last changed"
+  }
+}
+field {
+  name: "publisher"
+  number: 21
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Name of the publisher (organization or individual)"
+  }
+}
+field {
+  name: "contact"
+  number: 22
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ContactDetail"
+  options {
+    [google.fhir.proto.field_description]: "Contact details for the publisher"
+  }
+}
+field {
+  name: "description"
+  number: 23
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Markdown"
+  options {
+    [google.fhir.proto.field_description]: "Natural language description of the research element definition"
+  }
+}
+field {
+  name: "comment"
+  number: 24
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Used for footnotes or explanatory notes"
+  }
+}
+field {
+  name: "use_context"
+  number: 25
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.UsageContext"
+  options {
+    [google.fhir.proto.field_description]: "The context that the content is intended to support"
+  }
+}
+field {
+  name: "jurisdiction"
+  number: 26
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Intended jurisdiction for research element definition (if applicable)"
+  }
+}
+field {
+  name: "purpose"
+  number: 27
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Markdown"
+  options {
+    [google.fhir.proto.field_description]: "Why this research element definition is defined"
+  }
+}
+field {
+  name: "usage"
+  number: 28
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Describes the clinical usage of the ResearchElementDefinition"
+  }
+}
+field {
+  name: "copyright"
+  number: 29
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Markdown"
+  options {
+    [google.fhir.proto.field_description]: "Use and/or publishing restrictions"
+  }
+}
+field {
+  name: "approval_date"
+  number: 30
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Date"
+  options {
+    [google.fhir.proto.field_description]: "When the research element definition was approved by publisher"
+  }
+}
+field {
+  name: "last_review_date"
+  number: 31
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Date"
+  options {
+    [google.fhir.proto.field_description]: "When the research element definition was last reviewed"
+  }
+}
+field {
+  name: "effective_period"
+  number: 32
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Period"
+  options {
+    [google.fhir.proto.field_description]: "When the research element definition is expected to be used"
+  }
+}
+field {
+  name: "topic"
+  number: 33
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "The category of the ResearchElementDefinition, such as Education, Treatment, Assessment, etc."
+  }
+}
+field {
+  name: "author"
+  number: 34
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ContactDetail"
+  options {
+    [google.fhir.proto.field_description]: "Who authored the content"
+  }
+}
+field {
+  name: "editor"
+  number: 35
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ContactDetail"
+  options {
+    [google.fhir.proto.field_description]: "Who edited the content"
+  }
+}
+field {
+  name: "reviewer"
+  number: 36
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ContactDetail"
+  options {
+    [google.fhir.proto.field_description]: "Who reviewed the content"
+  }
+}
+field {
+  name: "endorser"
+  number: 37
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ContactDetail"
+  options {
+    [google.fhir.proto.field_description]: "Who endorsed the content"
+  }
+}
+field {
+  name: "related_artifact"
+  number: 38
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.RelatedArtifact"
+  options {
+    [google.fhir.proto.field_description]: "Additional documentation, citations, etc."
+  }
+}
+field {
+  name: "library"
+  number: 39
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Canonical"
+  options {
+    [google.fhir.proto.field_description]: "Logic used by the ResearchElementDefinition"
+  }
+}
+field {
+  name: "type"
+  number: 40
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ResearchElementDefinition.TypeCode"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "population | exposure | outcome"
+  }
+}
+field {
+  name: "variable_type"
+  number: 41
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ResearchElementDefinition.VariableTypeCode"
+  options {
+    [google.fhir.proto.field_description]: "dichotomous | continuous | descriptive"
+  }
+}
+field {
+  name: "characteristic"
+  number: 42
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.ResearchElementDefinition.Characteristic"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "What defines the members of the research element"
+  }
+}
+nested_type {
+  name: "StatusCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.PublicationStatusCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/publication-status"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "SubjectX"
+  field {
+    name: "codeable_concept"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    oneof_index: 0
+  }
+  field {
+    name: "reference"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Reference"
+    options {
+      [google.fhir.proto.valid_reference_type]: "Group"
+    }
+    oneof_index: 0
+  }
+  options {
+    [google.fhir.proto.is_choice_type]: true
+  }
+  oneof_decl {
+    name: "choice"
+  }
+}
+nested_type {
+  name: "TypeCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.ResearchElementTypeCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/research-element-type"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "VariableTypeCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.EvidenceVariableTypeCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/variable-type"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "Characteristic"
+  field {
+    name: "id"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "Unique id for inter-element referencing"
+    }
+  }
+  field {
+    name: "extension"
+    number: 2
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Additional content defined by implementations"
+    }
+  }
+  field {
+    name: "modifier_extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Extensions that cannot be ignored even if unrecognized"
+    }
+  }
+  field {
+    name: "definition"
+    number: 4
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.ResearchElementDefinition.Characteristic.DefinitionX"
+    options {
+      [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+      [google.fhir.proto.field_description]: "What code or expression defines members?"
+    }
+  }
+  field {
+    name: "usage_context"
+    number: 5
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.UsageContext"
+    options {
+      [google.fhir.proto.field_description]: "What code/value pairs define members?"
+    }
+  }
+  field {
+    name: "exclude"
+    number: 6
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Boolean"
+    options {
+      [google.fhir.proto.field_description]: "Whether the characteristic includes or excludes members"
+    }
+  }
+  field {
+    name: "unit_of_measure"
+    number: 7
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    options {
+      [google.fhir.proto.field_description]: "What unit is the outcome described in?"
+    }
+  }
+  field {
+    name: "study_effective_description"
+    number: 8
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "What time period does the study cover"
+    }
+  }
+  field {
+    name: "study_effective"
+    number: 9
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.ResearchElementDefinition.Characteristic.StudyEffectiveX"
+    options {
+      [google.fhir.proto.field_description]: "What time period does the study cover"
+    }
+  }
+  field {
+    name: "study_effective_time_from_start"
+    number: 10
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Duration"
+    options {
+      [google.fhir.proto.field_description]: "Observation time from study start"
+    }
+  }
+  field {
+    name: "study_effective_group_measure"
+    number: 11
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.ResearchElementDefinition.Characteristic.StudyEffectiveGroupMeasureCode"
+    options {
+      [google.fhir.proto.field_description]: "mean | median | mean-of-mean | mean-of-median | median-of-mean | median-of-median"
+    }
+  }
+  field {
+    name: "participant_effective_description"
+    number: 12
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "What time period do participants cover"
+    }
+  }
+  field {
+    name: "participant_effective"
+    number: 13
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.ResearchElementDefinition.Characteristic.ParticipantEffectiveX"
+    options {
+      [google.fhir.proto.field_description]: "What time period do participants cover"
+    }
+  }
+  field {
+    name: "participant_effective_time_from_start"
+    number: 14
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Duration"
+    options {
+      [google.fhir.proto.field_description]: "Observation time from study start"
+    }
+  }
+  field {
+    name: "participant_effective_group_measure"
+    number: 15
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.ResearchElementDefinition.Characteristic.ParticipantEffectiveGroupMeasureCode"
+    options {
+      [google.fhir.proto.field_description]: "mean | median | mean-of-mean | mean-of-median | median-of-mean | median-of-median"
+    }
+  }
+  nested_type {
+    name: "DefinitionX"
+    field {
+      name: "codeable_concept"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.CodeableConcept"
+      oneof_index: 0
+    }
+    field {
+      name: "canonical"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Canonical"
+      oneof_index: 0
+    }
+    field {
+      name: "expression"
+      number: 3
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Expression"
+      oneof_index: 0
+    }
+    field {
+      name: "data_requirement"
+      number: 4
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.DataRequirement"
+      oneof_index: 0
+    }
+    options {
+      [google.fhir.proto.is_choice_type]: true
+    }
+    oneof_decl {
+      name: "choice"
+    }
+  }
+  nested_type {
+    name: "StudyEffectiveX"
+    field {
+      name: "date_time"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.DateTime"
+      oneof_index: 0
+    }
+    field {
+      name: "period"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Period"
+      oneof_index: 0
+    }
+    field {
+      name: "duration"
+      number: 3
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Duration"
+      oneof_index: 0
+    }
+    field {
+      name: "timing"
+      number: 4
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Timing"
+      oneof_index: 0
+    }
+    options {
+      [google.fhir.proto.is_choice_type]: true
+    }
+    oneof_decl {
+      name: "choice"
+    }
+  }
+  nested_type {
+    name: "StudyEffectiveGroupMeasureCode"
+    field {
+      name: "value"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_ENUM
+      type_name: ".google.fhir.r4.core.GroupMeasureCode.Value"
+    }
+    field {
+      name: "id"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.String"
+    }
+    field {
+      name: "extension"
+      number: 3
+      label: LABEL_REPEATED
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Extension"
+    }
+    options {
+      [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/group-measure"
+      [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+      [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+    }
+  }
+  nested_type {
+    name: "ParticipantEffectiveX"
+    field {
+      name: "date_time"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.DateTime"
+      oneof_index: 0
+    }
+    field {
+      name: "period"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Period"
+      oneof_index: 0
+    }
+    field {
+      name: "duration"
+      number: 3
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Duration"
+      oneof_index: 0
+    }
+    field {
+      name: "timing"
+      number: 4
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Timing"
+      oneof_index: 0
+    }
+    options {
+      [google.fhir.proto.is_choice_type]: true
+    }
+    oneof_decl {
+      name: "choice"
+    }
+  }
+  nested_type {
+    name: "ParticipantEffectiveGroupMeasureCode"
+    field {
+      name: "value"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_ENUM
+      type_name: ".google.fhir.r4.core.GroupMeasureCode.Value"
+    }
+    field {
+      name: "id"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.String"
+    }
+    field {
+      name: "extension"
+      number: 3
+      label: LABEL_REPEATED
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Extension"
+    }
+    options {
+      [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/group-measure"
+      [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+      [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+    }
+  }
+}
+options {
+  [google.fhir.proto.structure_definition_kind]: KIND_RESOURCE
+  [google.fhir.proto.message_description]: "Auto-generated from StructureDefinition for ResearchElementDefinition, last updated 2019-11-01T09:29:23.356+11:00.\nA population, intervention, or exposure definition.\nSee http://hl7.org/fhir/StructureDefinition/ResearchElementDefinition"
+  [google.fhir.proto.fhir_structure_definition_url]: "http://hl7.org/fhir/StructureDefinition/ResearchElementDefinition"
+  [google.fhir.proto.search_parameter] {
+    name: "composed-of"
+    type: REFERENCE
+    expression: "ResearchElementDefinition.relatedArtifact.where(type=\'composed-of\').resource"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context"
+    type: TOKEN
+    expression: "(ResearchElementDefinition.useContext.value as CodeableConcept)"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context-quantity"
+    type: QUANTITY
+    expression: "(ResearchElementDefinition.useContext.value as Quantity) | (ResearchElementDefinition.useContext.value as Range)"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context-type"
+    type: TOKEN
+    expression: "ResearchElementDefinition.useContext.code"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context-type-quantity"
+    type: COMPOSITE
+    expression: "ResearchElementDefinition.useContext"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context-type-value"
+    type: COMPOSITE
+    expression: "ResearchElementDefinition.useContext"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "date"
+    type: DATE
+    expression: "ResearchElementDefinition.date"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "depends-on"
+    type: REFERENCE
+    expression: "ResearchElementDefinition.relatedArtifact.where(type=\'depends-on\').resource | ResearchElementDefinition.library"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "derived-from"
+    type: REFERENCE
+    expression: "ResearchElementDefinition.relatedArtifact.where(type=\'derived-from\').resource"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "description"
+    type: STRING
+    expression: "ResearchElementDefinition.description"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "effective"
+    type: DATE
+    expression: "ResearchElementDefinition.effectivePeriod"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "identifier"
+    type: TOKEN
+    expression: "ResearchElementDefinition.identifier"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "jurisdiction"
+    type: TOKEN
+    expression: "ResearchElementDefinition.jurisdiction"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "name"
+    type: STRING
+    expression: "ResearchElementDefinition.name"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "predecessor"
+    type: REFERENCE
+    expression: "ResearchElementDefinition.relatedArtifact.where(type=\'predecessor\').resource"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "publisher"
+    type: STRING
+    expression: "ResearchElementDefinition.publisher"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "status"
+    type: TOKEN
+    expression: "ResearchElementDefinition.status"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "successor"
+    type: REFERENCE
+    expression: "ResearchElementDefinition.relatedArtifact.where(type=\'successor\').resource"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "title"
+    type: STRING
+    expression: "ResearchElementDefinition.title"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "topic"
+    type: TOKEN
+    expression: "ResearchElementDefinition.topic"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "url"
+    type: URI
+    expression: "ResearchElementDefinition.url"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "version"
+    type: TOKEN
+    expression: "ResearchElementDefinition.version"
+  }
+}

@@ -1,0 +1,694 @@
+name: "DeviceRequest"
+field {
+  name: "id"
+  number: 1
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Id"
+  options {
+    [google.fhir.proto.field_description]: "Logical id of this artifact"
+  }
+}
+field {
+  name: "meta"
+  number: 2
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Meta"
+  options {
+    [google.fhir.proto.field_description]: "Metadata about the resource"
+  }
+}
+field {
+  name: "implicit_rules"
+  number: 3
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Uri"
+  options {
+    [google.fhir.proto.field_description]: "A set of rules under which this content was created"
+  }
+}
+field {
+  name: "language"
+  number: 4
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Code"
+  options {
+    [google.fhir.proto.field_description]: "Language of the resource content"
+  }
+}
+field {
+  name: "text"
+  number: 5
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Narrative"
+  options {
+    [google.fhir.proto.field_description]: "Text summary of the resource, for human interpretation"
+  }
+}
+field {
+  name: "contained"
+  number: 6
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.protobuf.Any"
+  options {
+    [google.fhir.proto.field_description]: "Contained, inline Resources"
+  }
+}
+field {
+  number: 7
+  options {
+    [google.fhir.proto.reserved_reason]: "Field 7 reserved for strongly-typed ContainedResource for id: DeviceRequest.contained"
+  }
+}
+field {
+  name: "extension"
+  number: 8
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Additional content defined by implementations"
+  }
+}
+field {
+  name: "modifier_extension"
+  number: 9
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Extensions that cannot be ignored"
+  }
+}
+field {
+  name: "identifier"
+  number: 10
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Identifier"
+  options {
+    [google.fhir.proto.field_description]: "External Request identifier"
+  }
+}
+field {
+  name: "instantiates_canonical"
+  number: 11
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Canonical"
+  options {
+    [google.fhir.proto.field_description]: "Instantiates FHIR protocol or definition"
+  }
+}
+field {
+  name: "instantiates_uri"
+  number: 12
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Uri"
+  options {
+    [google.fhir.proto.field_description]: "Instantiates external protocol or definition"
+  }
+}
+field {
+  name: "based_on"
+  number: 13
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "What request fulfills"
+    [google.fhir.proto.valid_reference_type]: "Resource"
+  }
+}
+field {
+  name: "prior_request"
+  number: 14
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "What request replaces"
+    [google.fhir.proto.valid_reference_type]: "Resource"
+  }
+}
+field {
+  name: "group_identifier"
+  number: 15
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Identifier"
+  options {
+    [google.fhir.proto.field_description]: "Identifier of composite request"
+  }
+}
+field {
+  name: "status"
+  number: 16
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DeviceRequest.StatusCode"
+  options {
+    [google.fhir.proto.field_description]: "draft | active | on-hold | revoked | completed | entered-in-error | unknown"
+  }
+}
+field {
+  name: "intent"
+  number: 17
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DeviceRequest.IntentCode"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option"
+  }
+}
+field {
+  name: "priority"
+  number: 18
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DeviceRequest.PriorityCode"
+  options {
+    [google.fhir.proto.field_description]: "routine | urgent | asap | stat"
+  }
+}
+field {
+  name: "code"
+  number: 19
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DeviceRequest.CodeX"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "Device requested"
+  }
+}
+field {
+  name: "parameter"
+  number: 20
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DeviceRequest.Parameter"
+  options {
+    [google.fhir.proto.field_description]: "Device details"
+  }
+}
+field {
+  name: "subject"
+  number: 21
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "Focus of request"
+    [google.fhir.proto.valid_reference_type]: "Patient"
+    [google.fhir.proto.valid_reference_type]: "Group"
+    [google.fhir.proto.valid_reference_type]: "Location"
+    [google.fhir.proto.valid_reference_type]: "Device"
+  }
+}
+field {
+  name: "encounter"
+  number: 22
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Encounter motivating request"
+    [google.fhir.proto.valid_reference_type]: "Encounter"
+  }
+}
+field {
+  name: "occurrence"
+  number: 23
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DeviceRequest.OccurrenceX"
+  options {
+    [google.fhir.proto.field_description]: "Desired time or schedule for use"
+  }
+}
+field {
+  name: "authored_on"
+  number: 24
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.DateTime"
+  options {
+    [google.fhir.proto.field_description]: "When recorded"
+  }
+}
+field {
+  name: "requester"
+  number: 25
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Who/what is requesting diagnostics"
+    [google.fhir.proto.valid_reference_type]: "Device"
+    [google.fhir.proto.valid_reference_type]: "Practitioner"
+    [google.fhir.proto.valid_reference_type]: "PractitionerRole"
+    [google.fhir.proto.valid_reference_type]: "Organization"
+  }
+}
+field {
+  name: "performer_type"
+  number: 26
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Filler role"
+  }
+}
+field {
+  name: "performer"
+  number: 27
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Requested Filler"
+    [google.fhir.proto.valid_reference_type]: "Practitioner"
+    [google.fhir.proto.valid_reference_type]: "PractitionerRole"
+    [google.fhir.proto.valid_reference_type]: "Organization"
+    [google.fhir.proto.valid_reference_type]: "CareTeam"
+    [google.fhir.proto.valid_reference_type]: "HealthcareService"
+    [google.fhir.proto.valid_reference_type]: "Patient"
+    [google.fhir.proto.valid_reference_type]: "Device"
+    [google.fhir.proto.valid_reference_type]: "RelatedPerson"
+  }
+}
+field {
+  name: "reason_code"
+  number: 28
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Coded Reason for request"
+  }
+}
+field {
+  name: "reason_reference"
+  number: 29
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Linked Reason for request"
+    [google.fhir.proto.valid_reference_type]: "Condition"
+    [google.fhir.proto.valid_reference_type]: "Observation"
+    [google.fhir.proto.valid_reference_type]: "DiagnosticReport"
+    [google.fhir.proto.valid_reference_type]: "DocumentReference"
+  }
+}
+field {
+  name: "insurance"
+  number: 30
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Associated insurance coverage"
+    [google.fhir.proto.valid_reference_type]: "Coverage"
+    [google.fhir.proto.valid_reference_type]: "ClaimResponse"
+  }
+}
+field {
+  name: "supporting_info"
+  number: 31
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Additional clinical information"
+    [google.fhir.proto.valid_reference_type]: "Resource"
+  }
+}
+field {
+  name: "note"
+  number: 32
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Annotation"
+  options {
+    [google.fhir.proto.field_description]: "Notes or comments"
+  }
+}
+field {
+  name: "relevant_history"
+  number: 33
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Request provenance"
+    [google.fhir.proto.valid_reference_type]: "Provenance"
+  }
+}
+nested_type {
+  name: "StatusCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.RequestStatusCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/request-status"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "IntentCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.RequestIntentCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/request-intent"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "PriorityCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.RequestPriorityCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/request-priority"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "CodeX"
+  field {
+    name: "reference"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Reference"
+    options {
+      [google.fhir.proto.valid_reference_type]: "Device"
+    }
+    oneof_index: 0
+  }
+  field {
+    name: "codeable_concept"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    oneof_index: 0
+  }
+  options {
+    [google.fhir.proto.is_choice_type]: true
+  }
+  oneof_decl {
+    name: "choice"
+  }
+}
+nested_type {
+  name: "Parameter"
+  field {
+    name: "id"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "Unique id for inter-element referencing"
+    }
+  }
+  field {
+    name: "extension"
+    number: 2
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Additional content defined by implementations"
+    }
+  }
+  field {
+    name: "modifier_extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Extensions that cannot be ignored even if unrecognized"
+    }
+  }
+  field {
+    name: "code"
+    number: 4
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    options {
+      [google.fhir.proto.field_description]: "Device detail"
+    }
+  }
+  field {
+    name: "value"
+    number: 5
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.DeviceRequest.Parameter.ValueX"
+    options {
+      [google.fhir.proto.field_description]: "Value of detail"
+    }
+  }
+  nested_type {
+    name: "ValueX"
+    field {
+      name: "codeable_concept"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.CodeableConcept"
+      oneof_index: 0
+    }
+    field {
+      name: "quantity"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Quantity"
+      oneof_index: 0
+    }
+    field {
+      name: "range"
+      number: 3
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Range"
+      oneof_index: 0
+    }
+    field {
+      name: "boolean"
+      number: 4
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Boolean"
+      oneof_index: 0
+    }
+    options {
+      [google.fhir.proto.is_choice_type]: true
+    }
+    oneof_decl {
+      name: "choice"
+    }
+  }
+}
+nested_type {
+  name: "OccurrenceX"
+  field {
+    name: "date_time"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.DateTime"
+    oneof_index: 0
+  }
+  field {
+    name: "period"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Period"
+    oneof_index: 0
+  }
+  field {
+    name: "timing"
+    number: 3
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Timing"
+    oneof_index: 0
+  }
+  options {
+    [google.fhir.proto.is_choice_type]: true
+  }
+  oneof_decl {
+    name: "choice"
+  }
+}
+options {
+  [google.fhir.proto.structure_definition_kind]: KIND_RESOURCE
+  [google.fhir.proto.message_description]: "Auto-generated from StructureDefinition for DeviceRequest, last updated 2019-11-01T09:29:23.356+11:00.\nMedical device request.\nSee http://hl7.org/fhir/StructureDefinition/DeviceRequest"
+  [google.fhir.proto.fhir_structure_definition_url]: "http://hl7.org/fhir/StructureDefinition/DeviceRequest"
+  [google.fhir.proto.search_parameter] {
+    name: "authored-on"
+    type: DATE
+    expression: "DeviceRequest.authoredOn"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "based-on"
+    type: REFERENCE
+    expression: "DeviceRequest.basedOn"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "code"
+    type: TOKEN
+    expression: "AllergyIntolerance.code | AllergyIntolerance.reaction.substance | Condition.code | (DeviceRequest.code as CodeableConcept) | DiagnosticReport.code | FamilyMemberHistory.condition.code | List.code | Medication.code | (MedicationAdministration.medication as CodeableConcept) | (MedicationDispense.medication as CodeableConcept) | (MedicationRequest.medication as CodeableConcept) | (MedicationStatement.medication as CodeableConcept) | Observation.code | Procedure.code | ServiceRequest.code"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "device"
+    type: REFERENCE
+    expression: "(DeviceRequest.code as Reference)"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "encounter"
+    type: REFERENCE
+    expression: "Composition.encounter | DeviceRequest.encounter | DiagnosticReport.encounter | DocumentReference.context.encounter | Flag.encounter | List.encounter | NutritionOrder.encounter | Observation.encounter | Procedure.encounter | RiskAssessment.encounter | ServiceRequest.encounter | VisionPrescription.encounter"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "event-date"
+    type: DATE
+    expression: "(DeviceRequest.occurrence as dateTime) | (DeviceRequest.occurrence as Period)"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "group-identifier"
+    type: TOKEN
+    expression: "DeviceRequest.groupIdentifier"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "identifier"
+    type: TOKEN
+    expression: "AllergyIntolerance.identifier | CarePlan.identifier | CareTeam.identifier | Composition.identifier | Condition.identifier | Consent.identifier | DetectedIssue.identifier | DeviceRequest.identifier | DiagnosticReport.identifier | DocumentManifest.masterIdentifier | DocumentManifest.identifier | DocumentReference.masterIdentifier | DocumentReference.identifier | Encounter.identifier | EpisodeOfCare.identifier | FamilyMemberHistory.identifier | Goal.identifier | ImagingStudy.identifier | Immunization.identifier | List.identifier | MedicationAdministration.identifier | MedicationDispense.identifier | MedicationRequest.identifier | MedicationStatement.identifier | NutritionOrder.identifier | Observation.identifier | Procedure.identifier | RiskAssessment.identifier | ServiceRequest.identifier | SupplyDelivery.identifier | SupplyRequest.identifier | VisionPrescription.identifier"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "instantiates-canonical"
+    type: REFERENCE
+    expression: "DeviceRequest.instantiatesCanonical"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "instantiates-uri"
+    type: URI
+    expression: "DeviceRequest.instantiatesUri"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "insurance"
+    type: REFERENCE
+    expression: "DeviceRequest.insurance"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "intent"
+    type: TOKEN
+    expression: "DeviceRequest.intent"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "patient"
+    type: REFERENCE
+    expression: "AllergyIntolerance.patient | CarePlan.subject.where(resolve() is Patient) | CareTeam.subject.where(resolve() is Patient) | ClinicalImpression.subject.where(resolve() is Patient) | Composition.subject.where(resolve() is Patient) | Condition.subject.where(resolve() is Patient) | Consent.patient | DetectedIssue.patient | DeviceRequest.subject.where(resolve() is Patient) | DeviceUseStatement.subject | DiagnosticReport.subject.where(resolve() is Patient) | DocumentManifest.subject.where(resolve() is Patient) | DocumentReference.subject.where(resolve() is Patient) | Encounter.subject.where(resolve() is Patient) | EpisodeOfCare.patient | FamilyMemberHistory.patient | Flag.subject.where(resolve() is Patient) | Goal.subject.where(resolve() is Patient) | ImagingStudy.subject.where(resolve() is Patient) | Immunization.patient | List.subject.where(resolve() is Patient) | MedicationAdministration.subject.where(resolve() is Patient) | MedicationDispense.subject.where(resolve() is Patient) | MedicationRequest.subject.where(resolve() is Patient) | MedicationStatement.subject.where(resolve() is Patient) | NutritionOrder.patient | Observation.subject.where(resolve() is Patient) | Procedure.subject.where(resolve() is Patient) | RiskAssessment.subject.where(resolve() is Patient) | ServiceRequest.subject.where(resolve() is Patient) | SupplyDelivery.patient | VisionPrescription.patient"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "performer"
+    type: REFERENCE
+    expression: "DeviceRequest.performer"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "prior-request"
+    type: REFERENCE
+    expression: "DeviceRequest.priorRequest"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "requester"
+    type: REFERENCE
+    expression: "DeviceRequest.requester"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "status"
+    type: TOKEN
+    expression: "DeviceRequest.status"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "subject"
+    type: REFERENCE
+    expression: "DeviceRequest.subject"
+  }
+}

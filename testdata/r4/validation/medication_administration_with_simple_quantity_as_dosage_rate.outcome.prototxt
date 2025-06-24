@@ -1,0 +1,14 @@
+issue {
+  severity {
+    value: WARNING
+  }
+  code {
+    value: VALUE
+  }
+  diagnostics {
+    value: "Unable to execute message constraint on SimpleQuantity (comparator.empty()): Unable to find field `comparator` in `google.fhir.r4.core.SimpleQuantity`"
+  }
+  expression {
+    value: "MedicationAdministration.dosage.rate.ofType(SimpleQuantity)"
+  }
+}

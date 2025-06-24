@@ -1,0 +1,454 @@
+name: "Media"
+field {
+  name: "id"
+  number: 1
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Id"
+  options {
+    [google.fhir.proto.field_description]: "Logical id of this artifact"
+  }
+}
+field {
+  name: "meta"
+  number: 2
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Meta"
+  options {
+    [google.fhir.proto.field_description]: "Metadata about the resource"
+  }
+}
+field {
+  name: "implicit_rules"
+  number: 3
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Uri"
+  options {
+    [google.fhir.proto.field_description]: "A set of rules under which this content was created"
+  }
+}
+field {
+  name: "language"
+  number: 4
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Code"
+  options {
+    [google.fhir.proto.field_description]: "Language of the resource content"
+  }
+}
+field {
+  name: "text"
+  number: 5
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Narrative"
+  options {
+    [google.fhir.proto.field_description]: "Text summary of the resource, for human interpretation"
+  }
+}
+field {
+  name: "contained"
+  number: 6
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.protobuf.Any"
+  options {
+    [google.fhir.proto.field_description]: "Contained, inline Resources"
+  }
+}
+field {
+  number: 7
+  options {
+    [google.fhir.proto.reserved_reason]: "Field 7 reserved for strongly-typed ContainedResource for id: Media.contained"
+  }
+}
+field {
+  name: "extension"
+  number: 8
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Additional content defined by implementations"
+  }
+}
+field {
+  name: "modifier_extension"
+  number: 9
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Extensions that cannot be ignored"
+  }
+}
+field {
+  name: "identifier"
+  number: 10
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Identifier"
+  options {
+    [google.fhir.proto.field_description]: "Identifier(s) for the image"
+  }
+}
+field {
+  name: "based_on"
+  number: 11
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Procedure that caused this media to be created"
+    [google.fhir.proto.valid_reference_type]: "ServiceRequest"
+    [google.fhir.proto.valid_reference_type]: "CarePlan"
+  }
+}
+field {
+  name: "part_of"
+  number: 12
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Part of referenced event"
+    [google.fhir.proto.valid_reference_type]: "Resource"
+  }
+}
+field {
+  name: "status"
+  number: 13
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Media.StatusCode"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown"
+  }
+}
+field {
+  name: "type"
+  number: 14
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Classification of media as image, video, or audio"
+  }
+}
+field {
+  name: "modality"
+  number: 15
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "The type of acquisition equipment/process"
+  }
+}
+field {
+  name: "view"
+  number: 16
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Imaging view, e.g. Lateral or Antero-posterior"
+  }
+}
+field {
+  name: "subject"
+  number: 17
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Who/What this Media is a record of"
+    [google.fhir.proto.valid_reference_type]: "Patient"
+    [google.fhir.proto.valid_reference_type]: "Practitioner"
+    [google.fhir.proto.valid_reference_type]: "PractitionerRole"
+    [google.fhir.proto.valid_reference_type]: "Group"
+    [google.fhir.proto.valid_reference_type]: "Device"
+    [google.fhir.proto.valid_reference_type]: "Specimen"
+    [google.fhir.proto.valid_reference_type]: "Location"
+  }
+}
+field {
+  name: "encounter"
+  number: 18
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Encounter associated with media"
+    [google.fhir.proto.valid_reference_type]: "Encounter"
+  }
+}
+field {
+  name: "created"
+  number: 19
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Media.CreatedX"
+  options {
+    [google.fhir.proto.field_description]: "When Media was collected"
+  }
+}
+field {
+  name: "issued"
+  number: 20
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Instant"
+  options {
+    [google.fhir.proto.field_description]: "Date/Time this version was made available"
+  }
+}
+field {
+  name: "operator"
+  number: 21
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "The person who generated the image"
+    [google.fhir.proto.valid_reference_type]: "Practitioner"
+    [google.fhir.proto.valid_reference_type]: "PractitionerRole"
+    [google.fhir.proto.valid_reference_type]: "Organization"
+    [google.fhir.proto.valid_reference_type]: "CareTeam"
+    [google.fhir.proto.valid_reference_type]: "Patient"
+    [google.fhir.proto.valid_reference_type]: "Device"
+    [google.fhir.proto.valid_reference_type]: "RelatedPerson"
+  }
+}
+field {
+  name: "reason_code"
+  number: 22
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Why was event performed?"
+  }
+}
+field {
+  name: "body_site"
+  number: 23
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Observed body part"
+  }
+}
+field {
+  name: "device_name"
+  number: 24
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.String"
+  options {
+    [google.fhir.proto.field_description]: "Name of the device/manufacturer"
+  }
+}
+field {
+  name: "device"
+  number: 25
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Observing Device"
+    [google.fhir.proto.valid_reference_type]: "Device"
+    [google.fhir.proto.valid_reference_type]: "DeviceMetric"
+    [google.fhir.proto.valid_reference_type]: "Device"
+  }
+}
+field {
+  name: "height"
+  number: 26
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.PositiveInt"
+  options {
+    [google.fhir.proto.field_description]: "Height of the image in pixels (photo/video)"
+  }
+}
+field {
+  name: "width"
+  number: 27
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.PositiveInt"
+  options {
+    [google.fhir.proto.field_description]: "Width of the image in pixels (photo/video)"
+  }
+}
+field {
+  name: "frames"
+  number: 28
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.PositiveInt"
+  options {
+    [google.fhir.proto.field_description]: "Number of frames if > 1 (photo)"
+  }
+}
+field {
+  name: "duration"
+  number: 29
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Decimal"
+  options {
+    [google.fhir.proto.field_description]: "Length in seconds (audio / video)"
+  }
+}
+field {
+  name: "content"
+  number: 30
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Attachment"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "Actual Media - reference or data"
+  }
+}
+field {
+  name: "note"
+  number: 31
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Annotation"
+  options {
+    [google.fhir.proto.field_description]: "Comments made about the media"
+  }
+}
+nested_type {
+  name: "StatusCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.EventStatusCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/event-status"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "CreatedX"
+  field {
+    name: "date_time"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.DateTime"
+    oneof_index: 0
+  }
+  field {
+    name: "period"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Period"
+    oneof_index: 0
+  }
+  options {
+    [google.fhir.proto.is_choice_type]: true
+  }
+  oneof_decl {
+    name: "choice"
+  }
+}
+options {
+  [google.fhir.proto.structure_definition_kind]: KIND_RESOURCE
+  [google.fhir.proto.message_description]: "Auto-generated from StructureDefinition for Media, last updated 2019-11-01T09:29:23.356+11:00.\nA photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.\nSee http://hl7.org/fhir/StructureDefinition/Media"
+  [google.fhir.proto.fhir_structure_definition_url]: "http://hl7.org/fhir/StructureDefinition/Media"
+  [google.fhir.proto.search_parameter] {
+    name: "based-on"
+    type: REFERENCE
+    expression: "Media.basedOn"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "created"
+    type: DATE
+    expression: "Media.created"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "device"
+    type: REFERENCE
+    expression: "Media.device"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "encounter"
+    type: REFERENCE
+    expression: "Media.encounter"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "identifier"
+    type: TOKEN
+    expression: "Media.identifier"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "modality"
+    type: TOKEN
+    expression: "Media.modality"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "operator"
+    type: REFERENCE
+    expression: "Media.operator"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "patient"
+    type: REFERENCE
+    expression: "Media.subject.where(resolve() is Patient)"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "site"
+    type: TOKEN
+    expression: "Media.bodySite"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "status"
+    type: TOKEN
+    expression: "Media.status"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "subject"
+    type: REFERENCE
+    expression: "Media.subject"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "type"
+    type: TOKEN
+    expression: "Media.type"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "view"
+    type: TOKEN
+    expression: "Media.view"
+  }
+}

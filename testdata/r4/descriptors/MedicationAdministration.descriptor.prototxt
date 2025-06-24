@@ -1,0 +1,626 @@
+name: "MedicationAdministration"
+field {
+  name: "id"
+  number: 1
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Id"
+  options {
+    [google.fhir.proto.field_description]: "Logical id of this artifact"
+  }
+}
+field {
+  name: "meta"
+  number: 2
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Meta"
+  options {
+    [google.fhir.proto.field_description]: "Metadata about the resource"
+  }
+}
+field {
+  name: "implicit_rules"
+  number: 3
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Uri"
+  options {
+    [google.fhir.proto.field_description]: "A set of rules under which this content was created"
+  }
+}
+field {
+  name: "language"
+  number: 4
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Code"
+  options {
+    [google.fhir.proto.field_description]: "Language of the resource content"
+  }
+}
+field {
+  name: "text"
+  number: 5
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Narrative"
+  options {
+    [google.fhir.proto.field_description]: "Text summary of the resource, for human interpretation"
+  }
+}
+field {
+  name: "contained"
+  number: 6
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.protobuf.Any"
+  options {
+    [google.fhir.proto.field_description]: "Contained, inline Resources"
+  }
+}
+field {
+  number: 7
+  options {
+    [google.fhir.proto.reserved_reason]: "Field 7 reserved for strongly-typed ContainedResource for id: MedicationAdministration.contained"
+  }
+}
+field {
+  name: "extension"
+  number: 8
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Additional content defined by implementations"
+  }
+}
+field {
+  name: "modifier_extension"
+  number: 9
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Extension"
+  options {
+    [google.fhir.proto.field_description]: "Extensions that cannot be ignored"
+  }
+}
+field {
+  name: "identifier"
+  number: 10
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Identifier"
+  options {
+    [google.fhir.proto.field_description]: "External identifier"
+  }
+}
+field {
+  name: "instantiates"
+  number: 11
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Uri"
+  options {
+    [google.fhir.proto.field_description]: "Instantiates protocol or definition"
+  }
+}
+field {
+  name: "part_of"
+  number: 12
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Part of referenced event"
+    [google.fhir.proto.valid_reference_type]: "MedicationAdministration"
+    [google.fhir.proto.valid_reference_type]: "Procedure"
+  }
+}
+field {
+  name: "status"
+  number: 13
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.MedicationAdministration.StatusCode"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "in-progress | not-done | on-hold | completed | entered-in-error | stopped | unknown"
+  }
+}
+field {
+  name: "status_reason"
+  number: 14
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Reason administration not performed"
+  }
+}
+field {
+  name: "category"
+  number: 15
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Type of medication usage"
+  }
+}
+field {
+  name: "medication"
+  number: 16
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.MedicationAdministration.MedicationX"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "What was administered"
+  }
+}
+field {
+  name: "subject"
+  number: 17
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "Who received medication"
+    [google.fhir.proto.valid_reference_type]: "Patient"
+    [google.fhir.proto.valid_reference_type]: "Group"
+  }
+}
+field {
+  name: "context"
+  number: 18
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Encounter or Episode of Care administered as part of"
+    [google.fhir.proto.valid_reference_type]: "Encounter"
+    [google.fhir.proto.valid_reference_type]: "EpisodeOfCare"
+  }
+}
+field {
+  name: "supporting_information"
+  number: 19
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Additional information to support administration"
+    [google.fhir.proto.valid_reference_type]: "Resource"
+  }
+}
+field {
+  name: "effective"
+  number: 20
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.MedicationAdministration.EffectiveX"
+  options {
+    [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+    [google.fhir.proto.field_description]: "Start and end time of administration"
+  }
+}
+field {
+  name: "performer"
+  number: 21
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.MedicationAdministration.Performer"
+  options {
+    [google.fhir.proto.field_description]: "Who performed the medication administration and what they did"
+  }
+}
+field {
+  name: "reason_code"
+  number: 22
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.CodeableConcept"
+  options {
+    [google.fhir.proto.field_description]: "Reason administration performed"
+  }
+}
+field {
+  name: "reason_reference"
+  number: 23
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Condition or observation that supports why the medication was administered"
+    [google.fhir.proto.valid_reference_type]: "Condition"
+    [google.fhir.proto.valid_reference_type]: "Observation"
+    [google.fhir.proto.valid_reference_type]: "DiagnosticReport"
+  }
+}
+field {
+  name: "request"
+  number: 24
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Request administration performed against"
+    [google.fhir.proto.valid_reference_type]: "MedicationRequest"
+  }
+}
+field {
+  name: "device"
+  number: 25
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "Device used to administer"
+    [google.fhir.proto.valid_reference_type]: "Device"
+  }
+}
+field {
+  name: "note"
+  number: 26
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Annotation"
+  options {
+    [google.fhir.proto.field_description]: "Information about the administration"
+  }
+}
+field {
+  name: "dosage"
+  number: 27
+  label: LABEL_OPTIONAL
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.MedicationAdministration.Dosage"
+  options {
+    [google.fhir.proto.field_description]: "Details of how medication was taken"
+  }
+}
+field {
+  name: "event_history"
+  number: 28
+  label: LABEL_REPEATED
+  type: TYPE_MESSAGE
+  type_name: ".google.fhir.r4.core.Reference"
+  options {
+    [google.fhir.proto.field_description]: "A list of events of interest in the lifecycle"
+    [google.fhir.proto.valid_reference_type]: "Provenance"
+  }
+}
+nested_type {
+  name: "StatusCode"
+  field {
+    name: "value"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_ENUM
+    type_name: ".google.fhir.r4.core.MedicationAdministrationStatusCode.Value"
+  }
+  field {
+    name: "id"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+  }
+  field {
+    name: "extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+  }
+  options {
+    [google.fhir.proto.fhir_valueset_url]: "http://hl7.org/fhir/ValueSet/medication-admin-status"
+    [google.fhir.proto.structure_definition_kind]: KIND_PRIMITIVE_TYPE
+    [google.fhir.proto.fhir_profile_base]: "http://hl7.org/fhir/StructureDefinition/code"
+  }
+}
+nested_type {
+  name: "MedicationX"
+  field {
+    name: "codeable_concept"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    oneof_index: 0
+  }
+  field {
+    name: "reference"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Reference"
+    options {
+      [google.fhir.proto.valid_reference_type]: "Medication"
+    }
+    oneof_index: 0
+  }
+  options {
+    [google.fhir.proto.is_choice_type]: true
+  }
+  oneof_decl {
+    name: "choice"
+  }
+}
+nested_type {
+  name: "EffectiveX"
+  field {
+    name: "date_time"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.DateTime"
+    oneof_index: 0
+  }
+  field {
+    name: "period"
+    number: 2
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Period"
+    oneof_index: 0
+  }
+  options {
+    [google.fhir.proto.is_choice_type]: true
+  }
+  oneof_decl {
+    name: "choice"
+  }
+}
+nested_type {
+  name: "Performer"
+  field {
+    name: "id"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "Unique id for inter-element referencing"
+    }
+  }
+  field {
+    name: "extension"
+    number: 2
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Additional content defined by implementations"
+    }
+  }
+  field {
+    name: "modifier_extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Extensions that cannot be ignored even if unrecognized"
+    }
+  }
+  field {
+    name: "function"
+    number: 4
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    options {
+      [google.fhir.proto.field_description]: "Type of performance"
+    }
+  }
+  field {
+    name: "actor"
+    number: 5
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Reference"
+    options {
+      [google.fhir.proto.validation_requirement]: REQUIRED_BY_FHIR
+      [google.fhir.proto.field_description]: "Who performed the medication administration"
+      [google.fhir.proto.valid_reference_type]: "Practitioner"
+      [google.fhir.proto.valid_reference_type]: "PractitionerRole"
+      [google.fhir.proto.valid_reference_type]: "Patient"
+      [google.fhir.proto.valid_reference_type]: "RelatedPerson"
+      [google.fhir.proto.valid_reference_type]: "Device"
+    }
+  }
+}
+nested_type {
+  name: "Dosage"
+  field {
+    name: "id"
+    number: 1
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "Unique id for inter-element referencing"
+    }
+  }
+  field {
+    name: "extension"
+    number: 2
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Additional content defined by implementations"
+    }
+  }
+  field {
+    name: "modifier_extension"
+    number: 3
+    label: LABEL_REPEATED
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.Extension"
+    options {
+      [google.fhir.proto.field_description]: "Extensions that cannot be ignored even if unrecognized"
+    }
+  }
+  field {
+    name: "text"
+    number: 4
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.String"
+    options {
+      [google.fhir.proto.field_description]: "Free text dosage instructions e.g. SIG"
+    }
+  }
+  field {
+    name: "site"
+    number: 5
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    options {
+      [google.fhir.proto.field_description]: "Body site administered to"
+    }
+  }
+  field {
+    name: "route"
+    number: 6
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    options {
+      [google.fhir.proto.field_description]: "Path of substance into body"
+    }
+  }
+  field {
+    name: "method"
+    number: 7
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.CodeableConcept"
+    options {
+      [google.fhir.proto.field_description]: "How drug was administered"
+    }
+  }
+  field {
+    name: "dose"
+    number: 8
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.SimpleQuantity"
+    options {
+      [google.fhir.proto.field_description]: "Amount of medication per dose"
+    }
+  }
+  field {
+    name: "rate"
+    number: 9
+    label: LABEL_OPTIONAL
+    type: TYPE_MESSAGE
+    type_name: ".google.fhir.r4.core.MedicationAdministration.Dosage.RateX"
+    options {
+      [google.fhir.proto.field_description]: "Dose quantity per unit of time"
+    }
+  }
+  nested_type {
+    name: "RateX"
+    field {
+      name: "ratio"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.Ratio"
+      oneof_index: 0
+    }
+    field {
+      name: "quantity"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.fhir.r4.core.SimpleQuantity"
+      oneof_index: 0
+    }
+    options {
+      [google.fhir.proto.is_choice_type]: true
+    }
+    oneof_decl {
+      name: "choice"
+    }
+  }
+  options {
+    [google.fhir.proto.fhir_path_message_constraint]: "dose.exists() or rate.exists()"
+  }
+}
+options {
+  [google.fhir.proto.structure_definition_kind]: KIND_RESOURCE
+  [google.fhir.proto.message_description]: "Auto-generated from StructureDefinition for MedicationAdministration, last updated 2019-11-01T09:29:23.356+11:00.\nAdministration of medication to a patient.\nSee http://hl7.org/fhir/StructureDefinition/MedicationAdministration"
+  [google.fhir.proto.fhir_structure_definition_url]: "http://hl7.org/fhir/StructureDefinition/MedicationAdministration"
+  [google.fhir.proto.search_parameter] {
+    name: "code"
+    type: TOKEN
+    expression: "AllergyIntolerance.code | AllergyIntolerance.reaction.substance | Condition.code | (DeviceRequest.code as CodeableConcept) | DiagnosticReport.code | FamilyMemberHistory.condition.code | List.code | Medication.code | (MedicationAdministration.medication as CodeableConcept) | (MedicationDispense.medication as CodeableConcept) | (MedicationRequest.medication as CodeableConcept) | (MedicationStatement.medication as CodeableConcept) | Observation.code | Procedure.code | ServiceRequest.code"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "context"
+    type: REFERENCE
+    expression: "MedicationAdministration.context"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "device"
+    type: REFERENCE
+    expression: "MedicationAdministration.device"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "effective-time"
+    type: DATE
+    expression: "MedicationAdministration.effective"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "identifier"
+    type: TOKEN
+    expression: "AllergyIntolerance.identifier | CarePlan.identifier | CareTeam.identifier | Composition.identifier | Condition.identifier | Consent.identifier | DetectedIssue.identifier | DeviceRequest.identifier | DiagnosticReport.identifier | DocumentManifest.masterIdentifier | DocumentManifest.identifier | DocumentReference.masterIdentifier | DocumentReference.identifier | Encounter.identifier | EpisodeOfCare.identifier | FamilyMemberHistory.identifier | Goal.identifier | ImagingStudy.identifier | Immunization.identifier | List.identifier | MedicationAdministration.identifier | MedicationDispense.identifier | MedicationRequest.identifier | MedicationStatement.identifier | NutritionOrder.identifier | Observation.identifier | Procedure.identifier | RiskAssessment.identifier | ServiceRequest.identifier | SupplyDelivery.identifier | SupplyRequest.identifier | VisionPrescription.identifier"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "medication"
+    type: REFERENCE
+    expression: "(MedicationAdministration.medication as Reference) | (MedicationDispense.medication as Reference) | (MedicationRequest.medication as Reference) | (MedicationStatement.medication as Reference)"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "patient"
+    type: REFERENCE
+    expression: "AllergyIntolerance.patient | CarePlan.subject.where(resolve() is Patient) | CareTeam.subject.where(resolve() is Patient) | ClinicalImpression.subject.where(resolve() is Patient) | Composition.subject.where(resolve() is Patient) | Condition.subject.where(resolve() is Patient) | Consent.patient | DetectedIssue.patient | DeviceRequest.subject.where(resolve() is Patient) | DeviceUseStatement.subject | DiagnosticReport.subject.where(resolve() is Patient) | DocumentManifest.subject.where(resolve() is Patient) | DocumentReference.subject.where(resolve() is Patient) | Encounter.subject.where(resolve() is Patient) | EpisodeOfCare.patient | FamilyMemberHistory.patient | Flag.subject.where(resolve() is Patient) | Goal.subject.where(resolve() is Patient) | ImagingStudy.subject.where(resolve() is Patient) | Immunization.patient | List.subject.where(resolve() is Patient) | MedicationAdministration.subject.where(resolve() is Patient) | MedicationDispense.subject.where(resolve() is Patient) | MedicationRequest.subject.where(resolve() is Patient) | MedicationStatement.subject.where(resolve() is Patient) | NutritionOrder.patient | Observation.subject.where(resolve() is Patient) | Procedure.subject.where(resolve() is Patient) | RiskAssessment.subject.where(resolve() is Patient) | ServiceRequest.subject.where(resolve() is Patient) | SupplyDelivery.patient | VisionPrescription.patient"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "performer"
+    type: REFERENCE
+    expression: "MedicationAdministration.performer.actor"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "reason-given"
+    type: TOKEN
+    expression: "MedicationAdministration.reasonCode"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "reason-not-given"
+    type: TOKEN
+    expression: "MedicationAdministration.statusReason"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "request"
+    type: REFERENCE
+    expression: "MedicationAdministration.request"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "status"
+    type: TOKEN
+    expression: "MedicationAdministration.status | MedicationDispense.status | MedicationRequest.status | MedicationStatement.status"
+  }
+  [google.fhir.proto.search_parameter] {
+    name: "subject"
+    type: REFERENCE
+    expression: "MedicationAdministration.subject"
+  }
+}

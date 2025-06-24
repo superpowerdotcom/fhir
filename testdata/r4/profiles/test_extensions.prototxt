@@ -1,0 +1,139 @@
+simple_extension {
+  element_data {
+    name: "SimpleDecimalExt"
+    size_restriction: REPEATED
+    description: "This is the A-Extension"
+  }
+  type: "decimal"
+  can_have_extensions: true
+}
+
+simple_extension {
+  element_data {
+    name: "SimpleCodeableConceptExtension"
+    size_restriction: OPTIONAL
+    description: "SimpleCodeableConcept Extension"
+  }
+  code_type {
+    system: "http://hl7.org/fhir/ValueSet/care-plan-activity-status"
+  }
+}
+
+simple_extension {
+  element_data {
+    name: "CustomCodeableConceptExtension"
+    size_restriction: OPTIONAL
+    description: "CustomCodeableConceptExtension Extension"
+  }
+  type: "CodeableConcept"
+}
+
+complex_extension {
+  element_data {
+    name: "ComplexExt"
+    size_restriction: OPTIONAL
+    description: "complex extension"
+  }
+
+  simple_field {
+    element_data {
+      name: "simpleSubfield"
+      size_restriction: OPTIONAL
+      description: "simple subfield"
+    }
+    type: "string"
+  }
+
+  complex_field {
+    element_data {
+      name: "complexSubfield"
+      size_restriction: REQUIRED
+      description: "complex subfield"
+    }
+
+    simple_field {
+      element_data {
+        name: "simpleSubSubFieldA"
+        size_restriction: OPTIONAL
+        description: "choice type"
+      }
+      type: "string"
+      type: "decimal"
+      type: "boolean"
+      can_have_extensions: true
+    }
+
+    simple_field {
+      element_data {
+        name: "simpleSubSubFieldB"
+        size_restriction: REPEATED
+        description: "simple sub sub field b"
+      }
+      type: "UnsignedInt"
+    }
+  }
+}
+
+simple_extension {
+  element_data {
+    name: "DigitalMediaType"
+    size_restriction: OPTIONAL
+    description: "Extension for Digital Media Type code."
+  }
+  code_type {
+    system: "http://hl7.org/fhir/ValueSet/media-type"
+  }
+}
+
+simple_extension {
+  element_data {
+    name: "FavoriteBrewery"
+    size_restriction: OPTIONAL
+  }
+  code_type {
+    system: "http://test/url/base/ValueSet/Brewery"
+  }
+}
+
+simple_extension {
+  element_data {
+    name: "FavoriteCalifornian"
+    size_restriction: OPTIONAL
+  }
+  code_type {
+    system: "http://test/url/base/ValueSet/Californians"
+  }
+}
+
+
+complex_extension {
+  element_data {
+    name: "SingleValueComplexExtension"
+    size_restriction: OPTIONAL
+  }
+
+  simple_field {
+    element_data {
+      name: "stringField"
+      description: "single field"
+    }
+    type: "string"
+  }
+}
+
+complex_extension {
+  element_data {
+    name: "SingleValueRepeatedComplexExtension"
+  }
+
+  simple_field {
+    element_data {
+      name: "stringField"
+      description: "single repeated field"
+      size_restriction: REPEATED
+    }
+    type: "string"
+  }
+}
+
+

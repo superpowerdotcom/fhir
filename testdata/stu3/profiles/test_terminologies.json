@@ -1,0 +1,34 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "CodeSystem",
+        "id": "Brewery",
+        "url": "http://test/url/base/Brewery",
+        "name": "Brewery",
+        "title": "Brewery",
+        "status": "draft",
+        "date": "2020-07-29",
+        "publisher": "Testington Inc.",
+        "description": "The brewery of origin.",
+        "content": "complete",
+        "concept": [
+          {
+            "code": "sante-adairius",
+            "display": "Sante Adairius"
+          },
+          {
+            "code": "treehouse",
+            "display": "Treehouse"
+          },
+          {
+            "code": "cantillon",
+            "display": "Cantillon"
+          }
+        ]
+      }
+    }
+  ]
+}

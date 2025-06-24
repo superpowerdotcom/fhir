@@ -1,0 +1,132 @@
+id {
+  value: "physiotherapy"
+}
+text {
+  status {
+    value: GENERATED
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: physiotherapy</p><p><b>contained</b>: , </p><p><b>identifier</b>: Placer = 20170201-0001</p><p><b>basedOn</b>: <a>CarePlan/gpvisit</a></p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>code</b>: Physiotherapy of chest (regime/therapy)  <span>(Details : {SNOMED CT code \'34431008\' = \'Physiotherapy of chest\', given as \'Physiotherapy of chest (regime/therapy) \'})</span></p><p><b>subject</b>: <a>Patient/example</a></p><p><b>occurrence</b>: Duration 15days, Do 1-1 per 1 days</p><p><b>asNeeded</b>: as needed to clear mucus <span>(Details )</span></p><p><b>authoredOn</b>: 01/02/2017 5:23:07 PM</p><p><b>requester</b>: <a>Dr Adam Careful</a></p><p><b>reasonReference</b>: id: cystic-fibrosis; Active <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-clinical code \'active\' = \'Active)</span>; Confirmed <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-ver-status code \'confirmed\' = \'Confirmed)</span>; Problem List Item <span>(Details : {http://terminology.hl7.org/CodeSystem/condition-category code \'problem-list-item\' = \'Problem List Item\', given as \'Problem List Item\'})</span>; Mild <span>(Details : {SNOMED CT code \'255604002\' = \'Mild\', given as \'Mild\'})</span>; Cystic Fibrosis <span>(Details : {http://hl7.org/fhir/sid/icd-10-cm code \'E84.0\' = \'E84.0\', given as \'Cystic fibrosis with pulmonary manifestations\'})</span>; onset: 12/11/2012</p><p><b>relevantHistory</b>: Author\'s Signature. Generated Summary: id: signature; recorded: 01/02/2017 5:23:07 PM; </p></div>"
+  }
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\372\006\367\002\n\v\n\tsignatureR\027\232\b\024\n\rphysiotherapy\022\003\n\0011b\016\b\300\251\264\352\264\357\321\002\022\001Z\030\001\212\001k*G\032E\032<\n:http://terminology.hl7.org/CodeSystem/v3-ParticipationType*\005\n\003AUT2 \232\a\t\n\aexample\342\t\021\n\017Dr Adam Careful\232\001\317\001\032N\032\034\n\032urn:iso-astm:E1762-95:2013*\030\n\0261.2.840.10065.1.12.1.12\024\n\022Author\'s Signature\"\016\b\300\251\264\352\264\357\321\002\022\001Z\030\001* \232\a\t\n\aexample\342\t\021\n\017Dr Adam Careful:\026\"\024application/fhir+xmlB\033\"\031application/signature+xmlJ\026\n\024this blob is snipped"
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\342\001\360\003\n\021\n\017cystic-fibrosisZH\032F\032:\n8http://terminology.hl7.org/CodeSystem/condition-clinical*\b\n\006activebM\032K\032<\n:http://terminology.hl7.org/CodeSystem/condition-ver-status*\v\n\tconfirmedjh\032f\032:\n8http://terminology.hl7.org/CodeSystem/condition-category*\023\n\021problem-list-item2\023\n\021Problem List Itemr1\032/\032\030\n\026http://snomed.info/sct*\v\n\t2556040022\006\n\004Mildzt\032_\032#\n!http://hl7.org/fhir/sid/icd-10-cm*\a\n\005E84.02/\n-Cystic fibrosis with pulmonary manifestations\"\021\n\017Cystic Fibrosis\212\001\f\362\006\t\n\aexample\232\001\037\n\035\b\200\350\273\231\374\306\263\002\022\020Australia/Sydney\030\003"
+}
+identifier {
+  type {
+    coding {
+      system {
+        value: "http://terminology.hl7.org/CodeSystem/v2-0203"
+      }
+      code {
+        value: "PLAC"
+      }
+      display {
+        value: "Placer Identifier"
+      }
+    }
+    text {
+      value: "Placer"
+    }
+  }
+  system {
+    value: "http://goodhealth.org/placer-ids"
+  }
+  value {
+    value: "20170201-0001"
+  }
+}
+based_on {
+  care_plan_id {
+    value: "gpvisit"
+  }
+}
+status {
+  value: COMPLETED
+}
+intent {
+  value: ORDER
+}
+code {
+  coding {
+    system {
+      value: "http://snomed.info/sct"
+    }
+    code {
+      value: "34431008"
+    }
+    display {
+      value: "Physiotherapy of chest (regime/therapy) "
+    }
+  }
+}
+subject {
+  patient_id {
+    value: "example"
+  }
+}
+occurrence {
+  timing {
+    repeat {
+      duration {
+        value: "15"
+      }
+      duration_max {
+        value: "25"
+      }
+      duration_unit {
+        value: MIN
+      }
+      frequency {
+        value: 1
+      }
+      frequency_max {
+        value: 4
+      }
+      period {
+        value: "1"
+      }
+      period_unit {
+        value: D
+      }
+    }
+  }
+}
+as_needed {
+  codeable_concept {
+    text {
+      value: "as needed to clear mucus"
+    }
+  }
+}
+authored_on {
+  value_us: 1485969787000000
+  timezone: "Z"
+  precision: SECOND
+}
+requester {
+  practitioner_id {
+    value: "example"
+  }
+  display {
+    value: "Dr Adam Careful"
+  }
+}
+reason_reference {
+  fragment {
+    value: "cystic-fibrosis"
+  }
+}
+relevant_history {
+  fragment {
+    value: "signature"
+  }
+  display {
+    value: "Author\'s Signature"
+  }
+}

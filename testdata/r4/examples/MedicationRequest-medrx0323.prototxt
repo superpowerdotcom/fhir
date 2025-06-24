@@ -1,0 +1,188 @@
+id {
+  value: "medrx0323"
+}
+text {
+  status {
+    value: GENERATED
+  }
+  div {
+    value: "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: medrx0323</p><p><b>contained</b>: </p><p><b>identifier</b>: 12345689 (OFFICIAL)</p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>medication</b>: id: med0318; Injection emulsion <span>(Details : {SNOMED CT code \'385221006\' = \'Injection emulsion\', given as \'Injection emulsion\'})</span></p><p><b>subject</b>: <a>Donald Duck</a></p><p><b>encounter</b>: <a>encounter who leads to this prescription</a></p><p><b>authoredOn</b>: 15/01/2015</p><p><b>requester</b>: <a>Patrick Pump</a></p><p><b>dosageInstruction</b>: </p></div>"
+  }
+}
+contained {
+  type_url: "type.googleapis.com/google.fhir.r4.core.ContainedResource"
+  value: "\332\004\205\005\n\t\n\amed0318r?\032=\032\030\n\026http://snomed.info/sct*\v\n\t3852210062\024\n\022Injection emulsion\202\001\216\001\"\213\001\n\210\001\032\205\001\032\035\n\033http://hl7.org/fhir/sid/ndc*\016\n\f0338-1134-032T\nRClinimix 4.25/10 sulfite-free (4.25% Amino Acid in 10% Dextrose) Injection, 1000ml\202\001\235\002\"\232\002\n\227\002\032\224\002\032\035\n\033http://hl7.org/fhir/sid/ndc*\016\n\f0409-5779-012\342\001\n\337\001TPN Electrolytes SODIUM CHLORIDE, CALCIUM CHLORIDE, POTASSIUM CHLORIDE, MAGNESIUM CHLORIDE, and SODIUM ACETATE ANHYDROUS | INJECTION, SOLUTION, CONCENTRATE | 321 mg/20mL, 331 mg/20mL, 1491 mg/20mL, 508 mg/20mL, 2420 mg/20mL\202\001W\"U\nS\032Q\032\035\n\033http://hl7.org/fhir/sid/ndc*\016\n\f0338-0519-022 \n\036Intralipid 20% IV Fat Emulsion\212\001)\"\b\n\006123455*\035\b\200\360\240\277\203\344\315\002\022\020Australia/Sydney\030\003"
+}
+identifier {
+  use {
+    value: OFFICIAL
+  }
+  system {
+    value: "http://www.bmc.nl/portal/prescriptions"
+  }
+  value {
+    value: "12345689"
+  }
+}
+status {
+  value: COMPLETED
+}
+intent {
+  value: ORDER
+}
+medication {
+  reference {
+    fragment {
+      value: "med0318"
+    }
+  }
+}
+subject {
+  patient_id {
+    value: "pat1"
+  }
+  display {
+    value: "Donald Duck"
+  }
+}
+encounter {
+  encounter_id {
+    value: "f001"
+  }
+  display {
+    value: "encounter who leads to this prescription"
+  }
+}
+authored_on {
+  value_us: 1421240400000000
+  timezone: "Australia/Sydney"
+  precision: DAY
+}
+requester {
+  practitioner_id {
+    value: "f007"
+  }
+  display {
+    value: "Patrick Pump"
+  }
+}
+dosage_instruction {
+  sequence {
+    value: 1
+  }
+  text {
+    value: "1000mL infused at 50ml/hour for 4 hours - hung at 2200 hours"
+  }
+  timing {
+    event {
+      value_us: 1421319600000000
+      timezone: "+11:00"
+      precision: SECOND
+    }
+    repeat {
+      frequency {
+        value: 1
+      }
+      period {
+        value: "24"
+      }
+      period_unit {
+        value: H
+      }
+    }
+  }
+  site {
+    coding {
+      system {
+        value: "http://snomed.info/sct"
+      }
+      code {
+        value: "6073002"
+      }
+      display {
+        value: "Structure of ligament of left superior vena cava"
+      }
+    }
+  }
+  route {
+    coding {
+      system {
+        value: "http://snomed.info/sct"
+      }
+      code {
+        value: "255560000"
+      }
+      display {
+        value: "Intravenous"
+      }
+    }
+  }
+  method {
+    text {
+      value: "PICC line"
+    }
+  }
+  dose_and_rate {
+    type {
+      coding {
+        system {
+          value: "http://terminology.hl7.org/CodeSystem/dose-rate-type"
+        }
+        code {
+          value: "ordered"
+        }
+        display {
+          value: "Ordered"
+        }
+      }
+    }
+    dose {
+      quantity {
+        value {
+          value: "1000"
+        }
+        unit {
+          value: "mL"
+        }
+        system {
+          value: "http://unitsofmeasure.org"
+        }
+        code {
+          value: "mL"
+        }
+      }
+    }
+    rate {
+      ratio {
+        numerator {
+          value {
+            value: "50"
+          }
+          unit {
+            value: "mL"
+          }
+          system {
+            value: "http://unitsofmeasure.org"
+          }
+          code {
+            value: "mL"
+          }
+        }
+        denominator {
+          value {
+            value: "1"
+          }
+          unit {
+            value: "h"
+          }
+          system {
+            value: "http://unitsofmeasure.org"
+          }
+          code {
+            value: "h"
+          }
+        }
+      }
+    }
+  }
+}
