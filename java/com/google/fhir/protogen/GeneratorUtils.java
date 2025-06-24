@@ -49,7 +49,7 @@ final class GeneratorUtils {
   // The path for annotation definition of proto options.
   public static final String ANNOTATION_PATH = "proto/google/fhir/proto";
 
-  private static final String GO_PACKAGE_PREFIX = "github.com/google/fhir/go";
+  private static final String GO_PACKAGE_PREFIX = "github.com/superpowerdotcom/fhir/go";
   private static final Pattern WORD_BREAK_PATTERN = Pattern.compile("[^A-Za-z0-9]+([A-Za-z0-9])");
   private static final Pattern ACRONYM_PATTERN = Pattern.compile("([A-Z])([A-Z]+)(?![a-z])");
 

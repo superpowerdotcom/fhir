@@ -18,8 +18,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/google/fhir/go/fhirpath/gen"
 	"github.com/antlr4-go/antlr/v4"
+	"github.com/superpowerdotcom/fhir/go/fhirpath/gen"
 )
 
 var (

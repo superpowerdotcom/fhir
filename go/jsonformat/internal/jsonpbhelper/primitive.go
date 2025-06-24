@@ -21,9 +21,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/google/fhir/go/jsonformat/internal/accessor"
-	"github.com/google/fhir/go/protopath"
-	apb "github.com/google/fhir/go/proto/google/fhir/proto/annotations_go_proto"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor"
+	apb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/annotations_go_proto"
+	"github.com/superpowerdotcom/fhir/go/protopath"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 )

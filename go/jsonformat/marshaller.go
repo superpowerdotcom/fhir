@@ -20,15 +20,15 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/google/fhir/go/fhirversion"
-	"github.com/google/fhir/go/jsonformat/internal/accessor"
-	"github.com/google/fhir/go/jsonformat/internal/jsonpbhelper"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/jsonpbhelper"
 	"golang.org/x/exp/maps"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 
+	apb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/annotations_go_proto"
 	anypb "google.golang.org/protobuf/types/known/anypb"
-	apb "github.com/google/fhir/go/proto/google/fhir/proto/annotations_go_proto"
 )
 
 // jsonFormat is the format in which the marshaller will represent the FHIR
@@ -738,7 +738,7 @@ func (m *Marshaller) marshalMessageToMap(pb protoreflect.Message) (jsonpbhelper.
 	if err != nil {
 		return nil, err
 	}
-	if m.jsonFormat != formatPure && !jsonpbhelper.IsResourceType(pb.Descriptor()) && !jsonpbhelper.IsChoice(pb.Descriptor()){
+	if m.jsonFormat != formatPure && !jsonpbhelper.IsResourceType(pb.Descriptor()) && !jsonpbhelper.IsChoice(pb.Descriptor()) {
 		// Omit FHIR element ID fields for analytics json.
 		// See https://github.com/rbrush/sql-on-fhir/blob/master/sql-on-fhir.md#id-fields-omitted.
 		delete(decmap, "id")

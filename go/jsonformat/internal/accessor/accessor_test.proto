@@ -16,7 +16,7 @@ syntax = "proto2";
 
 package fhir.go.jsonformat.internal.accessor;
 
-option go_package = "github.com/google/fhir/go/jsonformat/internal/accessor/accessor_test_go_proto";
+option go_package = "github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor/accessor_test_go_proto";
 
 // StringList is a merely a list of strings which is supposed to be used only in
 // proto accessor test.

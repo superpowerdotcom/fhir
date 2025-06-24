@@ -46,7 +46,7 @@ def move_generated_go_protos(tmp_dir: str):
   proto_dest_dir = os.path.join(dest_root, "go/proto/google")
   shutil.rmtree(proto_dest_dir, ignore_errors=True)
   
-  src_proto_dir = os.path.join(tmp_dir, "proto-out/github.com/google/fhir/go/proto/google")
+  src_proto_dir = os.path.join(tmp_dir, "proto-out/github.com/superpowerdotcom/fhir/go/proto/google")
   if os.path.exists(src_proto_dir):
     shutil.move(src_proto_dir, proto_dest_dir)
 
@@ -56,7 +56,7 @@ def move_generated_go_protos(tmp_dir: str):
   
   src_accessor_dir = os.path.join(
       tmp_dir,
-      "proto-out/github.com/google/fhir/go/jsonformat/internal/accessor/accessor_test_go_proto"
+      "proto-out/github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor/accessor_test_go_proto"
   )
   if os.path.exists(src_accessor_dir):
     shutil.copytree(src_accessor_dir, accessor_out)
@@ -67,7 +67,7 @@ def move_generated_go_protos(tmp_dir: str):
   
   src_protopath_dir = os.path.join(
       tmp_dir,
-      "proto-out/github.com/google/fhir/go/protopath/protopathtest_go_proto"
+      "proto-out/github.com/superpowerdotcom/fhir/go/protopath/protopathtest_go_proto"
   )
   if os.path.exists(src_protopath_dir):
     shutil.copytree(src_protopath_dir, protopath_dest_dir)
@@ -106,7 +106,7 @@ def main(argv):
               fout.write(line)
             if not has_go_package:
               fout.write(
-                  "option go_package = \"github.com/google/fhir/go/{}/{}_go_proto\";"
+                  "option go_package = \"github.com/superpowerdotcom/fhir/go/{}/{}_go_proto\";"
                   .format(repo_relative_path, prefix))
 
         # Remove the old file, and replace with the go_package modified file.

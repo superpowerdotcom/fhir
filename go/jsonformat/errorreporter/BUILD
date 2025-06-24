@@ -7,7 +7,7 @@ licenses(["notice"])
 go_library(
     name = "errorreporter",
     srcs = ["errorreporter.go"],
-    importpath = "github.com/google/fhir/go/jsonformat/errorreporter",
+    importpath = "github.com/superpowerdotcom/fhir/go/jsonformat/errorreporter",
     deps = [
         "//go/fhirversion",
         "//proto/google/fhir/proto/r4/core:codes_go_proto",

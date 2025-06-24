@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/google/fhir/go/jsonformat/internal/accessor"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 )

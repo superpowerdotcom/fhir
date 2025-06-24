@@ -19,13 +19,13 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/google/fhir/go/fhirversion"
-	"google.golang.org/protobuf/proto"
 	"bitbucket.org/creachadair/stringset"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
+	"google.golang.org/protobuf/proto"
 
-	dpb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
-	rpb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/bundle_and_contained_resource_go_proto"
-	epb "github.com/google/fhir/go/proto/google/fhir/proto/r5/fhirproto_extensions_go_proto"
+	dpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
+	rpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/bundle_and_contained_resource_go_proto"
+	epb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/fhirproto_extensions_go_proto"
 )
 
 const (

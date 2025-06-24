@@ -16,21 +16,21 @@
 package perf_test
 
 import (
-	"io/ioutil"
 	"bytes"
 	"encoding/base64"
 	"io"
+	"io/ioutil"
 	"math/rand"
 	"path"
 	"strings"
 	"testing"
 
 	"github.com/bazelbuild/rules_go/go/tools/bazel"
-	"github.com/google/fhir/go/fhirversion"
-	"github.com/google/fhir/go/jsonformat"
-	d4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
-	r4binarypb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/binary_go_proto"
-	r4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/bundle_and_contained_resource_go_proto"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
+	"github.com/superpowerdotcom/fhir/go/jsonformat"
+	d4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
+	r4binarypb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/binary_go_proto"
+	r4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/bundle_and_contained_resource_go_proto"
 )
 
 const (
@@ -42,11 +42,11 @@ func prepare(b *testing.B, f string, enableValidation bool) ([]byte, *jsonformat
 	p := path.Join(testDataDir, f)
 	path, err := bazel.Runfile(p)
 	if err != nil {
-	  b.Fatalf("Failed to read file %s due to error: %v", p, err)
+		b.Fatalf("Failed to read file %s due to error: %v", p, err)
 	}
 	d, err := ioutil.ReadFile(path)
 	if err != nil {
-	  b.Fatalf("Failed to read file %s due to error: %v", p, err)
+		b.Fatalf("Failed to read file %s due to error: %v", p, err)
 	}
 	if err != nil {
 		b.Fatalf("Failed to read file %s due to error: %v", p, err)

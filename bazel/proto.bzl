@@ -54,9 +54,9 @@ def fhir_proto_library(proto_library_prefix, srcs = [], proto_deps = [], **kwarg
         **kwargs
     )
 
-    importpath_prefix = "github.com/google/fhir/go/"
+    importpath_prefix = "github.com/superpowerdotcom/fhir/go/"
     if native.package_name().startswith("go/"):
-        importpath_prefix = "github.com/google/fhir/"
+        importpath_prefix = "github.com/superpowerdotcom/fhir/"
 
     go_proto_library(
         name = proto_library_prefix + "_go_proto",

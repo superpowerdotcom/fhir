@@ -29,29 +29,29 @@ import (
 
 	"runtime"
 
+	"bitbucket.org/creachadair/stringset"
 	"github.com/bazelbuild/rules_go/go/tools/bazel"
-	"github.com/google/fhir/go/fhirversion"
-	"github.com/google/fhir/go/jsonformat/internal/jsonpbhelper"
-	"github.com/google/fhir/go/jsonformat"
-	"github.com/google/fhir/go/protopath"
 	"github.com/google/go-cmp/cmp"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
+	"github.com/superpowerdotcom/fhir/go/jsonformat"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/jsonpbhelper"
+	"github.com/superpowerdotcom/fhir/go/protopath"
 	"google.golang.org/protobuf/encoding/prototext"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/testing/protocmp"
-	"bitbucket.org/creachadair/stringset"
 
-	r4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/bundle_and_contained_resource_go_proto"
-	r4compositionpb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/composition_go_proto"
-	r4observationpb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/observation_go_proto"
-	r4patientpb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/patient_go_proto"
-	r3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
+	r4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/bundle_and_contained_resource_go_proto"
+	r4compositionpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/composition_go_proto"
+	r4observationpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/observation_go_proto"
+	r4patientpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/patient_go_proto"
+	r3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
 )
 
 const (
 	timeZone               = "Australia/Sydney"
 	oneofResourceProtopath = "oneof_resource"
-	jsonExt     = "json"
-	txtprotoExt = "prototxt"
+	jsonExt                = "json"
+	txtprotoExt            = "prototxt"
 )
 
 var (
@@ -137,8 +137,8 @@ var (
 	)
 
 	versionToJSONPath = map[fhirversion.Version]string{
-		fhirversion.STU3:  "spec/hl7.fhir.core/3.0.1/package/",
-		fhirversion.R4:    "spec/hl7.fhir.r4.examples/4.0.1/package/",
+		fhirversion.STU3: "spec/hl7.fhir.core/3.0.1/package/",
+		fhirversion.R4:   "spec/hl7.fhir.r4.examples/4.0.1/package/",
 	}
 	versionToProtoPath = map[fhirversion.Version]string{
 		fhirversion.STU3: "testdata/stu3/examples",
@@ -522,6 +522,7 @@ var (
 	_, b, _, _ = runtime.Caller(0)
 	callerRoot = filepath.Dir(b)
 )
+
 // getRootPath returns the root bazel runfiles path if running in a bazel
 // environment, otherwise it will return the root path of the FHIR proto
 // repository. Typically this is used to access files such as testdata.
@@ -529,8 +530,8 @@ var (
 // exist, and if not, report an error.
 func getRootPath() string {
 	var root string
- 	root, err := bazel.RunfilesPath()
- 	if err != nil {
+	root, err := bazel.RunfilesPath()
+	if err != nil {
 		// Fall back to the non-bazel way to get to the root directory.
 		root = callerRoot + "/../../../../"
 	}
