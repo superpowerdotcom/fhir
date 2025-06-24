@@ -12,7 +12,7 @@ go_library(
         "json_format.go",
         "primitive.go",
     ],
-    importpath = "github.com/google/fhir/go/jsonformat/internal/jsonpbhelper",
+    importpath = "github.com/superpowerdotcom/fhir/go/jsonformat/internal/jsonpbhelper",
     deps = [
         "//go/jsonformat/internal/accessor",
         "//go/protopath",

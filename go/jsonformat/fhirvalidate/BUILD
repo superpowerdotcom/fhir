@@ -7,7 +7,7 @@ licenses(["notice"])
 go_library(
     name = "fhirvalidate",
     srcs = ["fhirvalidate.go"],
-    importpath = "github.com/google/fhir/go/jsonformat/fhirvalidate",
+    importpath = "github.com/superpowerdotcom/fhir/go/jsonformat/fhirvalidate",
     deps = [
         "//go/jsonformat/errorreporter",
         "//go/jsonformat/internal/jsonpbhelper",

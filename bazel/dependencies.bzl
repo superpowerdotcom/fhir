@@ -6,7 +6,7 @@ def fhirproto_dependencies(core_lib = False):
     """ Sets up FhirProto dependencies
 
     Args:
-      core_lib: Whether or not this is the core FHIR lib github.com/google/fhir
+      core_lib: Whether or not this is the core FHIR lib github.com/superpowerdotcom/fhir
     """
 
     main_fhir_location = "" if core_lib else "@com_google_fhir"

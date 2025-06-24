@@ -17,7 +17,7 @@ proto_library(
 
 go_proto_library(
     name = "protopathtest_go_proto",
-    importpath = "github.com/google/fhir/go/protopath/protopathtest_go_proto",
+    importpath = "github.com/superpowerdotcom/fhir/go/protopath/protopathtest_go_proto",
     protos = [":protopathtest_proto"],
 )
 
@@ -27,7 +27,7 @@ go_library(
         "proto_path.go",
         "proto_path_to_json.go",
     ],
-    importpath = "github.com/google/fhir/go/protopath",
+    importpath = "github.com/superpowerdotcom/fhir/go/protopath",
     deps = [
         "@com_github_golang_protobuf//proto:go_default_library",
         "@org_golang_google_protobuf//proto:go_default_library",

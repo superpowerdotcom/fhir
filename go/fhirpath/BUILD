@@ -7,7 +7,7 @@ package(default_visibility = ["//visibility:public"])
 go_library(
     name = "fhirpath",
     srcs = ["visitor.go"],
-    importpath = "github.com/google/fhir/go/fhirpath",
+    importpath = "github.com/superpowerdotcom/fhir/go/fhirpath",
     deps = [
         "//go/fhirpath/gen",
         "@com_github_antrl4_go_antlr//:go_default_library",

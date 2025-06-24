@@ -15,7 +15,7 @@ go_library(
         "fhirpath_parser.go",
         "fhirpath_visitor.go",
     ],
-    importpath = "github.com/google/fhir/go/fhirpath/gen",
+    importpath = "github.com/superpowerdotcom/fhir/go/fhirpath/gen",
     visibility = [
         "//go/fhirpath:__subpackages__",
     ],

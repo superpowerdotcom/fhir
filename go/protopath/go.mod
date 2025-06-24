@@ -1,4 +1,4 @@
-module github.com/google/fhir/go/protopath
+module github.com/superpowerdotcom/fhir/go/protopath
 
 go 1.19
 

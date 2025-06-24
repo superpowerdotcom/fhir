@@ -15,7 +15,7 @@ go_library(
         "unmarshaller.go",
         "version_config.go",
     ],
-    importpath = "github.com/google/fhir/go/jsonformat",
+    importpath = "github.com/superpowerdotcom/fhir/go/jsonformat",
     deps = [
         "//go/fhirversion",
         "//go/jsonformat/errorreporter",
