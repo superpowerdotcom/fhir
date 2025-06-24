@@ -41,4 +41,4 @@ fi
 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.29.0
 PATH=$PATH:$GOBIN
 
-bazel run //go:generate_go_protos -- --repo-path=.
+bazel run //go:generate_go_protos -- --repo-path="$(pwd)"

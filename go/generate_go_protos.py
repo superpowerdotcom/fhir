@@ -22,6 +22,7 @@ support go modules.
 import os
 import shutil
 import tempfile
+import uuid
 
 from absl import app
 from absl import flags
@@ -44,46 +45,47 @@ def move_generated_go_protos(tmp_dir: str):
   dest_root = _REPO_PATH.value
   proto_dest_dir = os.path.join(dest_root, "go/proto/google")
   shutil.rmtree(proto_dest_dir, ignore_errors=True)
-  shutil.move(
-      os.path.join(tmp_dir, "proto-out/github.com/google/fhir/go/proto/google"),
-      proto_dest_dir,
-  )
+  
+  src_proto_dir = os.path.join(tmp_dir, "proto-out/github.com/google/fhir/go/proto/google")
+  if os.path.exists(src_proto_dir):
+    shutil.move(src_proto_dir, proto_dest_dir)
 
   accessor_out = os.path.join(
       dest_root, "go/jsonformat/internal/accessor/accessor_test_go_proto")
   shutil.rmtree(accessor_out, ignore_errors=True)
-  shutil.copytree(
-      os.path.join(
-          tmp_dir,
-          "proto-out/github.com/google/fhir/go/jsonformat/internal/accessor/accessor_test_go_proto"
-      ), accessor_out)
+  
+  src_accessor_dir = os.path.join(
+      tmp_dir,
+      "proto-out/github.com/google/fhir/go/jsonformat/internal/accessor/accessor_test_go_proto"
+  )
+  if os.path.exists(src_accessor_dir):
+    shutil.copytree(src_accessor_dir, accessor_out)
 
   protopath_dest_dir = os.path.join(
       dest_root, "go/protopath/protopathtest_go_proto")
   shutil.rmtree(protopath_dest_dir, ignore_errors=True)
-  shutil.copytree(
-      os.path.join(
-          tmp_dir,
-          "proto-out/github.com/google/fhir/go/protopath/protopathtest_go_proto"
-      ), protopath_dest_dir)
+  
+  src_protopath_dir = os.path.join(
+      tmp_dir,
+      "proto-out/github.com/google/fhir/go/protopath/protopathtest_go_proto"
+  )
+  if os.path.exists(src_protopath_dir):
+    shutil.copytree(src_protopath_dir, protopath_dest_dir)
 
 
 def main(argv):
   if len(argv) > 1:
     raise app.UsageError("Too many command-line arguments.")
 
-  tmp_dir = os.path.join(tempfile.gettempdir(), "fhir")
-  if not os.path.exists(tmp_dir):
-    os.mkdir(tmp_dir)
+  tmp_dir = tempfile.mkdtemp(prefix="fhir-")
+  repo_tmp_dir = os.path.join(tmp_dir, "repo")
   proto_out_dir = os.path.join(tmp_dir, "proto-out")
-  if not os.path.exists(proto_out_dir):
-    os.mkdir(proto_out_dir)
 
   # Copy repository to the tmp_dir for proto generation.
-  shutil.copytree(_REPO_PATH.value, tmp_dir)
+  shutil.copytree(_REPO_PATH.value, repo_tmp_dir)
 
   # Add the correct go_package option to all the protos in the tmp_dir.
-  for dirpath, _, file_names in os.walk(os.path.join(tmp_dir)):
+  for dirpath, _, file_names in os.walk(repo_tmp_dir):
     for fn in file_names:
       if fn.endswith(".proto"):
         prefix = fn.split(".proto")[0]
@@ -91,7 +93,7 @@ def main(argv):
         old_file_path = os.path.join(dirpath, fn)
         new_file_path = os.path.join(dirpath, fn + "_with_go_package")
 
-        repo_relative_path = dirpath.split(tmp_dir)[1]
+        repo_relative_path = dirpath.split(repo_tmp_dir)[1]
         assert repo_relative_path[0] == "/"
         repo_relative_path = repo_relative_path[1:]
 
@@ -112,18 +114,25 @@ def main(argv):
         os.rename(new_file_path, old_file_path)
 
   # Run the protoc go generation commands
-  os.system(
-      r"find {0} -type f -name '*.proto' -exec protoc --proto_path={1} --go_out={2} {{}} \; "
-      .format(
-          os.path.join(tmp_dir, "proto"), tmp_dir,
-          proto_out_dir))
-  os.system(
-      r"find {0} -type f -name '*.proto' -exec protoc --proto_path={1} --go_out={2} {{}} \; "
-      .format(
-          os.path.join(tmp_dir, "go"), tmp_dir,
-          proto_out_dir))
+  if not os.path.exists(proto_out_dir):
+    os.makedirs(proto_out_dir)
+    
+  proto_dir = os.path.join(repo_tmp_dir, "proto")
+  if os.path.exists(proto_dir):
+    os.system(
+        r"find {0} -type f -name '*.proto' -exec protoc --proto_path={1} --go_out={2} {{}} \; "
+        .format(proto_dir, repo_tmp_dir, proto_out_dir))
+  
+  go_proto_dir = os.path.join(repo_tmp_dir, "go")
+  if os.path.exists(go_proto_dir):
+    os.system(
+        r"find {0} -type f -name '*.proto' -exec protoc --proto_path={1} --go_out={2} {{}} \; "
+        .format(go_proto_dir, repo_tmp_dir, proto_out_dir))
 
   move_generated_go_protos(tmp_dir)
+  
+  # Clean up temp directory (ignore permission errors)
+  shutil.rmtree(tmp_dir, ignore_errors=True)
 
 if __name__ == "__main__":
   flags.mark_flag_as_required("repo-path")

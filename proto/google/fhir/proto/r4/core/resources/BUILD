@@ -150,6 +150,7 @@ PROTO_DEPS = [
     ":terminology_capabilities_proto",
     ":test_report_proto",
     ":test_script_proto",
+    ":user_proto",
     ":value_set_proto",
     ":verification_result_proto",
     ":vision_prescription_proto",
