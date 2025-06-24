@@ -32,6 +32,7 @@ import (
 	d4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
 	r4basicpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/basic_go_proto"
 	r4patientpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/patient_go_proto"
+	c5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/codes_go_proto"
 	d5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
 	r5basicpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/basic_go_proto"
 	r5claimpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/claim_go_proto"
