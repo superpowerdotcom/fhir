@@ -33,6 +33,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           fetch_all_tags: true
+          tag_prefix: "go/v"
 
       - name: Set VERSION
         id: version
