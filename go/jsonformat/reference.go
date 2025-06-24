@@ -315,34 +315,9 @@ func denormalizeR4Reference(ref *d4pb.Reference) {
 // <SUPERPOWER.COM ADDITION>
 // A.S. 2025-06-24
 //
-// idk why google didn't define this function, it was breaking builds so i just copied it over here
-// don't expect it to work though, i just copied over the stuff from the R4 func above
-// (and we aren't using FHIR R5 anyway, we're using FHIR R4, so it's not a big deal for now)
+// Idk why google didn't define this function, it was breaking builds
+// This function is required to prevent build errors but is not fully implemented
+// since we primarily use FHIR R4 in our codebase
 func denormalizeR5Reference(ref *d5pb.Reference) {
-	if uri := ref.GetUri(); uri != nil {
-		return
-	}
-	if frag := ref.GetFragment(); frag != nil {
-		ref.Reference = &d5pb.Reference_Uri{Uri: &d5pb.String{Value: jsonpbhelper.RefFragmentPrefix + frag.GetValue()}}
-		return
-	}
-
-	rpb := ref.ProtoReflect()
-	f, err := jsonpbhelper.ResourceIDField(rpb)
-	if err != nil || f == nil {
-		return
-	}
-
-	refType, ok := jsonpbhelper.ResourceTypeForReference(f.Name())
-	if !ok {
-		return
-	}
-
-	refID, _ := rpb.Get(f).Message().Interface().(*d5pb.ReferenceId)
-	parts := []string{refType, refID.GetValue()}
-	if refID.GetHistory().GetValue() != "" {
-		parts = append(parts, jsonpbhelper.RefHistory, refID.GetHistory().GetValue())
-	}
-	ref.Reference = &d5pb.Reference_Uri{Uri: &d5pb.String{Value: strings.Join(parts, "/")}}
-	return
+	fmt.Println("Not implemented for R5. Attempted ref: ", ref)
 }
