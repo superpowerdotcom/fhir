@@ -16,12 +16,12 @@ package protopath
 import (
 	"testing"
 
-	anypb "google.golang.org/protobuf/types/known/anypb"
-	pptpb "github.com/google/fhir/go/protopath/protopathtest_go_proto"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
+	pptpb "github.com/superpowerdotcom/fhir/go/protopath/protopathtest_go_proto"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/testing/protocmp"
+	anypb "google.golang.org/protobuf/types/known/anypb"
 )
 
 func mustMarshalAny(t *testing.T, pb proto.Message) *anypb.Any {

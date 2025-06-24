@@ -17,13 +17,13 @@ package jsonformat
 import (
 	"fmt"
 
-	"github.com/google/fhir/go/fhirversion"
-	"google.golang.org/protobuf/proto"
 	"bitbucket.org/creachadair/stringset"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
+	"google.golang.org/protobuf/proto"
 
-	dpb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
-	epb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/fhirproto_extensions_go_proto"
-	rpb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
+	dpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
+	epb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/fhirproto_extensions_go_proto"
+	rpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
 )
 
 type r3Config struct{}

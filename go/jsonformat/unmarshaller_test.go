@@ -31,37 +31,37 @@ import (
 	"runtime"
 
 	"github.com/bazelbuild/rules_go/go/tools/bazel"
-	"github.com/google/fhir/go/fhirversion"
-	"github.com/google/fhir/go/jsonformat/errorreporter"
-	"github.com/google/fhir/go/jsonformat/internal/jsonpbhelper"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/errorreporter"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/jsonpbhelper"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 	"google.golang.org/protobuf/testing/protocmp"
 
+	c4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/codes_go_proto"
+	d4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
+	r4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/bundle_and_contained_resource_go_proto"
+	r4devicepb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/device_go_proto"
+	r4observationpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/observation_go_proto"
+	r4outcomepb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/operation_outcome_go_proto"
+	r4patientpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/patient_go_proto"
+	r4searchparampb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/search_parameter_go_proto"
+	c5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/codes_go_proto"
+	d5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
+	r5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/bundle_and_contained_resource_go_proto"
+	r5devicepb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/device_go_proto"
+	r5observationpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/observation_go_proto"
+	r5outcomepb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/operation_outcome_go_proto"
+	r5patientpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/patient_go_proto"
+	r5searchparampb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/search_parameter_go_proto"
+	r5valuesetpb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/valuesets_go_proto"
+	c3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/codes_go_proto"
+	d3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
+	m3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/metadatatypes_go_proto"
+	r3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
 	anypb "google.golang.org/protobuf/types/known/anypb"
-	c4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/codes_go_proto"
-	d4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
-	r4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/bundle_and_contained_resource_go_proto"
-	r4devicepb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/device_go_proto"
-	r4observationpb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/observation_go_proto"
-	r4outcomepb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/operation_outcome_go_proto"
-	r4patientpb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/patient_go_proto"
-	r4searchparampb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/search_parameter_go_proto"
-	c5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/codes_go_proto"
-	d5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
-	r5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/bundle_and_contained_resource_go_proto"
-	r5devicepb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/device_go_proto"
-	r5observationpb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/observation_go_proto"
-	r5outcomepb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/operation_outcome_go_proto"
-	r5patientpb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/patient_go_proto"
-	r5searchparampb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/search_parameter_go_proto"
-	r5valuesetpb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/valuesets_go_proto"
-	c3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/codes_go_proto"
-	d3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
-	m3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/metadatatypes_go_proto"
-	r3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
 )
 
 var (
@@ -93,6 +93,7 @@ var (
 	_, b, _, _ = runtime.Caller(0)
 	callerRoot = filepath.Dir(b)
 )
+
 // getRootPath returns the root bazel runfiles path if running in a bazel
 // environment, otherwise it will return the root path of the FHIR proto
 // repository. Typically this is used to access files such as testdata.
@@ -100,8 +101,8 @@ var (
 // exist, and if not, report an error.
 func getRootPath() string {
 	var root string
- 	root, err := bazel.RunfilesPath()
- 	if err != nil {
+	root, err := bazel.RunfilesPath()
+	if err != nil {
 		// Fall back to the non-bazel way to get to the root directory.
 		root = callerRoot + "/../../"
 	}

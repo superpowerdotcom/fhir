@@ -20,17 +20,17 @@ package errorreporter
 import (
 	"fmt"
 
-	"github.com/google/fhir/go/fhirversion"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
 
-	c4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/codes_go_proto"
-	d4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
-	r4outcomepb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/operation_outcome_go_proto"
-	c5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/codes_go_proto"
-	d5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
-	r5outcomepb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/operation_outcome_go_proto"
-	c3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/codes_go_proto"
-	d3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
-	r3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
+	c4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/codes_go_proto"
+	d4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
+	r4outcomepb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/operation_outcome_go_proto"
+	c5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/codes_go_proto"
+	d5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
+	r5outcomepb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/operation_outcome_go_proto"
+	c3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/codes_go_proto"
+	d3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
+	r3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
 )
 
 // IssueSeverityCode describes the severity of an operation output issue.

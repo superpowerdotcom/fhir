@@ -17,10 +17,10 @@ package jsonformat
 import (
 	"fmt"
 
-	"github.com/google/fhir/go/fhirversion"
+	"bitbucket.org/creachadair/stringset"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
-	"bitbucket.org/creachadair/stringset"
 )
 
 // config encapsulates the configuration for the converter of a particular FHIR version.

@@ -28,21 +28,22 @@ import (
 	"unicode/utf8"
 
 	"log"
-	"github.com/json-iterator/go"
+
+	"bitbucket.org/creachadair/stringset"
+	jsoniter "github.com/json-iterator/go"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
-	"bitbucket.org/creachadair/stringset"
 
-	apb "github.com/google/fhir/go/proto/google/fhir/proto/annotations_go_proto"
+	apb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/annotations_go_proto"
 
-	d4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
-	r4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/bundle_and_contained_resource_go_proto"
+	d4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
+	r4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/bundle_and_contained_resource_go_proto"
 
-	d5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
-	r5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/bundle_and_contained_resource_go_proto"
+	d5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
+	r5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/bundle_and_contained_resource_go_proto"
 
-	d3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
-	r3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
+	d3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
+	r3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/resources_go_proto"
 )
 
 const (

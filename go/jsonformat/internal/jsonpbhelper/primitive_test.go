@@ -19,24 +19,24 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/google/fhir/go/fhirversion"
-	"github.com/google/fhir/go/jsonformat/internal/accessor"
 	"github.com/google/go-cmp/cmp"
+	"github.com/superpowerdotcom/fhir/go/fhirversion"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/accessor"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
 	"google.golang.org/protobuf/testing/protocmp"
 
-	c4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/codes_go_proto"
-	d4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
-	rs4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/resources/research_study_go_proto"
-	e4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/fhirproto_extensions_go_proto"
-	c5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/codes_go_proto"
-	d5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
-	rs5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/resources/research_study_go_proto"
-	e5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/fhirproto_extensions_go_proto"
-	c3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/codes_go_proto"
-	d3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
-	e3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/fhirproto_extensions_go_proto"
+	c4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/codes_go_proto"
+	d4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
+	rs4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/resources/research_study_go_proto"
+	e4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/fhirproto_extensions_go_proto"
+	c5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/codes_go_proto"
+	d5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
+	rs5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/resources/research_study_go_proto"
+	e5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/fhirproto_extensions_go_proto"
+	c3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/codes_go_proto"
+	d3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
+	e3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/fhirproto_extensions_go_proto"
 )
 
 func appendSeparatorAndStrideExtensions(extListOwner protoreflect.Message, sep string, stride uint32) {
@@ -347,9 +347,9 @@ func TestDecimal(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.value, func(t *testing.T) {
 			expects := map[fhirversion.Version]proto.Message{
-				fhirversion.STU3:  &d3pb.Decimal{Value: test.value},
-				fhirversion.R4:    &d4pb.Decimal{Value: test.value},
-				fhirversion.R5:    &d5pb.Decimal{Value: test.value},
+				fhirversion.STU3: &d3pb.Decimal{Value: test.value},
+				fhirversion.R4:   &d4pb.Decimal{Value: test.value},
+				fhirversion.R5:   &d5pb.Decimal{Value: test.value},
 			}
 			for _, ver := range test.vers {
 				e := expects[ver]
@@ -390,9 +390,9 @@ func TestDecimal_Invalid(t *testing.T) {
 	}
 	for _, test := range tests {
 		msgs := map[fhirversion.Version]proto.Message{
-			fhirversion.STU3:  &d3pb.Decimal{},
-			fhirversion.R4:    &d4pb.Decimal{},
-			fhirversion.R5:    &d5pb.Decimal{},
+			fhirversion.STU3: &d3pb.Decimal{},
+			fhirversion.R4:   &d4pb.Decimal{},
+			fhirversion.R5:   &d5pb.Decimal{},
 		}
 		for _, ver := range test.vers {
 			if err := ParseDecimal(json.RawMessage(test.json), msgs[ver]); err == nil {

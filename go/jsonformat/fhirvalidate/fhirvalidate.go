@@ -25,16 +25,16 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/google/fhir/go/jsonformat/errorreporter"
-	"github.com/google/fhir/go/jsonformat/internal/jsonpbhelper"
+	"bitbucket.org/creachadair/stringset"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/errorreporter"
+	"github.com/superpowerdotcom/fhir/go/jsonformat/internal/jsonpbhelper"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protoreflect"
-	"bitbucket.org/creachadair/stringset"
 
-	apb "github.com/google/fhir/go/proto/google/fhir/proto/annotations_go_proto"
-	d4pb "github.com/google/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
-	d5pb "github.com/google/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
-	d3pb "github.com/google/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
+	apb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/annotations_go_proto"
+	d4pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r4/core/datatypes_go_proto"
+	d5pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/r5/core/datatypes_go_proto"
+	d3pb "github.com/superpowerdotcom/fhir/go/proto/google/fhir/proto/stu3/datatypes_go_proto"
 )
 
 var (
