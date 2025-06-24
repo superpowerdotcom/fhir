@@ -311,3 +311,13 @@ func denormalizeR4Reference(ref *d4pb.Reference) {
 	ref.Reference = &d4pb.Reference_Uri{Uri: &d4pb.String{Value: strings.Join(parts, "/")}}
 	return
 }
+
+// <SUPERPOWER.COM ADDITION>
+// A.S. 2025-06-24
+//
+// Idk why google didn't define this function, it was breaking builds
+// This function is required to prevent build errors but is not fully implemented
+// since we primarily use FHIR R4 in our codebase
+func denormalizeR5Reference(ref *d5pb.Reference) {
+	fmt.Println("Not implemented for R5. Attempted ref: ", ref)
+}

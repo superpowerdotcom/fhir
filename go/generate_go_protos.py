@@ -23,6 +23,8 @@ import os
 import shutil
 import tempfile
 import uuid
+import sys
+import time
 
 from absl import app
 from absl import flags
@@ -34,6 +36,9 @@ _REPO_PATH = flags.DEFINE_string(
     "The path to the root of the FHIR repository."
 )
 
+def log(msg):
+    print(msg)
+    sys.stdout.flush()
 
 def move_generated_go_protos(tmp_dir: str):
   """Responsible for moving the generated go protos to their final destination.
@@ -77,14 +82,19 @@ def main(argv):
   if len(argv) > 1:
     raise app.UsageError("Too many command-line arguments.")
 
+  log("🚀 [generate_go_protos.py] Starting Go proto generation. This step may take a while. Errors will appear below if any.")
+
+  start_time = time.time()
   tmp_dir = tempfile.mkdtemp(prefix="fhir-")
   repo_tmp_dir = os.path.join(tmp_dir, "repo")
   proto_out_dir = os.path.join(tmp_dir, "proto-out")
 
   # Copy repository to the tmp_dir for proto generation.
+  log("🔧 [generate_go_protos.py] Copying repository to temp directory...")
   shutil.copytree(_REPO_PATH.value, repo_tmp_dir)
 
   # Add the correct go_package option to all the protos in the tmp_dir.
+  log("🔧 [generate_go_protos.py] Adding go_package options to protos...")
   for dirpath, _, file_names in os.walk(repo_tmp_dir):
     for fn in file_names:
       if fn.endswith(".proto"):
@@ -114,6 +124,7 @@ def main(argv):
         os.rename(new_file_path, old_file_path)
 
   # Run the protoc go generation commands
+  log("🔧 [generate_go_protos.py] Running protoc to generate Go code...")
   if not os.path.exists(proto_out_dir):
     os.makedirs(proto_out_dir)
     
@@ -132,7 +143,12 @@ def main(argv):
   move_generated_go_protos(tmp_dir)
   
   # Clean up temp directory (ignore permission errors)
+  log("🔧 [generate_go_protos.py] Moving generated files to final destination...")
   shutil.rmtree(tmp_dir, ignore_errors=True)
+
+  end_time = time.time()
+  elapsed = int(end_time - start_time)
+  log(f"\n✅ [generate_go_protos.py] Go proto generation completed in {elapsed}s.")
 
 if __name__ == "__main__":
   flags.mark_flag_as_required("repo-path")
