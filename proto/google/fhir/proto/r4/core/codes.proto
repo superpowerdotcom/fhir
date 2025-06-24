@@ -3415,6 +3415,10 @@ message ResourceTypeCode {
         [(.google.fhir.proto.fhir_original_code) = "VerificationResult"];
     VISION_PRESCRIPTION = 148
         [(.google.fhir.proto.fhir_original_code) = "VisionPrescription"];
+    // <SUPERPOWER.COM ADDITION>
+    // Below are the following Medplum definitions that are not part of the
+    // official FHIR specification:
+    USER = 149 [(.google.fhir.proto.fhir_original_code) = "User"];
   }
 }
 

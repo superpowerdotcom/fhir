@@ -2908,6 +2908,11 @@ message Reference {
         [(.google.fhir.proto.referenced_fhir_type) = "VisionPrescription"];
     ReferenceId metadata_resource_id = 154
         [(.google.fhir.proto.referenced_fhir_type) = "MetadataResource"];
+    // <SUPERPOWER.COM ADDITION>
+    // Below are the following Medplum definitions that are not part of the
+    // official FHIR specification:
+    ReferenceId user_id = 157
+        [(.google.fhir.proto.referenced_fhir_type) = "User"];
   }
 }
 
