@@ -1360,6 +1360,14 @@ message FHIRAllTypesValueSet {
       (.google.fhir.proto.source_code_system) =
           "http://hl7.org/fhir/abstract-types"
     ];
+    // <SUPERPOWER.COM ADDITION>
+    // Below are the following Medplum definitions that are not part of the
+    // official FHIR specification:
+    USER = 214 [
+      (.google.fhir.proto.fhir_original_code) = "User",
+      (.google.fhir.proto.source_code_system) =
+          "http://medplum.com/fhir/resource-types"
+    ];
   }
 }
 
