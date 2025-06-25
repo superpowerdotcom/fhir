@@ -1,2 +1,7 @@
 # Ignore the bazel symlinks
 /bazel-*
+
+.idea
+.DS_Store
+.env
+fhir.iml

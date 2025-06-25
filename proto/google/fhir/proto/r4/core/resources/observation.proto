@@ -215,10 +215,10 @@ message Observation {
     repeated Extension modifier_extension = 3;
 
     // Low Range, if relevant
-    SimpleQuantity low = 4;
+    Quantity low = 4;
 
     // High Range, if relevant
-    SimpleQuantity high = 5;
+    Quantity high = 5;
 
     // Reference range qualifier
     CodeableConcept type = 6;
