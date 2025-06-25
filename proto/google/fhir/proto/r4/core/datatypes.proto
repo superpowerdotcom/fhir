@@ -2532,8 +2532,6 @@ message Range {
   //<SUPERPOWER.COM ADDITION>
   // A.S. 2025-06-25
   //
-  // This is a copy of the Ratio message from the FHIR R4 specification.
-  //
   // Medplum defines almost all their resources which use SimpleQuantity (according to the FHIR spec) 
   // as Quantity - this includes ObservationDefinitions, Observations (which was resolved previously), 
   // and Ranges. We need to modify the protos to conform with Medplum's definition of the FHIR spec 
