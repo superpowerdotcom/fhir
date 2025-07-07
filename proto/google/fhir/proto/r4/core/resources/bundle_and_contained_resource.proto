@@ -548,5 +548,6 @@ message ContainedResource {
     // Below are the following Medplum definitions that are not part of the
     // official FHIR specification:
     User user = 147;
+    AccessPolicy access_policy = 148;
   }
 }

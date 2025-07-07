@@ -1368,6 +1368,11 @@ message FHIRAllTypesValueSet {
       (.google.fhir.proto.source_code_system) =
           "http://medplum.com/fhir/resource-types"
     ];
+    ACCESS_POLICY = 215 [
+      (.google.fhir.proto.fhir_original_code) = "AccessPolicy",
+      (.google.fhir.proto.source_code_system) =
+          "http://medplum.com/fhir/resource-types"
+    ];
   }
 }
 

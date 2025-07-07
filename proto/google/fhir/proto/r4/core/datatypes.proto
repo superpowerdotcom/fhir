@@ -2923,6 +2923,8 @@ message Reference {
     // official FHIR specification:
     ReferenceId user_id = 157
         [(.google.fhir.proto.referenced_fhir_type) = "User"];
+    ReferenceId access_policy_id = 158
+        [(.google.fhir.proto.referenced_fhir_type) = "AccessPolicy"];
   }
 }
 
