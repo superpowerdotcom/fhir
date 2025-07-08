@@ -162,6 +162,7 @@ import "proto/google/fhir/proto/r4/core/resources/terminology_capabilities.proto
 import "proto/google/fhir/proto/r4/core/resources/test_report.proto";
 import "proto/google/fhir/proto/r4/core/resources/test_script.proto";
 import "proto/google/fhir/proto/r4/core/resources/user.proto";
+import "proto/google/fhir/proto/r4/core/resources/access_policy.proto";
 import "proto/google/fhir/proto/r4/core/resources/value_set.proto";
 import "proto/google/fhir/proto/r4/core/resources/verification_result.proto";
 import "proto/google/fhir/proto/r4/core/resources/vision_prescription.proto";
