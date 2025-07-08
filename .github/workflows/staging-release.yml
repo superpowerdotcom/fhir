@@ -35,6 +35,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Configure Go for private modules
+        run: |
+          echo "GOPRIVATE=github.com/superpowerdotcom/*" >> $GITHUB_ENV
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+
       - name: Test Go modules
         run: |
           cd go
