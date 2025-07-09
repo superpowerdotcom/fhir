@@ -58,7 +58,7 @@ type AccessPolicy struct {
 	// Access details for a resource type.
 	Resource []*AccessPolicy_Resource `protobuf:"bytes,13,rep,name=resource,proto3" json:"resource,omitempty"`
 	// Use IP Access Rules to allowlist, block, and challenge traffic based on the visitor IP address.
-	IpAccessRule []*AccessPolicy_IpAccessRule `protobuf:"bytes,14,rep,name=ip_access_rule,json=ipAccessRule,proto3" json:"ip_access_rule,omitempty"`
+	IpAccessRule []*AccessPolicy_IPAccessRule `protobuf:"bytes,14,rep,name=ip_access_rule,json=ipAccessRule,proto3" json:"ip_access_rule,omitempty"`
 }
 
 func (x *AccessPolicy) Reset() {
@@ -177,7 +177,7 @@ func (x *AccessPolicy) GetResource() []*AccessPolicy_Resource {
 	return nil
 }
 
-func (x *AccessPolicy) GetIpAccessRule() []*AccessPolicy_IpAccessRule {
+func (x *AccessPolicy) GetIpAccessRule() []*AccessPolicy_IPAccessRule {
 	if x != nil {
 		return x.IpAccessRule
 	}
@@ -296,7 +296,7 @@ func (x *AccessPolicy_Resource) GetWriteConstraint() []*datatypes_go_proto.Expre
 	return nil
 }
 
-type AccessPolicy_IpAccessRule struct {
+type AccessPolicy_IPAccessRule struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -309,8 +309,8 @@ type AccessPolicy_IpAccessRule struct {
 	Action *datatypes_go_proto.Code `protobuf:"bytes,3,opt,name=action,proto3" json:"action,omitempty"`
 }
 
-func (x *AccessPolicy_IpAccessRule) Reset() {
-	*x = AccessPolicy_IpAccessRule{}
+func (x *AccessPolicy_IPAccessRule) Reset() {
+	*x = AccessPolicy_IPAccessRule{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -318,13 +318,13 @@ func (x *AccessPolicy_IpAccessRule) Reset() {
 	}
 }
 
-func (x *AccessPolicy_IpAccessRule) String() string {
+func (x *AccessPolicy_IPAccessRule) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AccessPolicy_IpAccessRule) ProtoMessage() {}
+func (*AccessPolicy_IPAccessRule) ProtoMessage() {}
 
-func (x *AccessPolicy_IpAccessRule) ProtoReflect() protoreflect.Message {
+func (x *AccessPolicy_IPAccessRule) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -336,26 +336,26 @@ func (x *AccessPolicy_IpAccessRule) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AccessPolicy_IpAccessRule.ProtoReflect.Descriptor instead.
-func (*AccessPolicy_IpAccessRule) Descriptor() ([]byte, []int) {
+// Deprecated: Use AccessPolicy_IPAccessRule.ProtoReflect.Descriptor instead.
+func (*AccessPolicy_IPAccessRule) Descriptor() ([]byte, []int) {
 	return file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_rawDescGZIP(), []int{0, 1}
 }
 
-func (x *AccessPolicy_IpAccessRule) GetName() *datatypes_go_proto.String {
+func (x *AccessPolicy_IPAccessRule) GetName() *datatypes_go_proto.String {
 	if x != nil {
 		return x.Name
 	}
 	return nil
 }
 
-func (x *AccessPolicy_IpAccessRule) GetValue() *datatypes_go_proto.String {
+func (x *AccessPolicy_IPAccessRule) GetValue() *datatypes_go_proto.String {
 	if x != nil {
 		return x.Value
 	}
 	return nil
 }
 
-func (x *AccessPolicy_IpAccessRule) GetAction() *datatypes_go_proto.Code {
+func (x *AccessPolicy_IPAccessRule) GetAction() *datatypes_go_proto.Code {
 	if x != nil {
 		return x.Action
 	}
@@ -428,7 +428,7 @@ var file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_rawDesc =
 	0x70, 0x5f, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x72, 0x75, 0x6c, 0x65, 0x18, 0x0e, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x2e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x66, 0x68, 0x69,
 	0x72, 0x2e, 0x72, 0x34, 0x2e, 0x63, 0x6f, 0x72, 0x65, 0x2e, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73,
-	0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x2e, 0x49, 0x70, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52,
+	0x50, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x2e, 0x49, 0x50, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52,
 	0x75, 0x6c, 0x65, 0x52, 0x0c, 0x69, 0x70, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x75, 0x6c,
 	0x65, 0x1a, 0xaa, 0x04, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x48,
 	0x0a, 0x0d, 0x72, 0x65, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18,
@@ -465,7 +465,7 @@ var file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_rawDesc =
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x66, 0x68, 0x69, 0x72, 0x2e, 0x72, 0x34, 0x2e, 0x63, 0x6f,
 	0x72, 0x65, 0x2e, 0x45, 0x78, 0x70, 0x72, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x0f, 0x77,
 	0x72, 0x69, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x73, 0x74, 0x72, 0x61, 0x69, 0x6e, 0x74, 0x1a, 0xb5,
-	0x01, 0x0a, 0x0c, 0x49, 0x70, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x75, 0x6c, 0x65, 0x12,
+	0x01, 0x0a, 0x0c, 0x49, 0x50, 0x41, 0x63, 0x63, 0x65, 0x73, 0x73, 0x52, 0x75, 0x6c, 0x65, 0x12,
 	0x2f, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1b, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x66, 0x68, 0x69, 0x72, 0x2e, 0x72, 0x34, 0x2e, 0x63,
 	0x6f, 0x72, 0x65, 0x2e, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65,
@@ -508,7 +508,7 @@ var file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_msgTypes 
 var file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_goTypes = []interface{}{
 	(*AccessPolicy)(nil),                  // 0: google.fhir.r4.core.AccessPolicy
 	(*AccessPolicy_Resource)(nil),         // 1: google.fhir.r4.core.AccessPolicy.Resource
-	(*AccessPolicy_IpAccessRule)(nil),     // 2: google.fhir.r4.core.AccessPolicy.IpAccessRule
+	(*AccessPolicy_IPAccessRule)(nil),     // 2: google.fhir.r4.core.AccessPolicy.IPAccessRule
 	(*datatypes_go_proto.Id)(nil),         // 3: google.fhir.r4.core.Id
 	(*datatypes_go_proto.Meta)(nil),       // 4: google.fhir.r4.core.Meta
 	(*datatypes_go_proto.Uri)(nil),        // 5: google.fhir.r4.core.Uri
@@ -534,7 +534,7 @@ var file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_depIdxs =
 	11, // 9: google.fhir.r4.core.AccessPolicy.based_on:type_name -> google.fhir.r4.core.Reference
 	11, // 10: google.fhir.r4.core.AccessPolicy.compartment:type_name -> google.fhir.r4.core.Reference
 	1,  // 11: google.fhir.r4.core.AccessPolicy.resource:type_name -> google.fhir.r4.core.AccessPolicy.Resource
-	2,  // 12: google.fhir.r4.core.AccessPolicy.ip_access_rule:type_name -> google.fhir.r4.core.AccessPolicy.IpAccessRule
+	2,  // 12: google.fhir.r4.core.AccessPolicy.ip_access_rule:type_name -> google.fhir.r4.core.AccessPolicy.IPAccessRule
 	10, // 13: google.fhir.r4.core.AccessPolicy.Resource.resource_type:type_name -> google.fhir.r4.core.String
 	11, // 14: google.fhir.r4.core.AccessPolicy.Resource.compartment:type_name -> google.fhir.r4.core.Reference
 	10, // 15: google.fhir.r4.core.AccessPolicy.Resource.criteria:type_name -> google.fhir.r4.core.String
@@ -543,9 +543,9 @@ var file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_depIdxs =
 	10, // 18: google.fhir.r4.core.AccessPolicy.Resource.hidden_fields:type_name -> google.fhir.r4.core.String
 	10, // 19: google.fhir.r4.core.AccessPolicy.Resource.readonly_fields:type_name -> google.fhir.r4.core.String
 	13, // 20: google.fhir.r4.core.AccessPolicy.Resource.write_constraint:type_name -> google.fhir.r4.core.Expression
-	10, // 21: google.fhir.r4.core.AccessPolicy.IpAccessRule.name:type_name -> google.fhir.r4.core.String
-	10, // 22: google.fhir.r4.core.AccessPolicy.IpAccessRule.value:type_name -> google.fhir.r4.core.String
-	6,  // 23: google.fhir.r4.core.AccessPolicy.IpAccessRule.action:type_name -> google.fhir.r4.core.Code
+	10, // 21: google.fhir.r4.core.AccessPolicy.IPAccessRule.name:type_name -> google.fhir.r4.core.String
+	10, // 22: google.fhir.r4.core.AccessPolicy.IPAccessRule.value:type_name -> google.fhir.r4.core.String
+	6,  // 23: google.fhir.r4.core.AccessPolicy.IPAccessRule.action:type_name -> google.fhir.r4.core.Code
 	24, // [24:24] is the sub-list for method output_type
 	24, // [24:24] is the sub-list for method input_type
 	24, // [24:24] is the sub-list for extension type_name
@@ -584,7 +584,7 @@ func file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_init() {
 			}
 		}
 		file_proto_google_fhir_proto_r4_core_resources_access_policy_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AccessPolicy_IpAccessRule); i {
+			switch v := v.(*AccessPolicy_IPAccessRule); i {
 			case 0:
 				return &v.state
 			case 1:
