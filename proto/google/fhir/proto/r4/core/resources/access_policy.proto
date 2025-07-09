@@ -62,7 +62,7 @@ message AccessPolicy {
   repeated Resource resource = 13;
 
   // Use IP Access Rules to allowlist, block, and challenge traffic based on the visitor IP address.
-  repeated IpAccessRule ip_access_rule = 14;
+  repeated IPAccessRule ip_access_rule = 14;
 
   message Resource {
     // The resource type.
@@ -91,7 +91,7 @@ message AccessPolicy {
     repeated Expression write_constraint = 8;
   }
 
-  message IpAccessRule {
+  message IPAccessRule {
     // Friendly name that will make it easy for you to identify the IP Access Rule in the future.
     String name = 1;
 

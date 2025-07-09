@@ -3418,8 +3418,8 @@ message ResourceTypeCode {
     // <SUPERPOWER.COM ADDITION>
     // Below are the following Medplum definitions that are not part of the
     // official FHIR specification:
-    USER = 149 [(.google.fhir.proto.fhir_original_code) = "User"];
-    ACCESS_POLICY = 150 [(.google.fhir.proto.fhir_original_code) = "AccessPolicy"];
+    USER = 1001 [(.google.fhir.proto.fhir_original_code) = "User"];
+    ACCESS_POLICY = 1002 [(.google.fhir.proto.fhir_original_code) = "AccessPolicy"];
   }
 }
 

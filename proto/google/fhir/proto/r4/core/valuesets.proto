@@ -1363,12 +1363,12 @@ message FHIRAllTypesValueSet {
     // <SUPERPOWER.COM ADDITION>
     // Below are the following Medplum definitions that are not part of the
     // official FHIR specification:
-    USER = 214 [
+    USER = 1001 [
       (.google.fhir.proto.fhir_original_code) = "User",
       (.google.fhir.proto.source_code_system) =
           "http://medplum.com/fhir/resource-types"
     ];
-    ACCESS_POLICY = 215 [
+    ACCESS_POLICY = 1002 [
       (.google.fhir.proto.fhir_original_code) = "AccessPolicy",
       (.google.fhir.proto.source_code_system) =
           "http://medplum.com/fhir/resource-types"
