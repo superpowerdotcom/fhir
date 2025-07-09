@@ -161,10 +161,13 @@ import "proto/google/fhir/proto/r4/core/resources/task.proto";
 import "proto/google/fhir/proto/r4/core/resources/terminology_capabilities.proto";
 import "proto/google/fhir/proto/r4/core/resources/test_report.proto";
 import "proto/google/fhir/proto/r4/core/resources/test_script.proto";
-import "proto/google/fhir/proto/r4/core/resources/user.proto";
 import "proto/google/fhir/proto/r4/core/resources/value_set.proto";
 import "proto/google/fhir/proto/r4/core/resources/verification_result.proto";
 import "proto/google/fhir/proto/r4/core/resources/vision_prescription.proto";
+// <SUPERPOWER.COM ADDITION>
+// These are the proto imports for the Medplum custom resources.
+import "proto/google/fhir/proto/r4/core/resources/user.proto";
+import "proto/google/fhir/proto/r4/core/resources/access_policy.proto";
 
 option java_multiple_files = true;
 option java_package = "com.google.fhir.r4.core";
@@ -547,6 +550,7 @@ message ContainedResource {
     // <SUPERPOWER.COM ADDITION>
     // Below are the following Medplum definitions that are not part of the
     // official FHIR specification:
-    User user = 147;
+    User user = 1001;
+    AccessPolicy access_policy = 1002;
   }
 }
