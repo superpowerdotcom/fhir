@@ -1373,6 +1373,11 @@ message FHIRAllTypesValueSet {
       (.google.fhir.proto.source_code_system) =
           "http://medplum.com/fhir/resource-types"
     ];
+    CLIENT_APPLICATION = 1003 [
+      (.google.fhir.proto.fhir_original_code) = "ClientApplication",
+      (.google.fhir.proto.source_code_system) =
+          "http://medplum.com/fhir/resource-types"
+    ];
   }
 }
 
