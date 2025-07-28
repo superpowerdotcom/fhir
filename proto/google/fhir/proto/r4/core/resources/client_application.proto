@@ -82,59 +82,46 @@ message ClientApplication {
   // Description of the client application
   String description = 12;
 
-  // Sign-in form configuration
+  // Sign-in form configuration with welcome string and logo
   message SignInForm {
-    // Unique id for inter-element referencing
-    String id = 1;
+    // Welcome string for the Log In Form
+    String welcome_string = 1;
 
-    // Additional content defined by implementations
-    repeated Extension extension = 2;
-
-    // Extensions that cannot be ignored even if unrecognized
-    repeated Extension modifier_extension = 3;
-
-    // Custom fields for the sign-in form (can be extended based on Medplum's implementation)
-    // This is a placeholder structure - actual fields would depend on Medplum's specific implementation
-    repeated Extension field = 4;
+    // Logo for the Log In Form
+    Attachment logo = 2;
   }
   SignInForm sign_in_form = 13;
 
-  // Welcome string displayed to users
-  String welcome_string = 14;
-
-  // Logo for the client application
-  Attachment logo = 15;
-
   // Secret key for the client application
-  String secret = 16;
+  String secret = 14;
 
   // Retiring secret key for the client application
-  String retiring_secret = 17;
+  String retiring_secret = 15;
 
   // URI for JSON Web Key Set
-  Uri jwks_uri = 18;
+  Uri jwks_uri = 16;
 
   // Redirect URI for OAuth2 flows
-  Uri redirect_uri = 19;
+  Uri redirect_uri = 17;
 
   // Launch URI for SMART App Launch
-  Uri launch_uri = 20;
+  Uri launch_uri = 18;
 
   // Whether PKCE is optional for this client
-  Boolean pkce_optional = 21;
+  Boolean pkce_optional = 19;
 
   // TODO: Define protos for IdentityProvider (Currently being unused at the moment)
-  // Reference identity_provider = 22 [(.google.fhir.proto.valid_reference_type) = "IdentityProvider"];
+  // Reference identity_provider = 20 [(.google.fhir.proto.valid_reference_type) = "IdentityProvider"];
 
   // Access token lifetime
-  String access_token_lifetime = 23;
+  String access_token_lifetime = 21;
 
   // Refresh token lifetime  
-  String refresh_token_lifetime = 24;
+  String refresh_token_lifetime = 22;
 
   // Allowed origins for CORS
-  repeated String allowed_origin = 25;
+  repeated String allowed_origin = 23;
 
   // Default scopes for this client application
-  repeated String default_scope = 26;
+  repeated String default_scope = 24;
 }
