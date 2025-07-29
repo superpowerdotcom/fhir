@@ -2925,6 +2925,8 @@ message Reference {
         [(.google.fhir.proto.referenced_fhir_type) = "User"];
     ReferenceId access_policy_id = 1002
         [(.google.fhir.proto.referenced_fhir_type) = "AccessPolicy"];
+    ReferenceId client_application_id = 1003
+        [(.google.fhir.proto.referenced_fhir_type) = "ClientApplication"];
   }
 }
 

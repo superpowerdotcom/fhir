@@ -85,6 +85,7 @@ message User {
   Boolean mfa_enrolled = 19;
 
   // Optional project if the user only exists for the project. This is used for the project-specific user database.
+  // TODO: Define protos for Project (Currently being unused at the moment)
   // Reference project = 20
   //     [(.google.fhir.proto.valid_reference_type) = "Project"];
 } 

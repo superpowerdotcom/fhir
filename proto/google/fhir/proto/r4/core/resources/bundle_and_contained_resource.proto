@@ -168,6 +168,7 @@ import "proto/google/fhir/proto/r4/core/resources/vision_prescription.proto";
 // These are the proto imports for the Medplum custom resources.
 import "proto/google/fhir/proto/r4/core/resources/user.proto";
 import "proto/google/fhir/proto/r4/core/resources/access_policy.proto";
+import "proto/google/fhir/proto/r4/core/resources/client_application.proto";
 
 option java_multiple_files = true;
 option java_package = "com.google.fhir.r4.core";
@@ -552,5 +553,6 @@ message ContainedResource {
     // official FHIR specification:
     User user = 1001;
     AccessPolicy access_policy = 1002;
+    ClientApplication client_application = 1003;
   }
 }

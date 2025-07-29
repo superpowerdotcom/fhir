@@ -3420,6 +3420,7 @@ message ResourceTypeCode {
     // official FHIR specification:
     USER = 1001 [(.google.fhir.proto.fhir_original_code) = "User"];
     ACCESS_POLICY = 1002 [(.google.fhir.proto.fhir_original_code) = "AccessPolicy"];
+    CLIENT_APPLICATION = 1003 [(.google.fhir.proto.fhir_original_code) = "ClientApplication"];
   }
 }
 
