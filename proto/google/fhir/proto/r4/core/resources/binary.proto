@@ -71,4 +71,9 @@ message Binary {
 
   // The actual content
   Base64Binary data = 7;
+
+  // <SUPERPOWER.COM ADDITION>
+  //
+  // Medplum returns a 'url' field for Binary resources
+  Uri url = 8;
 }

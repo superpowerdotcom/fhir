@@ -1,7 +1,30 @@
 # superpowerdotcom/fhir
 
-This is a fork of `google/fhir` with small additions to support custom Medplum sources. As of 06/23/2025, use this repo to work off of the protos for our Go implementations. We currently have custom proto definitions for:
-- User
+This is a _fork_ of `github.com/google/fhir` with additions to support Medplum-specific resources and fields. 
+
+Use this repo to work off of the protos for our Go implementations.
+
+## Superpower Changes
+
+Changes from the upstream `google/fhir` repo:
+
+### New Medplum Resources
+- **User** (2025-06-24) - Added proto definitions for Medplum's User resource
+- **AccessPolicy** (2025-07-07) - Added proto definitions for Medplum's AccessPolicy resource
+- **ClientApplication** (2025-07-26) - Added proto definitions for Medplum's ClientApplication resource
+
+### Modified Resources
+- **Binary** (2026-01-24) - Added `url` field (Medplum returns a signed URL for binary content)
+- **Observation** (2025-06-24) - Changed `SimpleQuantity` to `Quantity` for Medplum compatibility
+- **ObservationDefinition** (2025-06-24) - Changed `SimpleQuantity` to `Quantity` for Medplum compatibility
+- **Range** (2025-06-25) - Changed to use `Quantity` instead of `SimpleQuantity` for Medplum compatibility
+
+### Library Changes
+- **jsonformat.UnmarshalError()** (2026-01-24) - Enhanced error messages to include `Diagnostics` field for better debugging. 
+  - Prior to this, if there were unmarshal errors, we would only see 
+    `error at "Binary"`; with this update, the error will be: `error at "Binary": unknown field 'foo'`.
+
+---
 
 ## Building the Go proto packages
 
