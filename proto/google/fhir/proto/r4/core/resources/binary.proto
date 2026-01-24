@@ -71,4 +71,7 @@ message Binary {
 
   // The actual content
   Base64Binary data = 7;
+
+  // Medplum returns a 'url' field for Binary resources
+  string url = 8;
 }
