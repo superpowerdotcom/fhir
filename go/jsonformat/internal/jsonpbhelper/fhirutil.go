@@ -19,6 +19,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"math"
 	"regexp"
 	"strconv"
@@ -26,8 +27,6 @@ import (
 	"sync"
 	"time"
 	"unicode/utf8"
-
-	"log"
 
 	"bitbucket.org/creachadair/stringset"
 	jsoniter "github.com/json-iterator/go"
@@ -260,6 +259,9 @@ func (e *UnmarshalError) Error() string {
 	var msg string
 	if e.Path != "" {
 		msg = fmt.Sprintf("error at %q: ", e.Path)
+	}
+	if e.Diagnostics != "" {
+		return msg + e.Details + " " + e.Diagnostics
 	}
 	return msg + e.Details
 }
