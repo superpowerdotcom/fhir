@@ -36,9 +36,11 @@ jobs:
           fetch-depth: 0
 
       - name: Configure Go for private modules
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "GOPRIVATE=github.com/superpowerdotcom/*" >> $GITHUB_ENV
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${GH_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
 
       - name: Test Go modules
         run: |
@@ -59,10 +61,24 @@ jobs:
 
       - name: Calculate next version
         id: next_version
+        env:
+          LATEST_TAG: ${{ steps.get_latest_tag.outputs.latest_tag }}
+          VERSION_INCREMENT: ${{ inputs.version_increment }}
+          PRERELEASE_TYPE: ${{ inputs.prerelease_type }}
         run: |
-          LATEST_TAG=${{ steps.get_latest_tag.outputs.latest_tag }}
-          VERSION_INCREMENT=${{ inputs.version_increment }}
-          PRERELEASE_TYPE=${{ inputs.prerelease_type }}
+          # Validate before Bash arithmetic: tag values must never become code.
+          if [[ ! "$LATEST_TAG" =~ ^go/v(0|[1-9][0-9]{0,8})\.(0|[1-9][0-9]{0,8})\.(0|[1-9][0-9]{0,8})$ ]]; then
+            echo "Invalid stable Go version tag" >&2
+            exit 1
+          fi
+          case "$VERSION_INCREMENT" in
+            major|minor|patch) ;;
+            *) echo "Invalid version increment" >&2; exit 1 ;;
+          esac
+          case "$PRERELEASE_TYPE" in
+            alpha|beta|rc) ;;
+            *) echo "Invalid pre-release type" >&2; exit 1 ;;
+          esac
           
           # Remove 'go/v' prefix
           VERSION=${LATEST_TAG#go/v}
@@ -103,12 +119,14 @@ jobs:
         run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Create staging tag
+        env:
+          NEW_VERSION: ${{ steps.next_version.outputs.new_version }}
+          REF_NAME: ${{ github.ref_name }}
         run: |
-          NEW_VERSION=${{ steps.next_version.outputs.new_version }}
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git tag -a $NEW_VERSION -m "Staging release $NEW_VERSION from ${{ github.ref_name }}"
-          git push origin $NEW_VERSION
+          git tag -a "$NEW_VERSION" -m "Staging release $NEW_VERSION from $REF_NAME"
+          git push origin "$NEW_VERSION"
 
       - name: Create GitHub Release
         id: create_release
@@ -163,20 +181,27 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Summary
+        env:
+          NEW_VERSION: ${{ steps.next_version.outputs.new_version }}
+          REF_NAME: ${{ github.ref_name }}
+          SHORT_SHA: ${{ steps.vars.outputs.short_sha }}
+          PRERELEASE_TYPE: ${{ inputs.prerelease_type }}
+          VERSION_INCREMENT: ${{ inputs.version_increment }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           echo "## 🎉 Staging Release Created!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** \`${{ steps.next_version.outputs.new_version }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "**Branch:** \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "**Commit:** \`${{ steps.vars.outputs.short_sha }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "**Type:** \`${{ inputs.prerelease_type }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "**Increment:** \`${{ inputs.version_increment }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** \`${NEW_VERSION}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** \`${REF_NAME}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** \`${SHORT_SHA}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Type:** \`${PRERELEASE_TYPE}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Increment:** \`${VERSION_INCREMENT}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 📦 Installation:" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
-          echo "go get github.com/superpowerdotcom/fhir/go@${{ steps.next_version.outputs.new_version }}" >> $GITHUB_STEP_SUMMARY
+          echo "go get github.com/superpowerdotcom/fhir/go@${NEW_VERSION}" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 🔗 Links:" >> $GITHUB_STEP_SUMMARY
-          echo "- [GitHub Release](https://github.com/${{ github.repository }}/releases/tag/${{ steps.next_version.outputs.new_version }})" >> $GITHUB_STEP_SUMMARY
-          echo "- [Go Package](https://pkg.go.dev/github.com/superpowerdotcom/fhir/go@${{ steps.next_version.outputs.new_version }})" >> $GITHUB_STEP_SUMMARY 
+          echo "- [GitHub Release](https://github.com/${REPOSITORY}/releases/tag/${NEW_VERSION})" >> $GITHUB_STEP_SUMMARY
+          echo "- [Go Package](https://pkg.go.dev/github.com/superpowerdotcom/fhir/go@${NEW_VERSION})" >> $GITHUB_STEP_SUMMARY 
