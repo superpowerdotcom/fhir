@@ -1,6 +1,6 @@
 module github.com/superpowerdotcom/fhir/go/protopath
 
-go 1.19
+go 1.26
 
 require (
 	github.com/golang/protobuf v1.5.4

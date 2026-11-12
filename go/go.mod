@@ -1,6 +1,6 @@
 module github.com/superpowerdotcom/fhir/go
 
-go 1.19
+go 1.26
 
 require (
 	bitbucket.org/creachadair/stringset v0.0.9
